@@ -1,0 +1,34 @@
+{
+  "dataset": "freesolv",
+  "seed": 0,
+  "task_type": "regression",
+  "selected_k": 5,
+  "k_selection": "min validation RMSE (tie -> smaller k)",
+  "n_endpoints": 1,
+  "n_targets": 65,
+  "n_predicted": 65,
+  "coverage": 1.0,
+  "n_invalid_test_structures": 0,
+  "n_failed_predictions": 0,
+  "rmse": 4.5243,
+  "mae": 2.9444,
+  "runtime_s": {
+    "load_s": 0.21,
+    "retrieve_s": 0.02,
+    "total_s": 0.24
+  },
+  "hashes": {
+    "train": {
+      "path": "data/moleculenet/seed_0/freesolv/freesolv_train.csv",
+      "sha256": "ee990c370760c68de51a76361eb98afc7b120f493eaf29f4c71f0b78b7463781"
+    },
+    "valid": {
+      "path": "data/moleculenet/seed_0/freesolv/freesolv_valid.csv",
+      "sha256": "7f628b9bab402041513ff98cb95addd92bcf864fc21d9e35a2bea565f2b895b7"
+    },
+    "test": {
+      "path": "data/moleculenet/seed_0/freesolv/freesolv_test.csv",
+      "sha256": "3145cfdc0e8194ae947c34e25f453a1a2b745946fced370dc39631b12550c9b3"
+    }
+  }
+}

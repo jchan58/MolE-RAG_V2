@@ -1,0 +1,41 @@
+{
+  "dataset": "bace",
+  "seed": 0,
+  "task_type": "classification",
+  "fingerprint": "Topological Torsion",
+  "fingerprint_rdkit_call": "rdMolDescriptors.GetHashedTopologicalTorsionFingerprintAsBitVect(mol, nBits=2048)",
+  "selected_k": 5,
+  "k_selection": "max macro validation ROC-AUC (tie -> smaller k)",
+  "n_endpoints": 1,
+  "n_targets": 152,
+  "n_predicted": 152,
+  "coverage": 1.0,
+  "n_invalid_test_structures": 0,
+  "n_failed_predictions": 0,
+  "macro_roc_auc": 0.8033,
+  "n_endpoints_evaluable": 1,
+  "n_endpoints_undefined": 0,
+  "undefined_endpoints": [],
+  "per_endpoint_roc_auc": {
+    "Class": 0.8033
+  },
+  "runtime_s": {
+    "load_s": 1.63,
+    "retrieve_s": 0.12,
+    "total_s": 1.76
+  },
+  "hashes": {
+    "train": {
+      "path": "data/moleculenet/seed_0/bace/bace_train.csv",
+      "sha256": "f2b71e015838fd65f2c4627e342906ad4c042775900a21d60dcf401176c910f9"
+    },
+    "valid": {
+      "path": "data/moleculenet/seed_0/bace/bace_valid.csv",
+      "sha256": "7818e6661a7f4e93b46ce61595780a7574d486b451fdb373594f1a0b36852fa2"
+    },
+    "test": {
+      "path": "data/moleculenet/seed_0/bace/bace_test.csv",
+      "sha256": "06f22ad5496a44a80ec20cfbc6e67c8856fdc7329db49f9204b6daece5043878"
+    }
+  }
+}

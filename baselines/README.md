@@ -10,7 +10,7 @@ here too (ChemRAG, MolRAG, and the no-LLM Morgan-fingerprint KNN).
 
 | Group | Baselines |
 |---|---|
-| Retrieval (shared backbone) | `chemrag_baseline`*, `molrag_baseline`, `morgan_knn` (KNN; `morgan_knn/k5/` is the paper's k=5 variant) |
+| Retrieval (shared backbone) | `chemrag_baseline`*, `molrag_baseline`, `morgan_knn` (no-LLM KNN; see its README — ships the paper's Morgan k=5 baseline **and** a BestFP-KNN variant that uses MolE-RAG's per-task retrieval fingerprint) |
 | Graph models | `gin`, `dmpnn_baseline`, `graphormer_baseline`, `grover_baseline`, `molclr_baseline`, `kano_baseline` |
 | Molecular language / multimodal | `gimlet_baseline`, `mol_llm_baseline`, `nach0_baseline`, `biot5_baseline`, `molxpt_baseline`, `chemdfm_baseline`, `llasmol_baseline`, `moleculargpt_baseline` |
 | Extra (not in the paper table) | `unimol`, and the blocked attempts `instructmol_gs_baseline`, `mr_mol_baseline` (kept with their notes) |

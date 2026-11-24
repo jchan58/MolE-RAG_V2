@@ -1,0 +1,34 @@
+{
+  "dataset": "lipo",
+  "seed": 0,
+  "task_type": "regression",
+  "selected_k": 5,
+  "k_selection": "min validation RMSE (tie -> smaller k)",
+  "n_endpoints": 1,
+  "n_targets": 420,
+  "n_predicted": 420,
+  "coverage": 1.0,
+  "n_invalid_test_structures": 0,
+  "n_failed_predictions": 0,
+  "rmse": 1.0428,
+  "mae": 0.8026,
+  "runtime_s": {
+    "load_s": 2.82,
+    "retrieve_s": 0.89,
+    "total_s": 3.72
+  },
+  "hashes": {
+    "train": {
+      "path": "data/moleculenet/seed_0/lipo/lipo_train.csv",
+      "sha256": "67d6f515f04771164ad7eab904d1f2e2a52b6e064052ae6ef6d31df2fbea0215"
+    },
+    "valid": {
+      "path": "data/moleculenet/seed_0/lipo/lipo_valid.csv",
+      "sha256": "9f905c6a620d649a181089be7de1909b3414348133b9d40845c8fc0b3d71e39e"
+    },
+    "test": {
+      "path": "data/moleculenet/seed_0/lipo/lipo_test.csv",
+      "sha256": "4f6f48e972d0beae7b58a155acf725e72ca68939299aa893de2afbf7ba0ef7cb"
+    }
+  }
+}

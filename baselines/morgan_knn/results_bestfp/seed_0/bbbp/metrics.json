@@ -1,0 +1,41 @@
+{
+  "dataset": "bbbp",
+  "seed": 0,
+  "task_type": "classification",
+  "fingerprint": "ECFP2",
+  "fingerprint_rdkit_call": "AllChem.GetMorganFingerprintAsBitVect(mol, 1, nBits=2048)",
+  "selected_k": 3,
+  "k_selection": "max macro validation ROC-AUC (tie -> smaller k)",
+  "n_endpoints": 1,
+  "n_targets": 205,
+  "n_predicted": 205,
+  "coverage": 1.0,
+  "n_invalid_test_structures": 0,
+  "n_failed_predictions": 0,
+  "macro_roc_auc": 0.8777,
+  "n_endpoints_evaluable": 1,
+  "n_endpoints_undefined": 0,
+  "undefined_endpoints": [],
+  "per_endpoint_roc_auc": {
+    "p_np": 0.8777
+  },
+  "runtime_s": {
+    "load_s": 1.44,
+    "retrieve_s": 0.21,
+    "total_s": 1.67
+  },
+  "hashes": {
+    "train": {
+      "path": "data/moleculenet/seed_0/bbbp/bbbp_train.csv",
+      "sha256": "e774d1fd92765e1c73047505e122d238cee0ce8bb750a789f66abbd6f91d7215"
+    },
+    "valid": {
+      "path": "data/moleculenet/seed_0/bbbp/bbbp_valid.csv",
+      "sha256": "41334f172113e31d08846e96eb40215a9a15fb443a9d27b41e97226c9eef6493"
+    },
+    "test": {
+      "path": "data/moleculenet/seed_0/bbbp/bbbp_test.csv",
+      "sha256": "f09225193a2c6fcbb7f10da8d19e83d5064b553049ff64197fa2a881afd187f8"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "dataset": "sider",
+  "seed": 0,
+  "task_type": "classification",
+  "fingerprint": "FCFP2",
+  "fingerprint_rdkit_call": "AllChem.GetMorganFingerprintAsBitVect(mol, 1, nBits=2048, useFeatures=True)",
+  "selected_k": 5,
+  "k_selection": "max macro validation ROC-AUC (tie -> smaller k)",
+  "n_endpoints": 27,
+  "n_targets": 3888,
+  "n_predicted": 3888,
+  "coverage": 1.0,
+  "n_invalid_test_structures": 0,
+  "n_failed_predictions": 0,
+  "macro_roc_auc": 0.6119,
+  "n_endpoints_evaluable": 27,
+  "n_endpoints_undefined": 0,
+  "undefined_endpoints": [],
+  "per_endpoint_roc_auc": {
+    "Blood_and_lymphatic_system_disorders": 0.6456,
+    "Cardiac_disorders": 0.6959,
+    "Congenital,_familial_and_genetic_disorders": 0.5414,
+    "Ear_and_labyrinth_disorders": 0.6819,
+    "Endocrine_disorders": 0.6341,
+    "Eye_disorders": 0.6293,
+    "Gastrointestinal_disorders": 0.6559,
+    "General_disorders_and_administration_site_conditions": 0.6026,
+    "Hepatobiliary_disorders": 0.6968,
+    "Immune_system_disorders": 0.5841,
+    "Infections_and_infestations": 0.5785,
+    "Injury,_poisoning_and_procedural_complications": 0.5954,
+    "Investigations": 0.6383,
+    "Metabolism_and_nutrition_disorders": 0.5771,
+    "Musculoskeletal_and_connective_tissue_disorders": 0.5903,
+    "Neoplasms_benign,_malignant_and_unspecified_(incl_cysts_and_polyps)": 0.5957,
+    "Nervous_system_disorders": 0.6204,
+    "Pregnancy,_puerperium_and_perinatal_conditions": 0.561,
+    "Product_issues": 0.486,
+    "Psychiatric_disorders": 0.6305,
+    "Renal_and_urinary_disorders": 0.6905,
+    "Reproductive_system_and_breast_disorders": 0.6322,
+    "Respiratory,_thoracic_and_mediastinal_disorders": 0.6093,
+    "Skin_and_subcutaneous_tissue_disorders": 0.4995,
+    "Social_circumstances": 0.6133,
+    "Surgical_and_medical_procedures": 0.6448,
+    "Vascular_disorders": 0.5899
+  },
+  "runtime_s": {
+    "load_s": 13.56,
+    "retrieve_s": 2.57,
+    "total_s": 16.32
+  },
+  "hashes": {
+    "train": {
+      "path": "data/moleculenet/seed_0/sider/sider_train.csv",
+      "sha256": "4a132d7ca407f9016471f93caaecb698272d135af14de875ffd4177e9739a578"
+    },
+    "valid": {
+      "path": "data/moleculenet/seed_0/sider/sider_valid.csv",
+      "sha256": "484d8a5fdb91d2c96cb5fd653aa83e55a9eb8be8b276da1f8c9d29cd8d38a312"
+    },
+    "test": {
+      "path": "data/moleculenet/seed_0/sider/sider_test.csv",
+      "sha256": "a3b392358b5790bf8eed16ce046f1d811b239e9f15ea4e8b5ede7348ab8548da"
+    }
+  }
+}

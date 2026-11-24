@@ -1,0 +1,52 @@
+{
+  "dataset": "tox21",
+  "seed": 0,
+  "task_type": "classification",
+  "fingerprint": "Atom Pair",
+  "fingerprint_rdkit_call": "rdMolDescriptors.GetHashedAtomPairFingerprintAsBitVect(mol, nBits=2048)",
+  "selected_k": 5,
+  "k_selection": "max macro validation ROC-AUC (tie -> smaller k)",
+  "n_endpoints": 12,
+  "n_targets": 7394,
+  "n_predicted": 7394,
+  "coverage": 1.0,
+  "n_invalid_test_structures": 0,
+  "n_failed_predictions": 0,
+  "macro_roc_auc": 0.7337,
+  "n_endpoints_evaluable": 12,
+  "n_endpoints_undefined": 0,
+  "undefined_endpoints": [],
+  "per_endpoint_roc_auc": {
+    "NR-AR": 0.7505,
+    "NR-AR-LBD": 0.7839,
+    "NR-AhR": 0.7643,
+    "NR-Aromatase": 0.7156,
+    "NR-ER": 0.7625,
+    "NR-ER-LBD": 0.825,
+    "NR-PPAR-gamma": 0.6429,
+    "SR-ARE": 0.6771,
+    "SR-ATAD5": 0.679,
+    "SR-HSE": 0.6296,
+    "SR-MMP": 0.8132,
+    "SR-p53": 0.7608
+  },
+  "runtime_s": {
+    "load_s": 18.68,
+    "retrieve_s": 23.14,
+    "total_s": 42.16
+  },
+  "hashes": {
+    "train": {
+      "path": "data/moleculenet/seed_0/tox21/tox21_train.csv",
+      "sha256": "0f91914080bdd7184504934716c4f90d811c6f8c60babe3bae0065a639ed55de"
+    },
+    "valid": {
+      "path": "data/moleculenet/seed_0/tox21/tox21_valid.csv",
+      "sha256": "976faaff83f795d64e7639dd07e34224db5eae5607eb2dc940e24be6f4c87fa9"
+    },
+    "test": {
+      "path": "data/moleculenet/seed_0/tox21/tox21_test.csv",
+      "sha256": "1ab31bfe0eccc8c6994732c606ed66a1dac0ea4c49c6c96207410024cbd1dea2"
+    }
+  }
+}

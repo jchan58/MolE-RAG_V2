@@ -1,0 +1,41 @@
+{
+  "dataset": "hiv",
+  "seed": 0,
+  "task_type": "classification",
+  "fingerprint": "RDKit",
+  "fingerprint_rdkit_call": "Chem.RDKFingerprint(mol)  # default maxPath=7, 2048 bits",
+  "selected_k": 5,
+  "k_selection": "max macro validation ROC-AUC (tie -> smaller k)",
+  "n_endpoints": 1,
+  "n_targets": 4112,
+  "n_predicted": 4112,
+  "coverage": 1.0,
+  "n_invalid_test_structures": 0,
+  "n_failed_predictions": 0,
+  "macro_roc_auc": 0.7876,
+  "n_endpoints_evaluable": 1,
+  "n_endpoints_undefined": 0,
+  "undefined_endpoints": [],
+  "per_endpoint_roc_auc": {
+    "HIV_active": 0.7876
+  },
+  "runtime_s": {
+    "load_s": 88.37,
+    "retrieve_s": 88.23,
+    "total_s": 176.79
+  },
+  "hashes": {
+    "train": {
+      "path": "data/moleculenet/seed_0/hiv/hiv_train.csv",
+      "sha256": "bf35785cd06bb70ce9d27b602897cec477fae4146e68e44e5d88b2f578f9df36"
+    },
+    "valid": {
+      "path": "data/moleculenet/seed_0/hiv/hiv_valid.csv",
+      "sha256": "527bd8db4c1a39bf79ddf2b1cf5ca918bb90b9e6aa88c2d246434063a51d48eb"
+    },
+    "test": {
+      "path": "data/moleculenet/seed_0/hiv/hiv_test.csv",
+      "sha256": "8a5d54147c9761538b83f7e2250e922c140c26a73ae3cd4829ea8194d98a4152"
+    }
+  }
+}

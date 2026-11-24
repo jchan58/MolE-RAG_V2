@@ -1,0 +1,13 @@
+{
+  "all_pass": true,
+  "checks": {
+    "classification_score_1101_is_0.75": true,
+    "regression_mean_2_4_is_3.0": true,
+    "tie_vote_uses_train_majority": true,
+    "tie_vote_train_tie_predicts_0": true,
+    "effective_k_short_pool": true,
+    "tie_break_by_molecule_id": true,
+    "retrieval_deterministic": true,
+    "identical_structure_sim_1.0": true
+  }
+}

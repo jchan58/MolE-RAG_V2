@@ -1,0 +1,40 @@
+{
+  "dataset": "clintox",
+  "seed": 0,
+  "task_type": "classification",
+  "selected_k": 5,
+  "k_selection": "max macro validation ROC-AUC (tie -> smaller k)",
+  "n_endpoints": 2,
+  "n_targets": 298,
+  "n_predicted": 298,
+  "coverage": 1.0,
+  "n_invalid_test_structures": 0,
+  "n_failed_predictions": 0,
+  "macro_roc_auc": 0.7496,
+  "n_endpoints_evaluable": 2,
+  "n_endpoints_undefined": 0,
+  "undefined_endpoints": [],
+  "per_endpoint_roc_auc": {
+    "CT_TOX": 0.7345,
+    "FDA_APPROVED": 0.7646
+  },
+  "runtime_s": {
+    "load_s": 1.35,
+    "retrieve_s": 0.31,
+    "total_s": 1.67
+  },
+  "hashes": {
+    "train": {
+      "path": "data/moleculenet/seed_0/clintox/clintox_train.csv",
+      "sha256": "ffa35d30b4b3d52442c664db542e21fd37a44b0d7d14da07698a89735cc9ba6f"
+    },
+    "valid": {
+      "path": "data/moleculenet/seed_0/clintox/clintox_valid.csv",
+      "sha256": "29d296b17a75ec200a727ae202108a2c170ba5a0957d1683f3f6d31c31ca9b5e"
+    },
+    "test": {
+      "path": "data/moleculenet/seed_0/clintox/clintox_test.csv",
+      "sha256": "c142dd7da1c7a20c8d27141337c64e6f10e2c2b2728679004e9e11f21daf8a4c"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+dataset,seed,task_type,fingerprint,selected_k,metric,value,coverage,runtime_s,n_endpoints,n_endpoints_undefined
+bbbp,0,classification,ECFP2,3,macro_roc_auc,0.8777,1.0,1.67,1,0
+bace,0,classification,Topological Torsion,5,macro_roc_auc,0.8033,1.0,1.76,1,0
+clintox,0,classification,FCFP2,5,macro_roc_auc,0.6556,1.0,2.09,2,0
+hiv,0,classification,RDKit,5,macro_roc_auc,0.7876,1.0,176.79,1,0
+tox21,0,classification,Atom Pair,5,macro_roc_auc,0.7337,1.0,42.16,12,0
+sider,0,classification,FCFP2,5,macro_roc_auc,0.6119,1.0,16.32,27,0
+esol,0,regression,Atom Pair,5,rmse,1.0033,1.0,0.86,1,0
+freesolv,0,regression,MACCS,3,rmse,2.796,1.0,0.48,1,0
+lipo,0,regression,Atom Pair,5,rmse,0.9362,1.0,4.46,1,0

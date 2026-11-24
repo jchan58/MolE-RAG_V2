@@ -1,0 +1,45 @@
+{
+  "method_name": "BestFP-KNN",
+  "fingerprint_per_dataset": {
+    "bace": "Topological Torsion",
+    "bbbp": "ECFP2",
+    "clintox": "FCFP2",
+    "esol": "Atom Pair",
+    "freesolv": "MACCS",
+    "hiv": "RDKit",
+    "lipo": "Atom Pair",
+    "sider": "FCFP2",
+    "tox21": "Atom Pair"
+  },
+  "fingerprint_rdkit_call": {
+    "ECFP2": "AllChem.GetMorganFingerprintAsBitVect(mol, 1, nBits=2048)",
+    "FCFP2": "AllChem.GetMorganFingerprintAsBitVect(mol, 1, nBits=2048, useFeatures=True)",
+    "MACCS": "MACCSkeys.GenMACCSKeys(mol)  # 167 keyed bits",
+    "RDKit": "Chem.RDKFingerprint(mol)  # default maxPath=7, 2048 bits",
+    "Topological Torsion": "rdMolDescriptors.GetHashedTopologicalTorsionFingerprintAsBitVect(mol, nBits=2048)",
+    "Atom Pair": "rdMolDescriptors.GetHashedAtomPairFingerprintAsBitVect(mol, nBits=2048)"
+  },
+  "k_per_dataset": {
+    "bace": 5,
+    "bbbp": 3,
+    "clintox": 5,
+    "esol": 5,
+    "freesolv": 3,
+    "hiv": 5,
+    "lipo": 5,
+    "sider": 5,
+    "tox21": 5
+  },
+  "fingerprint_source": "MolE-RAG deployed structural-retrieval map DATASET_BEST_FP (rebuild_fewshot_pools.py), selected by the paper's gpt-4o-mini validation sweep; see the Molecular Fingerprints appendix. k is the paper's validation-selected neighbourhood size per dataset.",
+  "similarity": "Tanimoto",
+  "neighbor_weighting": "uniform",
+  "max_retrieved": 5,
+  "reference_database": "training split only",
+  "tie_break": "ascending reference molecule_id, then source-row order (numpy stable sort)",
+  "preprocessing": "RDKit MolFromSmiles only; no new salt stripping / neutralization / tautomer normalization (matches make_scaffold_splits.py)",
+  "python_version": "3.13.9",
+  "rdkit_version": "2025.09.2",
+  "sklearn_version": "1.9.0",
+  "numpy_version": "2.3.5",
+  "pandas_version": "3.0.3"
+}

@@ -1,0 +1,50 @@
+{
+  "dataset": "tox21",
+  "seed": 0,
+  "task_type": "classification",
+  "selected_k": 5,
+  "k_selection": "max macro validation ROC-AUC (tie -> smaller k)",
+  "n_endpoints": 12,
+  "n_targets": 7394,
+  "n_predicted": 7394,
+  "coverage": 1.0,
+  "n_invalid_test_structures": 0,
+  "n_failed_predictions": 0,
+  "macro_roc_auc": 0.7001,
+  "n_endpoints_evaluable": 12,
+  "n_endpoints_undefined": 0,
+  "undefined_endpoints": [],
+  "per_endpoint_roc_auc": {
+    "NR-AR": 0.7202,
+    "NR-AR-LBD": 0.7755,
+    "NR-AhR": 0.7583,
+    "NR-Aromatase": 0.7084,
+    "NR-ER": 0.6267,
+    "NR-ER-LBD": 0.675,
+    "NR-PPAR-gamma": 0.6697,
+    "SR-ARE": 0.6485,
+    "SR-ATAD5": 0.6673,
+    "SR-HSE": 0.6951,
+    "SR-MMP": 0.7198,
+    "SR-p53": 0.7371
+  },
+  "runtime_s": {
+    "load_s": 16.76,
+    "retrieve_s": 21.76,
+    "total_s": 38.75
+  },
+  "hashes": {
+    "train": {
+      "path": "data/moleculenet/seed_0/tox21/tox21_train.csv",
+      "sha256": "0f91914080bdd7184504934716c4f90d811c6f8c60babe3bae0065a639ed55de"
+    },
+    "valid": {
+      "path": "data/moleculenet/seed_0/tox21/tox21_valid.csv",
+      "sha256": "976faaff83f795d64e7639dd07e34224db5eae5607eb2dc940e24be6f4c87fa9"
+    },
+    "test": {
+      "path": "data/moleculenet/seed_0/tox21/tox21_test.csv",
+      "sha256": "1ab31bfe0eccc8c6994732c606ed66a1dac0ea4c49c6c96207410024cbd1dea2"
+    }
+  }
+}

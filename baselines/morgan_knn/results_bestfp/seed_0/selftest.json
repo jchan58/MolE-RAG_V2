@@ -1,0 +1,22 @@
+{
+  "all_pass": true,
+  "checks": {
+    "classification_score_1101_is_0.75": true,
+    "regression_mean_2_4_is_3.0": true,
+    "tie_vote_uses_train_majority": true,
+    "tie_vote_train_tie_predicts_0": true,
+    "effective_k_short_pool": true,
+    "[ECFP2] tie_break_by_molecule_id": true,
+    "[ECFP2] identical_structure_sim_1.0": true,
+    "[FCFP2] tie_break_by_molecule_id": true,
+    "[FCFP2] identical_structure_sim_1.0": true,
+    "[MACCS] tie_break_by_molecule_id": true,
+    "[MACCS] identical_structure_sim_1.0": true,
+    "[RDKit] tie_break_by_molecule_id": true,
+    "[RDKit] identical_structure_sim_1.0": true,
+    "[Topological Torsion] tie_break_by_molecule_id": true,
+    "[Topological Torsion] identical_structure_sim_1.0": true,
+    "[Atom Pair] tie_break_by_molecule_id": true,
+    "[Atom Pair] identical_structure_sim_1.0": true
+  }
+}

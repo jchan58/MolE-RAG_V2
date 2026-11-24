@@ -1,0 +1,21 @@
+{
+  "method_name": "Morgan-KNN",
+  "fingerprint": "binary Morgan (rdFingerprintGenerator)",
+  "radius": 2,
+  "fp_size": 2048,
+  "include_chirality": true,
+  "similarity": "Tanimoto",
+  "neighbor_weighting": "uniform",
+  "candidate_k": [
+    5
+  ],
+  "fallback_k": 4,
+  "reference_database": "training split only",
+  "tie_break": "ascending reference molecule_id, then source-row order (numpy stable sort)",
+  "preprocessing": "RDKit MolFromSmiles only; no new salt stripping / neutralization / tautomer normalization (matches make_scaffold_splits.py)",
+  "python_version": "3.13.9",
+  "rdkit_version": "2025.09.2",
+  "sklearn_version": "1.9.0",
+  "numpy_version": "2.3.5",
+  "pandas_version": "3.0.3"
+}

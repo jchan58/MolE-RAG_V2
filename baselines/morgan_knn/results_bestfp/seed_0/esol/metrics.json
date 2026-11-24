@@ -1,0 +1,36 @@
+{
+  "dataset": "esol",
+  "seed": 0,
+  "task_type": "regression",
+  "fingerprint": "Atom Pair",
+  "fingerprint_rdkit_call": "rdMolDescriptors.GetHashedAtomPairFingerprintAsBitVect(mol, nBits=2048)",
+  "selected_k": 5,
+  "k_selection": "min validation RMSE (tie -> smaller k)",
+  "n_endpoints": 1,
+  "n_targets": 114,
+  "n_predicted": 114,
+  "coverage": 1.0,
+  "n_invalid_test_structures": 0,
+  "n_failed_predictions": 0,
+  "rmse": 1.0033,
+  "mae": 0.7403,
+  "runtime_s": {
+    "load_s": 0.78,
+    "retrieve_s": 0.08,
+    "total_s": 0.86
+  },
+  "hashes": {
+    "train": {
+      "path": "data/moleculenet/seed_0/esol/esol_train.csv",
+      "sha256": "7950fd9053d909c66bb77a0b8e2bc6e54a1db70bba5b0d616175accf3b7e54da"
+    },
+    "valid": {
+      "path": "data/moleculenet/seed_0/esol/esol_valid.csv",
+      "sha256": "64d4ca43585458381cb933c618018742d9ab40190b9042f93f80a72ad5962cdd"
+    },
+    "test": {
+      "path": "data/moleculenet/seed_0/esol/esol_test.csv",
+      "sha256": "e6055a13306ac5d133a0b04f0f0519ba2118ed9ea8d930be4bfc64cd74d95f0b"
+    }
+  }
+}

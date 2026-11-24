@@ -1,0 +1,3 @@
+dataset,endpoint,k,metric,value
+clintox,CT_TOX,5,roc_auc,0.6640708915145006
+clintox,FDA_APPROVED,5,roc_auc,0.6484567901234567
