@@ -24,7 +24,7 @@ if MODE == "smoke":
 else:
     CANDIDATES = ["ml.g6e.16xlarge", "ml.g6e.12xlarge", "ml.g6e.4xlarge"]
 
-DATA_SRC = "/work/hdd/bhrm/jchan5/mole-rag_naacl/dmpnn_baseline/data"
+DATA_SRC = "/workspace/mole-rag_naacl/dmpnn_baseline/data"
 data_s3 = sess.upload_data(path=DATA_SRC, bucket=BUCKET, key_prefix="mol_llm_baseline/data")
 print("data ->", data_s3, flush=True)
 

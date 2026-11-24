@@ -2,7 +2,7 @@
 """Render RESULTS.md from analysis/results.json for the GIMLET zero-shot baseline."""
 import json, os
 
-BASE = '/work/hdd/bhrm/jchan5/mole-rag_naacl/gimlet_baseline'
+BASE = '/workspace/mole-rag_naacl/gimlet_baseline'
 res = json.load(open(os.path.join(BASE, 'analysis', 'results.json')))
 
 # MolRAG-paper GIMLET numbers (for reference; paper uses different scaffold splits).

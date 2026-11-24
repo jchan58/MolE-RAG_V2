@@ -3,8 +3,8 @@
 # Primary: qwen.qwen3-32b-v1:0 (us-east-1/us-west-2/us-east-2). Fallback: Sonnet 4.6 + Haiku 4.5.
 # Resumable off existing per-article done markers. Outputs -> /tmp/exp70_filter + S3.
 set -u
-CODE=/scratch/bhrm/jchan5/exp70_bbbp_pmc_collection/code
-PY=/u/jchan5/miniconda3/bin/python3
+CODE=${CODE:-$(cd "$(dirname "$0")" && pwd)}
+PY=${PY:-python3}
 LOGDIR=/tmp/exp70_filter/logs
 mkdir -p "$LOGDIR"
 

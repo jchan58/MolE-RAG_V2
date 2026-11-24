@@ -16,7 +16,7 @@ Weights are FROZEN (no fine-tuning): model.eval(), torch.no_grad(), generate onl
 """
 import os, sys, json, csv, re, argparse, time, math, types
 
-GIMLET_DIR = '/work/hdd/bhrm/jchan5/baselines/GIMLET'
+GIMLET_DIR = '/workspace/baselines/GIMLET'
 sys.path.insert(0, GIMLET_DIR)
 os.chdir(GIMLET_DIR)   # so pyximport can build dataloaders.algos as a package submodule
 os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
@@ -24,10 +24,10 @@ os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
 # the shell profile points at an unwritable /work/hdd/bdgw/... and must be overridden).
 os.environ['HF_HUB_OFFLINE'] = '1'
 os.environ['TRANSFORMERS_OFFLINE'] = '1'
-os.environ['HF_HOME'] = '/work/hdd/bhrm/jchan5/models'
-os.environ['HF_HUB_CACHE'] = '/work/hdd/bhrm/jchan5/models/hub'
-os.environ['TRANSFORMERS_CACHE'] = '/work/hdd/bhrm/jchan5/models/hub'
-os.environ['HUGGINGFACE_HUB_CACHE'] = '/work/hdd/bhrm/jchan5/models/hub'
+os.environ['HF_HOME'] = '/workspace/models'
+os.environ['HF_HUB_CACHE'] = '/workspace/models/hub'
+os.environ['TRANSFORMERS_CACHE'] = '/workspace/models/hub'
+os.environ['HUGGINGFACE_HUB_CACHE'] = '/workspace/models/hub'
 
 # Bypass model/__init__.py (it eagerly imports the KVPLM/MoMu baselines, which need
 # boto3/fairseq/pytorch_lightning/etc. that we don't install). Inject a lightweight
@@ -49,8 +49,8 @@ from ogb.utils import smiles2graph
 from model.GIMLET.GIMLETTransformerForConditionalGeneration import GraphT5TransformerForConditionalGeneration
 from dataloaders.gimlet_collator import CollatorForGIMLETLanguageModeling
 
-DATA_ROOT = '/work/hdd/bhrm/jchan5/MolE-RAG/data/moleculenet_property_scaffold/seed_0'
-PROMPTS_PATH = '/work/hdd/bhrm/jchan5/mole-rag_naacl/gimlet_baseline/code/gimlet_prompts.json'
+DATA_ROOT = '/workspace/MolE-RAG/data/moleculenet_property_scaffold/seed_0'
+PROMPTS_PATH = '/workspace/mole-rag_naacl/gimlet_baseline/code/gimlet_prompts.json'
 
 REG_TASKS = {'esol', 'freesolv', 'lipo'}
 CLA_TASKS = {'bbbp', 'bace', 'hiv', 'clintox', 'sider', 'tox21'}
@@ -236,7 +236,7 @@ def run_task(task, model, tokenizer, collator, device, out_dir, batch_size, log)
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--tasks', nargs='+', required=True)
-    ap.add_argument('--out_dir', default='/work/hdd/bhrm/jchan5/mole-rag_naacl/gimlet_baseline/outputs')
+    ap.add_argument('--out_dir', default='/workspace/mole-rag_naacl/gimlet_baseline/outputs')
     ap.add_argument('--batch_size', type=int, default=40)
     args = ap.parse_args()
 

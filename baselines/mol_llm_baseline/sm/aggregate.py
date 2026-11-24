@@ -8,7 +8,7 @@ import boto3, json, os, io, tarfile
 BUCKET = "molerag"
 INCR = "mol_llm_baseline/output/incremental"
 OUT_PREFIX = "mol_llm_baseline/output"
-BASE = "/work/hdd/bhrm/jchan5/mole-rag_naacl/mol_llm_baseline"
+BASE = "/workspace/mole-rag_naacl/mol_llm_baseline"
 META = json.load(open(f"{BASE}/../dmpnn_baseline/data/meta.json"))
 SEED = 0
 TASK_ORDER = ["bbbp", "bace", "hiv", "clintox", "sider", "tox21", "esol", "freesolv", "lipo"]

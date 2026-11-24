@@ -7,7 +7,7 @@
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=80g
 #SBATCH --time=20:00:00
-#SBATCH --output=/work/hdd/bhrm/jchan5/mole-rag_naacl/kano_baseline/execution/kano_%x_%j.log
+#SBATCH --output=/workspace/mole-rag_naacl/kano_baseline/execution/kano_%x_%j.log
 
 set -u
 ENC=${ENC:-CMPNN}
@@ -15,10 +15,10 @@ CKPT=${CKPT:-./dumped/pretrained_graph_encoder/original_CMPN_0623_1350_14000th_e
 TAG=${TAG:-cmpnn}
 NRUNS=${NRUNS:-1}
 
-KANO=/work/hdd/bhrm/jchan5/mole-rag_naacl/kano/KANO
-DATA=/work/hdd/bhrm/jchan5/mole-rag_naacl/kano_baseline/data
-RES=/work/hdd/bhrm/jchan5/mole-rag_naacl/kano_baseline/results_${TAG}
-PY=/work/hdd/bhrm/jchan5/miniconda3/envs/kano/bin/python
+KANO=/workspace/mole-rag_naacl/kano/KANO
+DATA=/workspace/mole-rag_naacl/kano_baseline/data
+RES=/workspace/mole-rag_naacl/kano_baseline/results_${TAG}
+PY=/workspace/miniconda3/envs/kano/bin/python
 mkdir -p "$RES"
 cd "$KANO"
 echo "host $(hostname)  ENC=$ENC  TAG=$TAG  NRUNS=$NRUNS"

@@ -4,8 +4,8 @@
 # downloaded articles. async_judge is run to completion each pass (never overlapped,
 # so the global 450/s OpenAI budget is never exceeded).
 set -u
-RUN_DIR="/scratch/bhrm/jchan5/exp70_bbbp_pmc_collection"
-PY="/u/jchan5/miniconda3/bin/python3"
+RUN_DIR="${EXP70_RUN_DIR:-$(cd "$(dirname "$0")/.." && pwd)/corpus_runs/bbbp}"
+PY="${PY:-python3}"
 export EXP70_RUN_DIR="$RUN_DIR"
 cd "$RUN_DIR/code"
 prev=-1

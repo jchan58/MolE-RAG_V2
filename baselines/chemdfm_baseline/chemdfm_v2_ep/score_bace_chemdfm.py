@@ -3,7 +3,7 @@ logic (AUC from probability_active, Brier, acc, abstain, paired bootstrap C-A) b
 chemdfm model and tolerant of a truncated part file. Output: SCORES_C_chemdfm.json next to parts."""
 import json, glob, random
 from pathlib import Path
-BASE = Path("/work/hdd/bhrm/jchan5/molerag_reasoning/BACE/framework_final")
+BASE = Path("/workspace/molerag_reasoning/BACE/framework_final")
 MODELS = ["chemdfm_v2_14b"]
 random.seed(0)
 
@@ -79,5 +79,5 @@ for m in MODELS:
         print(f"{m:16} {k:4} {met['n']:>4} {met['miss']:>4} {str(met['auc']):>6} {str(met['brier']):>6} {str(met['acc@0.5']):>7} {str(met['acc_committed']):>7} {met['abstain']:>4}")
     report[m]["paired_C_minus_A"] = paired_boot(rows)
     print("    paired C-A:", report[m]["paired_C_minus_A"])
-out = Path("/work/hdd/bhrm/jchan5/mole-rag_naacl/chemdfm_baseline/chemdfm_v2_ep/SCORES_C_chemdfm.json")
+out = Path("/workspace/mole-rag_naacl/chemdfm_baseline/chemdfm_v2_ep/SCORES_C_chemdfm.json")
 json.dump(report, open(out, "w"), indent=1); print("\nsaved", out)

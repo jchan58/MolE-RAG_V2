@@ -1,8 +1,8 @@
 #!/bin/bash
 set -x
-VENV=/work/hdd/bhrm/jchan5/exp70_multi/venv_vllm
-PY=/u/jchan5/miniconda3/bin/python3
-export PIP_CACHE_DIR=/work/hdd/bhrm/jchan5/.pip-cache
+VENV=${VENV:-$HOME/exp70_venv_vllm}
+PY=${PY:-python3}
+export PIP_CACHE_DIR=${PIP_CACHE_DIR:-/tmp/pip-cache}
 "$PY" -m venv "$VENV"
 source "$VENV/bin/activate"
 pip install --upgrade pip wheel setuptools

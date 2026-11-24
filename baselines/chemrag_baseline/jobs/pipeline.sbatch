@@ -8,13 +8,13 @@
 #SBATCH --mem=96G
 #SBATCH --time=01:00:00
 #SBATCH --job-name=crmn
-#SBATCH --output=/work/hdd/bhrm/jchan5/molerag_reasoning/claude/chemrag_moleculenet_9task_qwen_v1/jobs/logs/%x_%j.out
-#SBATCH --error=/work/hdd/bhrm/jchan5/molerag_reasoning/claude/chemrag_moleculenet_9task_qwen_v1/jobs/logs/%x_%j.err
+#SBATCH --output=/workspace/molerag_reasoning/claude/chemrag_moleculenet_9task_qwen_v1/jobs/logs/%x_%j.out
+#SBATCH --error=/workspace/molerag_reasoning/claude/chemrag_moleculenet_9task_qwen_v1/jobs/logs/%x_%j.err
 set -u
-ROOT=/work/hdd/bhrm/jchan5/molerag_reasoning/claude/chemrag_moleculenet_9task_qwen_v1
-PY=/u/jchan5/miniconda3/bin/python3
-SITE=/work/hdd/bhrm/jchan5/site-packages
-JHOME=/work/hdd/bhrm/jchan5/java21/jdk-21.0.11+10
+ROOT=/workspace/molerag_reasoning/claude/chemrag_moleculenet_9task_qwen_v1
+PY=/home/user/miniconda3/bin/python3
+SITE=/workspace/site-packages
+JHOME=/workspace/java21/jdk-21.0.11+10
 mkdir -p "$ROOT/jobs/logs"; cd "$ROOT"
 echo "HOST=$(hostname) START=$(date -Is) JOB=${SLURM_JOB_ID}"
 nvidia-smi --query-gpu=name,memory.total --format=csv,noheader 2>/dev/null | head -1

@@ -6,32 +6,32 @@ torch 1.9.0+cu111 cuda 11.1 device cuda
 Yes id 2163 No id 465
 model loaded; params 63401496
 Traceback (most recent call last):
-  File "/work/hdd/bhrm/jchan5/mole-rag_naacl/gimlet_baseline/code/smoke_test.py", line 67, in <module>
+  File "/workspace/mole-rag_naacl/gimlet_baseline/code/smoke_test.py", line 67, in <module>
     o = model.generate(**b, output_scores=True, return_dict_in_generate=True)
-  File "/work/hdd/bhrm/jchan5/envs/gimlet/lib/python3.7/site-packages/torch/autograd/grad_mode.py", line 28, in decorate_context
+  File "/workspace/envs/gimlet/lib/python3.7/site-packages/torch/autograd/grad_mode.py", line 28, in decorate_context
     return func(*args, **kwargs)
-  File "/work/hdd/bhrm/jchan5/envs/gimlet/lib/python3.7/site-packages/transformers/generation/utils.py", line 1287, in generate
+  File "/workspace/envs/gimlet/lib/python3.7/site-packages/transformers/generation/utils.py", line 1287, in generate
     inputs_tensor, model_kwargs, model_input_name
-  File "/work/hdd/bhrm/jchan5/envs/gimlet/lib/python3.7/site-packages/transformers/generation/utils.py", line 638, in _prepare_encoder_decoder_kwargs_for_generation
+  File "/workspace/envs/gimlet/lib/python3.7/site-packages/transformers/generation/utils.py", line 638, in _prepare_encoder_decoder_kwargs_for_generation
     model_kwargs["encoder_outputs"]: ModelOutput = encoder(**encoder_kwargs)
-  File "/work/hdd/bhrm/jchan5/envs/gimlet/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+  File "/workspace/envs/gimlet/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
     return forward_call(*input, **kwargs)
-  File "/work/hdd/bhrm/jchan5/baselines/GIMLET/model/GIMLET/GIMLETEncoderStack.py", line 73, in forward
+  File "/workspace/baselines/GIMLET/model/GIMLET/GIMLETEncoderStack.py", line 73, in forward
     hidden_state_graph, attn_bias_graph, padding_mask_graph = self.graph_encoder(graph)
-  File "/work/hdd/bhrm/jchan5/envs/gimlet/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+  File "/workspace/envs/gimlet/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
     return forward_call(*input, **kwargs)
-  File "/work/hdd/bhrm/jchan5/baselines/GIMLET/model/graphormer/modules/graphormer_graph_encoder.py", line 431, in forward
+  File "/workspace/baselines/GIMLET/model/graphormer/modules/graphormer_graph_encoder.py", line 431, in forward
     return self.embedding_graph(batched_data)
-  File "/work/hdd/bhrm/jchan5/baselines/GIMLET/model/graphormer/modules/graphormer_graph_encoder.py", line 402, in embedding_graph
+  File "/workspace/baselines/GIMLET/model/graphormer/modules/graphormer_graph_encoder.py", line 402, in embedding_graph
     x = self.graph_node_feature(batched_data)
-  File "/work/hdd/bhrm/jchan5/envs/gimlet/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+  File "/workspace/envs/gimlet/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
     return forward_call(*input, **kwargs)
-  File "/work/hdd/bhrm/jchan5/baselines/GIMLET/model/graphormer/modules/graphormer_layers.py", line 56, in forward
+  File "/workspace/baselines/GIMLET/model/graphormer/modules/graphormer_layers.py", line 56, in forward
     node_feature = self.atom_encoder(x).sum(dim=-2)  # [n_graph, n_node, n_hidden]
-  File "/work/hdd/bhrm/jchan5/envs/gimlet/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
+  File "/workspace/envs/gimlet/lib/python3.7/site-packages/torch/nn/modules/module.py", line 1051, in _call_impl
     return forward_call(*input, **kwargs)
-  File "/work/hdd/bhrm/jchan5/envs/gimlet/lib/python3.7/site-packages/torch/nn/modules/sparse.py", line 160, in forward
+  File "/workspace/envs/gimlet/lib/python3.7/site-packages/torch/nn/modules/sparse.py", line 160, in forward
     self.norm_type, self.scale_grad_by_freq, self.sparse)
-  File "/work/hdd/bhrm/jchan5/envs/gimlet/lib/python3.7/site-packages/torch/nn/functional.py", line 2043, in embedding
+  File "/workspace/envs/gimlet/lib/python3.7/site-packages/torch/nn/functional.py", line 2043, in embedding
     return torch.embedding(weight, input, padding_idx, scale_grad_by_freq, sparse)
 RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! (when checking arugment for argument index in method wrapper_index_select)

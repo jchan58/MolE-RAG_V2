@@ -41,11 +41,11 @@ _Pending the GPU run (`jobs/run_gin.sbatch`). `seed_0/summary.csv` + per-task `s
 
 ## Reproduce
 ```bash
-# env: /work/hdd/bhrm/jchan5/envs/gin  (torch 2.4.1+cu121, torch_geometric 2.6.1, rdkit)
-sbatch /work/hdd/bhrm/jchan5/mole-rag_naacl/gin/jobs/run_gin.sbatch
+# env: /workspace/envs/gin  (torch 2.4.1+cu121, torch_geometric 2.6.1, rdkit)
+sbatch /workspace/mole-rag_naacl/gin/jobs/run_gin.sbatch
 # or directly (from this dir, GPU node):
-cd /work/hdd/bhrm/jchan5/mole-rag_naacl/gin
-/work/hdd/bhrm/jchan5/envs/gin/bin/python train_gin.py --datasets bbbp --seeds 0 1 2
+cd /workspace/mole-rag_naacl/gin
+/workspace/envs/gin/bin/python train_gin.py --datasets bbbp --seeds 0 1 2
 ```
 
 ## Notes

@@ -8,7 +8,7 @@ import boto3, json, os, io, tarfile
 BUCKET = "molerag"
 INCR = "llasmol_baseline/output/incremental"
 OUT_PREFIX = "llasmol_baseline/output"
-BASE = "/work/hdd/bhrm/jchan5/mole-rag_naacl/llasmol_baseline"
+BASE = "/workspace/mole-rag_naacl/llasmol_baseline"
 
 SUPPORTED = {"esol": "regression", "lipo": "regression", "freesolv": "regression",
              "bbbp": "classification", "bace": "classification", "hiv": "classification",

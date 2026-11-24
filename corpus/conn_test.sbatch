@@ -8,10 +8,10 @@
 #SBATCH --mem=8G
 #SBATCH --time=00:10:00
 #SBATCH --gres=gpu:1
-#SBATCH --output=/work/hdd/bhrm/jchan5/exp70_multi/logs/conn_%j.out
-PY=/u/jchan5/miniconda3/bin/python3
+#SBATCH --output=${EXP70_BASE:-$(cd "$(dirname "$0")/.." && pwd)/corpus_runs}/logs/conn_%j.out
+PY=${PY:-python3}
 echo "NODE=$(hostname) JOB=$SLURM_JOB_ID $(date -u)"
-export AWS_BEARER_TOKEN_BEDROCK=$(grep -o 'AWS_BEARER_TOKEN_BEDROCK=.*' /u/jchan5/.config/molrag/bedrock.env | cut -d= -f2-)
+export AWS_BEARER_TOKEN_BEDROCK=$(grep -o 'AWS_BEARER_TOKEN_BEDROCK=.*' ${BEDROCK_ENV:-$HOME/.config/molrag/bedrock.env} | cut -d= -f2-)
 timeout 30 $PY - <<'PYEOF'
 import socket, time
 try:
@@ -22,7 +22,7 @@ except Exception as e: print('NCBI FAIL', repr(e))
 PYEOF
 echo "--- S3 ---"; timeout 30 aws s3 ls s3://molerag/ >/dev/null 2>&1 && echo "S3 OK" || echo "S3 FAIL"
 echo "--- Bedrock ---"
-cd /work/hdd/bhrm/jchan5/exp70_multi/code
+cd ${CODE:-$(cd "$(dirname "$0")" && pwd)}
 EXP70_DATASET=lipo EXP70_CLAUDE_MODELS=us.anthropic.claude-haiku-4-5-20251001-v1:0 timeout 40 $PY -c "
 import bedrock_llm as B
 import time; t=time.time()

@@ -33,7 +33,7 @@ ChemRAG framework applied to MoleculeNet property prediction. Retriever = **RRF(
 - `generate_score.py` (Qwen, local HF), `generate_ministral.py` (Bedrock), `jobs/` (sbatch + orchestrator).
 
 ## Reproduce
-Retrieval (chained interactive-GPU pipeline): `jobs/orchestrate.sh` → `jobs/pipeline.sbatch` (BM25 via main py3.13 + `PYTHONPATH=/work/hdd/bhrm/jchan5/site-packages` + Java 21; dense scan GPU fp16; fuse+fetch). Generation+score: `generate_score.py --regress --classify --score` (Qwen) or `generate_ministral.py --generate --score` (Bedrock `mistral.ministral-3-14b-instruct`). Indices reused from exp44: BM25 `MolE-RAG/external/ChemRAG/index/bm25/bm25`, Contriever `contriever_index/`, corpus `MolE-RAG/external/ChemRAG/corpus/chunks/`.
+Retrieval (chained interactive-GPU pipeline): `jobs/orchestrate.sh` → `jobs/pipeline.sbatch` (BM25 via main py3.13 + `PYTHONPATH=/workspace/site-packages` + Java 21; dense scan GPU fp16; fuse+fetch). Generation+score: `generate_score.py --regress --classify --score` (Qwen) or `generate_ministral.py --generate --score` (Bedrock `mistral.ministral-3-14b-instruct`). Indices reused from exp44: BM25 `MolE-RAG/external/ChemRAG/index/bm25/bm25`, Contriever `contriever_index/`, corpus `MolE-RAG/external/ChemRAG/corpus/chunks/`.
 
 ## Caveats / not yet run
 - 2-retriever RRF (SPECTER/e5 not built/available); corpus lacks the textbook partition.

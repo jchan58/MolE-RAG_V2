@@ -8,11 +8,11 @@
 #SBATCH --mem=48G
 #SBATCH --time=01:00:00
 #SBATCH --job-name=dmpnn
-#SBATCH --output=/work/hdd/bhrm/jchan5/mole-rag_naacl/dmpnn_baseline/logs/%x_%j.out
-#SBATCH --error=/work/hdd/bhrm/jchan5/mole-rag_naacl/dmpnn_baseline/logs/%x_%j.err
+#SBATCH --output=/workspace/mole-rag_naacl/dmpnn_baseline/logs/%x_%j.out
+#SBATCH --error=/workspace/mole-rag_naacl/dmpnn_baseline/logs/%x_%j.err
 set -u
-ROOT=/work/hdd/bhrm/jchan5/mole-rag_naacl/dmpnn_baseline
-PY=/u/jchan5/miniconda3/envs/cp_dmpnn/bin/python
+ROOT=/workspace/mole-rag_naacl/dmpnn_baseline
+PY=/home/user/miniconda3/envs/cp_dmpnn/bin/python
 export PYTHONNOUSERSITE=1 PYTHONUNBUFFERED=1
 cd "$ROOT"
 echo "HOST=$(hostname) START=$(date -Is)"

@@ -3,9 +3,9 @@
 # SageMaker sourcedir, upload to S3, launch a PyTorch-1.13 DLC training job via boto3.
 # TASKS env controls scope ("bbbp" for a smoke test, "all" for the full 9).
 set -euo pipefail
-BASE=/work/hdd/bhrm/jchan5/mole-rag_naacl/grover_baseline
-MLEVEL=/work/hdd/bhrm/jchan5/mole-rag_naacl/gode/Gode/m_level_pretrain_and_fine_tune
-KANODATA=/work/hdd/bhrm/jchan5/mole-rag_naacl/kano_baseline/data   # reuse the wide CSVs
+BASE=/workspace/mole-rag_naacl/grover_baseline
+MLEVEL=/workspace/mole-rag_naacl/gode/Gode/m_level_pretrain_and_fine_tune
+KANODATA=/workspace/mole-rag_naacl/kano_baseline/data   # reuse the wide CSVs
 BUILD=$BASE/sm_build
 BUCKET=sagemaker-us-east-1-833984135295
 PREFIX=grover_large
@@ -14,7 +14,7 @@ ROLE=arn:aws:iam::833984135295:role/SageMakerExecutionRole
 INSTANCE=${INSTANCE:-ml.g5.12xlarge}
 TASKS=${TASKS:-all}
 EPOCHS=${EPOCHS:-20}
-PY=/u/jchan5/miniconda3/bin/python
+PY=/home/user/miniconda3/bin/python
 
 echo "[1/4] staging sourcedir -> $BUILD"
 rm -rf "$BUILD"; mkdir -p "$BUILD"

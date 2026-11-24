@@ -2,14 +2,14 @@
 # Package KANO (CMPNN) + our seed_0 data into a SageMaker sourcedir, upload to S3,
 # and launch a SageMaker PyTorch-2.1 DLC training job via boto3 (light; no sagemaker SDK).
 set -euo pipefail
-BASE=/work/hdd/bhrm/jchan5/mole-rag_naacl/kano_baseline
-KANO=/work/hdd/bhrm/jchan5/mole-rag_naacl/kano/KANO
+BASE=/workspace/mole-rag_naacl/kano_baseline
+KANO=/workspace/mole-rag_naacl/kano/KANO
 BUILD=$BASE/sm_build
 BUCKET=sagemaker-us-east-1-833984135295
 PREFIX=kano_cmpnn
 IMAGE=763104351884.dkr.ecr.us-east-1.amazonaws.com/pytorch-training:2.1.0-gpu-py310-cu121-ubuntu20.04-sagemaker
 ROLE=arn:aws:iam::833984135295:role/SageMakerExecutionRole
-PY=/u/jchan5/miniconda3/bin/python   # for boto3 only
+PY=/home/user/miniconda3/bin/python   # for boto3 only
 
 echo "[1/4] staging sourcedir -> $BUILD"
 rm -rf "$BUILD"; mkdir -p "$BUILD"

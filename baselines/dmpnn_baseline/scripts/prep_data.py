@@ -3,8 +3,8 @@ Single-task (esol/freesolv/lipo/bbbp/bace/hiv): columns [smiles, <target>].
 Multitask (tox21/sider/clintox): pivot same-SMILES rows (keyed by 'task' = subtask) into one row/molecule
 with one column per subtask; missing (mol,subtask) left blank (Chemprop masks missing targets)."""
 import csv,os,json
-BASE="/work/hdd/bhrm/jchan5/MolE-RAG/data/moleculenet_property_scaffold/seed_0"
-OUT="/work/hdd/bhrm/jchan5/mole-rag_naacl/dmpnn_baseline/data"
+BASE="/workspace/MolE-RAG/data/moleculenet_property_scaffold/seed_0"
+OUT="/workspace/mole-rag_naacl/dmpnn_baseline/data"
 REG={"esol","freesolv","lipo"}
 TASKS=["esol","freesolv","lipo","bbbp","bace","hiv","clintox","sider","tox21"]
 meta={}

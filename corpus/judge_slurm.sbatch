@@ -7,9 +7,9 @@
 #SBATCH --mem=48G
 #SBATCH --time=01:00:00
 #SBATCH --gres=gpu:1
-#SBATCH --output=/scratch/bhrm/jchan5/exp70_bbbp_pmc_collection/logs/slurm_%x_%j.out
-RUN_DIR="/scratch/bhrm/jchan5/exp70_bbbp_pmc_collection"
-PY="/u/jchan5/miniconda3/bin/python3"
+#SBATCH --output=${EXP70_RUN_DIR:-$(cd "$(dirname "$0")/.." && pwd)/corpus_runs/bbbp}/logs/slurm_%x_%j.out
+RUN_DIR="${EXP70_RUN_DIR:-$(cd "$(dirname "$0")/.." && pwd)/corpus_runs/bbbp}"
+PY="${PY:-python3}"
 export EXP70_RUN_DIR="$RUN_DIR" EXP70_JUDGE_THREADS=64
 cd "$RUN_DIR/code"
 echo "[$(date -u +%H:%M:%S)] judge node $(hostname) job $SLURM_JOB_ID starting 16 judge procs (nshards=1, ItemLock-coordinated)"

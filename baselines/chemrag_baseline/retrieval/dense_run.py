@@ -8,8 +8,8 @@ HERE=os.path.dirname(os.path.abspath(__file__))
 QF=f"{HERE}/../queries/all_queries.jsonl"
 OUT=f"{HERE}/dense_hits.jsonl"
 QEMB=f"{HERE}/query_emb.npy"
-IDX="/work/hdd/bhrm/jchan5/contriever_index"
-MODEL="/work/hdd/bhrm/jchan5/models/hub/models--facebook--contriever-msmarco/snapshots/abe8c1493371369031bcb1e02acb754cf4e162fa"
+IDX="/workspace/contriever_index"
+MODEL="/workspace/models/hub/models--facebook--contriever-msmarco/snapshots/abe8c1493371369031bcb1e02acb754cf4e162fa"
 DIM=768; TOPK=30; BLOCK=50000
 dev="cuda" if torch.cuda.is_available() else "cpu"
 def mean_pool(last,mask):

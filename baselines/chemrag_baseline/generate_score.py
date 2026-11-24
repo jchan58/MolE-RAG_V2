@@ -19,7 +19,7 @@ os.environ.setdefault("HF_HUB_OFFLINE","1"); os.environ.setdefault("TRANSFORMERS
 import torch
 from transformers import AutoTokenizer,AutoModelForCausalLM
 HERE=Path(__file__).resolve().parent
-MODEL="/work/hdd/bhrm/jchan5/models/models--Qwen--Qwen3-4B-Instruct-2507/snapshots/cdbee75f17c01a7cc42f958dc650907174af0554"
+MODEL="/workspace/models/models--Qwen--Qwen3-4B-Instruct-2507/snapshots/cdbee75f17c01a7cc42f958dc650907174af0554"
 QD=HERE/"queries"; RET=HERE/"retrieval"; OUT=HERE/"outputs"; OUT.mkdir(exist_ok=True)
 CLS=["bbbp","bace","hiv","clintox","sider","tox21"]; REG=["esol","freesolv","lipo"]
 # per-task question (Instruction) + positive-class meaning

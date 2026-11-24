@@ -6,7 +6,7 @@
 # that is alive-but-quiet (e.g. mid-merge/_results_sync) -> no double-launch. Singleton via flock.
 set -u
 export AWS_DEFAULT_REGION=us-east-1
-BASE=/work/hdd/bhrm/jchan5/exp70_multi; CODE=$BASE/code; PY=/u/jchan5/miniconda3/bin/python3
+BASE=${EXP70_BASE:-$(cd "$(dirname "$0")/.." && pwd)/corpus_runs}; CODE=$BASE/code; PY=${PY:-python3}
 OTHER_NODES="dt-login02 dt-login01 dt-login03"
 exec 7>"$BASE/.collector_supervisor.lock"
 if ! flock -n 7; then echo "supervisor already running; exit"; exit 0; fi

@@ -8,16 +8,16 @@
 #SBATCH --gpus-per-node=1
 #SBATCH --mem=64G
 #SBATCH --time=06:00:00
-#SBATCH --output=/work/hdd/bhrm/jchan5/mole-rag_naacl/gin/jobs/gin_%j.out
-#SBATCH --error=/work/hdd/bhrm/jchan5/mole-rag_naacl/gin/jobs/gin_%j.err
+#SBATCH --output=/workspace/mole-rag_naacl/gin/jobs/gin_%j.out
+#SBATCH --error=/workspace/mole-rag_naacl/gin/jobs/gin_%j.err
 
 # GIN (trained from scratch) supervised baseline over the 9 MoleculeNet tasks, seed-0 split,
 # 3 initialization seeds, lr grid {1e-3,1e-4}, best checkpoint by validation. Same test molecules
 # as MolE-RAG.
 
 set -euo pipefail
-ENV=/work/hdd/bhrm/jchan5/envs/gin
-GIN=/work/hdd/bhrm/jchan5/mole-rag_naacl/gin
+ENV=/workspace/envs/gin
+GIN=/workspace/mole-rag_naacl/gin
 
 export OMP_NUM_THREADS=8 OPENBLAS_NUM_THREADS=8 MKL_NUM_THREADS=8
 cd "$GIN"

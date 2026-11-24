@@ -6,7 +6,7 @@ import sagemaker, boto3, sys, json
 from sagemaker.pytorch import PyTorch
 ROLE="arn:aws:iam::833984135295:role/service-role/AmazonSageMaker-ExecutionRole-20260922T220415"
 BUCKET="molerag"
-REPO="/work/hdd/bhrm/jchan5/mole-rag_naacl/gimlet_baseline/code/GIMLET"
+REPO="/workspace/mole-rag_naacl/gimlet_baseline/code/GIMLET"
 INST=sys.argv[1] if len(sys.argv)>1 else "ml.g4dn.4xlarge"
 TASKS=sys.argv[2] if len(sys.argv)>2 else "clintox,sider"
 sess=sagemaker.Session(boto3.Session(region_name="us-east-1"))

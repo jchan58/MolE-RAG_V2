@@ -4,8 +4,8 @@ AUC (classification, mean over targets) / RMSE (regression). Resumable (skip-don
 time-budgeted so it chains across 1hr interactive GPU jobs. Env: cp_dmpnn.
 Usage: run_dmpnn.py [--tasks a,b] [--seeds 0,1,2] [--epochs 50] [--minutes 52] [--accelerator gpu]"""
 import os,sys,json,subprocess,glob,time,argparse,csv,math
-ROOT="/work/hdd/bhrm/jchan5/mole-rag_naacl/dmpnn_baseline"
-CP="/u/jchan5/miniconda3/envs/cp_dmpnn/bin/chemprop"
+ROOT="/workspace/mole-rag_naacl/dmpnn_baseline"
+CP="/home/user/miniconda3/envs/cp_dmpnn/bin/chemprop"
 META=json.load(open(f"{ROOT}/data/meta.json"))
 def auc(scores,labels):
     pairs=[(s,l) for s,l in zip(scores,labels) if l is not None and s is not None]

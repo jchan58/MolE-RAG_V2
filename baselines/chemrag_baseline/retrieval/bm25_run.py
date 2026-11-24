@@ -6,7 +6,7 @@ import json,time,sys,os,argparse
 from pyserini.search.lucene import LuceneSearcher
 HERE=os.path.dirname(os.path.abspath(__file__))
 QF=f"{HERE}/../queries/all_queries.jsonl"
-INDEX="/work/hdd/bhrm/jchan5/MolE-RAG/external/ChemRAG/index/bm25/bm25"
+INDEX="/workspace/MolE-RAG/external/ChemRAG/index/bm25/bm25"
 K=60; CHUNK=500
 _ap=argparse.ArgumentParser(); _ap.add_argument("--shard",type=int,default=0); _ap.add_argument("--nshards",type=int,default=1)
 _ap.add_argument("--threads",type=int,default=64); _ap.add_argument("--minutes",type=float,default=52); _A=_ap.parse_args()

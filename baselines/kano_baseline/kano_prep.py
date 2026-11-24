@@ -12,8 +12,8 @@ import csv, json
 from collections import OrderedDict
 from pathlib import Path
 
-SRC = Path("/work/hdd/bhrm/jchan5/MolE-RAG/data/moleculenet_property_scaffold/seed_0")
-DEST = Path("/work/hdd/bhrm/jchan5/mole-rag_naacl/kano_baseline/data")
+SRC = Path("/workspace/MolE-RAG/data/moleculenet_property_scaffold/seed_0")
+DEST = Path("/workspace/mole-rag_naacl/kano_baseline/data")
 CLS = ["bbbp", "bace", "hiv", "clintox", "sider", "tox21"]
 REG = ["esol", "freesolv", "lipo"]
 

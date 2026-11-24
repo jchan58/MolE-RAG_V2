@@ -2,7 +2,7 @@
 # Chains interactive-GPU pipeline jobs (one at a time, QOS-friendly) until all stages complete.
 # Gates on squeue by job NAME (crmn). Resubmits when the previous ends and work remains.
 set -u
-ROOT=/work/hdd/bhrm/jchan5/molerag_reasoning/claude/chemrag_moleculenet_9task_qwen_v1
+ROOT=/workspace/molerag_reasoning/claude/chemrag_moleculenet_9task_qwen_v1
 LOG="$ROOT/jobs/orchestrate.log"; NQ=16648
 cd "$ROOT"
 cnt(){ [ -f "$1" ] && wc -l < "$1" | tr -d ' ' || echo 0; }

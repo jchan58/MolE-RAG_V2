@@ -5,13 +5,13 @@
 # done parts). Zero-byte/truncated parts are deleted before each relaunch. Heartbeat for a guardian.
 set -u
 export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 TOKENIZERS_PARALLELISM=false
-PY=/u/jchan5/miniconda3/bin/python
+PY=/home/user/miniconda3/bin/python
 MODEL=chemdfm_v2_14b
 W=${W:-2}   # single-worker endpoint + 60s invoke limit: keep queue shallow (1 in-flight + ~1 queued)
-BACE=/work/hdd/bhrm/jchan5/molerag_reasoning/BACE/framework_final
-FWC=/work/hdd/bhrm/jchan5/molerag_reasoning/fw_multi/code
-FWR=/work/hdd/bhrm/jchan5/molerag_reasoning/fw_multi/runs
-EP=/work/hdd/bhrm/jchan5/mole-rag_naacl/chemdfm_baseline/chemdfm_v2_ep
+BACE=/workspace/molerag_reasoning/BACE/framework_final
+FWC=/workspace/molerag_reasoning/fw_multi/code
+FWR=/workspace/molerag_reasoning/fw_multi/runs
+EP=/workspace/mole-rag_naacl/chemdfm_baseline/chemdfm_v2_ep
 LOG=$EP/run_logs
 mkdir -p $LOG
 HB=$LOG/heartbeat

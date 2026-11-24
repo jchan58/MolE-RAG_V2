@@ -5,9 +5,9 @@
 #                         restricted to BM25 candidate articles), write JUDGE_DONE
 #  JUDGE_DONE          -> launch g5.12xlarge MedCPT (needs G-quota=96), then extract + indexes on Delta
 set -u
-CODE="/work/hdd/bhrm/jchan5/exp70_multi/code"; PY=/u/jchan5/miniconda3/bin/python3
+CODE="${CODE:-$(cd "$(dirname "$0")" && pwd)}"; PY=${PY:-python3}
 export AWS_DEFAULT_REGION=us-east-1
-DS=hiv; RUN=/work/hdd/bhrm/jchan5/exp70_multi/$DS
+DS=hiv; RUN=${EXP70_BASE:-$(cd "$(dirname "$0")/.." && pwd)/corpus_runs}/$DS
 for iter in $(seq 1 2880); do
   [ -f "$RUN/state/STRUCT_DONE" ] && { echo "hiv structuring done"; break; }
   # 1) CPU-EC2 for chunk+BM25

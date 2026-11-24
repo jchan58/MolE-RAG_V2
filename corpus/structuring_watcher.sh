@@ -14,7 +14,7 @@
 # any STALE STRUCT_RUNNING markers are cleared so an orphaned marker can't deadlock a dataset.
 # Usage: structuring_watcher.sh "sider lipo tox21 hiv"
 set -u
-CODE="/work/hdd/bhrm/jchan5/exp70_multi/code"; PY=/u/jchan5/miniconda3/bin/python3
+CODE="${CODE:-$(cd "$(dirname "$0")" && pwd)}"; PY=${PY:-python3}
 DSLIST="${1:-sider lipo tox21 hiv}"
 # Bedrock extraction thread-pool size (larger K1000 union -> more concurrent in-flight calls).
 export EXP70_EXTRACT_THREADS="${EXP70_EXTRACT_THREADS:-32}"
@@ -22,18 +22,18 @@ export EXP70_EXTRACT_THREADS="${EXP70_EXTRACT_THREADS:-32}"
 # SINGLETON (cross-node, shared Lustre lock): only ONE structuring_watcher may run at a time.
 # Two instances could both pass a dataset's STRUCT_RUNNING check and launch concurrent extracts,
 # whose append-mode evidence_records.jsonl + shared extract_done markers then corrupt each other.
-exec 6>"/work/hdd/bhrm/jchan5/exp70_multi/.structuring_watcher.lock"
+exec 6>"${EXP70_BASE:-$(cd "$(dirname "$0")/.." && pwd)/corpus_runs}/.structuring_watcher.lock"
 if ! flock -n 6; then echo "another structuring_watcher holds the lock; exiting"; exit 0; fi
 
 # Startup: clear any orphaned STRUCT_RUNNING markers (this watcher is the only launcher, so on a
 # fresh start nothing is actually running). STRUCT_DONE datasets are skipped regardless.
 for DS in $DSLIST; do
-  rm -f "/work/hdd/bhrm/jchan5/exp70_multi/$DS/state/STRUCT_RUNNING" 2>/dev/null || true
+  rm -f "${EXP70_BASE:-$(cd "$(dirname "$0")/.." && pwd)/corpus_runs}/$DS/state/STRUCT_RUNNING" 2>/dev/null || true
 done
 
 for iter in $(seq 1 2880); do        # ~48h at 60s
   for DS in $DSLIST; do
-    RUN=/work/hdd/bhrm/jchan5/exp70_multi/$DS
+    RUN=${EXP70_BASE:-$(cd "$(dirname "$0")/.." && pwd)/corpus_runs}/$DS
     [ -f "$RUN/state/STRUCT_DONE" ] && continue
     [ -f "$RUN/state/STRUCT_RUNNING" ] && continue    # a backgrounded run is already in progress
     if [ -f "$RUN/state/JUDGE_DONE" ]; then
@@ -58,7 +58,7 @@ for iter in $(seq 1 2880); do        # ~48h at 60s
       ) &
     fi
   done
-  alldone=1; for DS in $DSLIST; do [ -f "/work/hdd/bhrm/jchan5/exp70_multi/$DS/state/STRUCT_DONE" ] || alldone=0; done
+  alldone=1; for DS in $DSLIST; do [ -f "${EXP70_BASE:-$(cd "$(dirname "$0")/.." && pwd)/corpus_runs}/$DS/state/STRUCT_DONE" ] || alldone=0; done
   [ "$alldone" = 1 ] && { echo "all structuring done"; break; }
   sleep 60
 done

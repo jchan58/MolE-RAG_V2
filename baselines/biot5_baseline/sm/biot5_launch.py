@@ -8,7 +8,7 @@ from sagemaker.pytorch import PyTorch
 
 ROLE = "arn:aws:iam::833984135295:role/service-role/AmazonSageMaker-ExecutionRole-20260922T220415"
 BUCKET = "molerag"
-SRC = "/work/hdd/bhrm/jchan5/mole-rag_naacl/biot5_baseline/code/BioT5"
+SRC = "/workspace/mole-rag_naacl/biot5_baseline/code/BioT5"
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 groups = sys.argv[1]

@@ -8,9 +8,9 @@
 # (structuring_watcher.sh then does Cohere rerank + extract + v2 cards on JUDGE_DONE)
 set -u
 DS="${1:?usage: sm_downstream_watcher.sh <ds> <itype>}"; ITYPE="${2:-c6i.8xlarge}"
-CODE=/work/hdd/bhrm/jchan5/exp70_multi/code; PY=/u/jchan5/miniconda3/bin/python3
+CODE=${CODE:-$(cd "$(dirname "$0")" && pwd)}; PY=${PY:-python3}
 export AWS_DEFAULT_REGION=us-east-1
-RUN=/work/hdd/bhrm/jchan5/exp70_multi/$DS
+RUN=${EXP70_BASE:-$(cd "$(dirname "$0")/.." && pwd)/corpus_runs}/$DS
 mkdir -p "$RUN/logs" "$RUN/state"
 sm_status() { timeout 25 aws sagemaker describe-processing-job --region us-east-1 --processing-job-name "$1" --query ProcessingJobStatus --output text 2>/dev/null; }
 

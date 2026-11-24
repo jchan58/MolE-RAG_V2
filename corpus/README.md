@@ -58,7 +58,12 @@ scratch) and are overridable via env (`EXP70_BASE`, `EXP70_RUN_DIR`,
 - `identity.py` uses PubChem synonym caches (`data/caches/*.json`, ~63 MB). They
   are regenerable (the pipeline re-queries PubChem if absent) but are hosted
   alongside the cards to avoid re-fetching.
-- The `*.sh` files are the original Delta-HPC orchestration wrappers (SLURM /
-  EC2 / SageMaker / login-node watchdogs). They encode site-specific paths and
-  are kept as reference; the portable entry point is `env_common.sh` + the
-  Python stages above.
+- The `*.sh` / `*.sbatch` files are the original orchestration wrappers (SLURM /
+  EC2 / SageMaker / login-node watchdogs). Their paths have been parameterized
+  (they resolve `CODE`/`PY`/`EXP70_BASE` from `env_common.sh` and env vars, so no
+  author paths are hard-coded), but they still assume that class of cluster
+  infrastructure. They are kept as reference — **the portable, from-scratch entry
+  point is `env_common.sh` + the Python stages above**, which run on a single
+  machine given the API credentials in `.env`. Depth B is optional: the shipped
+  `data/cards/` already contains the corpus, so reproducing the paper's numbers
+  (Depth A) needs none of this.

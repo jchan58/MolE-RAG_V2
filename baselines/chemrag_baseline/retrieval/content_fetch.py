@@ -2,7 +2,7 @@
 Writes id_contents.jsonl {id, contents, source}. Then assembles fused_docs.jsonl joining fused_top5 with text."""
 import json,os
 HERE=os.path.dirname(os.path.abspath(__file__))
-CORPUS="/work/hdd/bhrm/jchan5/MolE-RAG/external/ChemRAG/corpus/chunks"
+CORPUS="/workspace/MolE-RAG/external/ChemRAG/corpus/chunks"
 def main():
     need=set(json.load(open(f"{HERE}/needed_ids.json")))
     print(f"need {len(need)} ids",flush=True)

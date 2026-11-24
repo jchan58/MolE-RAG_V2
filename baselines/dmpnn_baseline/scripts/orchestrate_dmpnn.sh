@@ -3,7 +3,7 @@
 # Retries sbatch when the submit quota is full (QOSMaxSubmitJobPerUserLimit). Stops when all
 # 27 result.json (9 tasks x 3 seeds) exist. Logs to logs/orchestrate.log.
 set -u
-ROOT=/work/hdd/bhrm/jchan5/mole-rag_naacl/dmpnn_baseline
+ROOT=/workspace/mole-rag_naacl/dmpnn_baseline
 LOG="$ROOT/logs/orchestrate.log"; cd "$ROOT"
 ndone(){ ls runs/*/seed*/result.json 2>/dev/null | wc -l | tr -d ' '; }
 PREV=-1; STALL=0

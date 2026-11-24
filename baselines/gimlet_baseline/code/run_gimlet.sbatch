@@ -8,15 +8,15 @@
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=48g
 #SBATCH --time=03:00:00
-#SBATCH --output=/work/hdd/bhrm/jchan5/mole-rag_naacl/gimlet_baseline/logs/slurm_%j.out
-#SBATCH --error=/work/hdd/bhrm/jchan5/mole-rag_naacl/gimlet_baseline/logs/slurm_%j.out
+#SBATCH --output=/workspace/mole-rag_naacl/gimlet_baseline/logs/slurm_%j.out
+#SBATCH --error=/workspace/mole-rag_naacl/gimlet_baseline/logs/slurm_%j.out
 
 set -e
-export HF_HOME=/work/hdd/bhrm/jchan5/models
-export HF_HUB_CACHE=/work/hdd/bhrm/jchan5/models/hub
-export TRANSFORMERS_CACHE=/work/hdd/bhrm/jchan5/models/hub
-export HF_DATASETS_CACHE=/work/hdd/bhrm/jchan5/models/datasets
-export HUGGINGFACE_HUB_CACHE=/work/hdd/bhrm/jchan5/models/hub
+export HF_HOME=/workspace/models
+export HF_HUB_CACHE=/workspace/models/hub
+export TRANSFORMERS_CACHE=/workspace/models/hub
+export HF_DATASETS_CACHE=/workspace/models/datasets
+export HUGGINGFACE_HUB_CACHE=/workspace/models/hub
 export HF_HUB_OFFLINE=1
 export TRANSFORMERS_OFFLINE=1
 export TOKENIZERS_PARALLELISM=false
@@ -24,9 +24,9 @@ export OMP_NUM_THREADS=8
 export OPENBLAS_NUM_THREADS=8
 export MKL_NUM_THREADS=8
 
-PY=/work/hdd/bhrm/jchan5/envs/gimlet/bin/python
-CODE=/work/hdd/bhrm/jchan5/mole-rag_naacl/gimlet_baseline/code
-OUT=/work/hdd/bhrm/jchan5/mole-rag_naacl/gimlet_baseline/outputs
+PY=/workspace/envs/gimlet/bin/python
+CODE=/workspace/mole-rag_naacl/gimlet_baseline/code
+OUT=/workspace/mole-rag_naacl/gimlet_baseline/outputs
 
 echo "=== node $(hostname) $(date) ==="
 nvidia-smi -L || true

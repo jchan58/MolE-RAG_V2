@@ -8,7 +8,7 @@
 # GPU-gated next stage (EC2 or Delta GPU).
 set -u
 DS="${1:?usage: run_tail.sh <dataset>}"
-CODE="/work/hdd/bhrm/jchan5/exp70_multi/code"
+CODE="${CODE:-$(cd "$(dirname "$0")" && pwd)}"
 source "$CODE/env_common.sh" "$DS"
 export EXP70_SEARCH_CAP=300
 # polite parallelism: this runs on a SHARED login node, so keep CPU footprint modest

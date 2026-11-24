@@ -6,7 +6,7 @@
 # loop tiny + hang-proof. Singleton via flock.
 set -u
 export AWS_DEFAULT_REGION=us-east-1
-BASE=/work/hdd/bhrm/jchan5/exp70_multi; PY=/u/jchan5/miniconda3/bin/python3
+BASE=${EXP70_BASE:-$(cd "$(dirname "$0")/.." && pwd)/corpus_runs}; PY=${PY:-python3}
 mkdir -p "$BASE"
 # NOTE: no flock singleton — flock is unreliable on Lustre (stale locks blocked relaunch). Two
 # heartbeats would only write the same idempotent anchor (last-wins, no corruption), so running

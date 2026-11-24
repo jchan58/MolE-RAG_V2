@@ -4,7 +4,7 @@ Reproduces zero-shot GIMLET predictions on OUR MoleculeNet scaffold-split **test
 scored as ROC-AUC (classification) / RMSE (regression). Weights FROZEN (no fine-tuning).
 
 ## Environment (NCSA Delta)
-Conda env at `/work/hdd/bhrm/jchan5/envs/gimlet` (Python 3.7.16). Built to match GIMLET's
+Conda env at `/workspace/envs/gimlet` (Python 3.7.16). Built to match GIMLET's
 README (CUDA 11.1 / torch 1.9). Exact pinned versions:
 
 | package | version |
@@ -31,7 +31,7 @@ README (CUDA 11.1 / torch 1.9). Exact pinned versions:
 Build script: `code/../logs/install.log` was produced by
 `scratchpad/install_gimlet.sh` (pyg wheels from
 `https://data.pyg.org/whl/torch-1.9.0+cu111.html`). pip cache:
-`PIP_CACHE_DIR=/work/hdd/bhrm/jchan5/.pip-cache`.
+`PIP_CACHE_DIR=/workspace/.pip-cache`.
 
 GPUs: A100 (sm_80) via SLURM partition `gpuA100x4`, account `bhrm-delta-gpu`.
 cu111 supports sm_80. The login node has no GPU and is heavily shared/slow, so all
@@ -40,7 +40,7 @@ GIMLET work (incl. the smoke test) runs on the GPU compute node inside the SLURM
 ## Checkpoint + tokenizer (pre-cached; compute nodes are offline)
 - Model: HF `haitengzhao/gimlet` (frozen pretrained; `pytorch_model.bin` ~253 MB).
 - Tokenizer: `t5-small`.
-- Both pre-downloaded on the login node to `HF_HOME=/work/hdd/bhrm/jchan5/models`.
+- Both pre-downloaded on the login node to `HF_HOME=/workspace/models`.
 - The job sets `HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1` (no network on compute nodes).
 
 ## Instructions / prompts
@@ -67,7 +67,7 @@ GIMLET's own per-task instruction text was extracted **verbatim** from the HF da
 
 ## Run
 ```bash
-sbatch /work/hdd/bhrm/jchan5/mole-rag_naacl/gimlet_baseline/code/run_gimlet.sbatch
+sbatch /workspace/mole-rag_naacl/gimlet_baseline/code/run_gimlet.sbatch
 ```
 One SLURM job loops over all 9 datasets internally (do NOT submit 9 jobs - tight QOS limit).
 It (1) smoke-tests env+checkpoint on a few bace/lipo molecules, (2) runs all 9 tasks
@@ -76,9 +76,9 @@ It (1) smoke-tests env+checkpoint on a few bace/lipo molecules, (2) runs all 9 t
 
 Manual re-run of pieces (from any node with the env):
 ```bash
-PY=/work/hdd/bhrm/jchan5/envs/gimlet/bin/python
-C=/work/hdd/bhrm/jchan5/mole-rag_naacl/gimlet_baseline/code
-HF_HOME=/work/hdd/bhrm/jchan5/models HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 \
+PY=/workspace/envs/gimlet/bin/python
+C=/workspace/mole-rag_naacl/gimlet_baseline/code
+HF_HOME=/workspace/models HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 \
   $PY $C/gimlet_predict.py --tasks bace bbbp freesolv esol clintox lipo hiv sider tox21
 $PY $C/gimlet_score.py && $PY $C/make_results_md.py
 ```

@@ -5,8 +5,8 @@
 #
 # Usage:  bash launch_worker.sh [auto|pubchem|querygen_molecule|search|metadata|download]
 set -u
-RUN_DIR="/scratch/bhrm/jchan5/exp70_bbbp_pmc_collection"
-PY="/u/jchan5/miniconda3/bin/python3"
+RUN_DIR="${EXP70_RUN_DIR:-$(cd "$(dirname "$0")/.." && pwd)/corpus_runs/bbbp}"
+PY="${PY:-python3}"
 STAGE="${1:-auto}"
 TS="$(date +%s)_$$"
 mkdir -p "$RUN_DIR/logs"

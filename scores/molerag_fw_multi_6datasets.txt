@@ -29,4 +29,4 @@
   opus_4_6         n= 144 | A mean_auc=0.72 | B mean_auc=0.727 | C mean_auc=0.678 | C-A=-0.043 CI(-0.088, 0.005)
   gpt5mini         n= 144 | A mean_auc=0.652 | B mean_auc=0.648 | C mean_auc=0.685 | C-A=0.033 CI(-0.073, 0.138)
 
-saved /work/hdd/bhrm/jchan5/molerag_reasoning/fw_multi/SCORES_fw_multi.json
+saved SCORES_fw_multi.json

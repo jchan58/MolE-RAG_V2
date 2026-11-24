@@ -42,7 +42,7 @@ import os
 # --data-root or $GIN_DATA_ROOT, e.g. /opt/ml/input/data/training/moleculenet_property_scaffold).
 DATA_ROOT = Path(os.environ.get(
     "GIN_DATA_ROOT",
-    "/work/hdd/bhrm/jchan5/MolE-RAG/data/moleculenet_property_scaffold"))
+    "/workspace/MolE-RAG/data/moleculenet_property_scaffold"))
 
 DATASET_TASK_TYPE = {
     "bbbp": "classification", "bace": "classification", "hiv": "classification",
@@ -312,7 +312,7 @@ def main():
     ap.add_argument("--dropout", type=float, default=0.5)
     ap.add_argument("--epochs", type=int, default=0, help="0 -> per-dataset default/override")
     ap.add_argument("--batch-size", type=int, default=0, help="0 -> per-dataset default/override")
-    ap.add_argument("--out-dir", default="/work/hdd/bhrm/jchan5/mole-rag_naacl/gin/seed_0")
+    ap.add_argument("--out-dir", default="/workspace/mole-rag_naacl/gin/seed_0")
     ap.add_argument("--data-root", default=None, help="override moleculenet_property_scaffold dir")
     ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     args = ap.parse_args()

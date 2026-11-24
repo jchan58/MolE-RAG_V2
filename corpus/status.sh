@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Quick per-dataset status snapshot for exp70-multi collection.
 set -u
-B=/work/hdd/bhrm/jchan5/exp70_multi
-PY=/u/jchan5/miniconda3/bin/python3
+B=${EXP70_BASE:-$(cd "$(dirname "$0")/.." && pwd)/corpus_runs}
+PY=${PY:-python3}
 for DS in sider lipo tox21 hiv; do
   R="$B/$DS"
   [ -d "$R" ] || { echo "$DS: not started"; continue; }

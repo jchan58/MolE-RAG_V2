@@ -2,16 +2,16 @@
 """Smoke test: env + frozen checkpoint + GIMLET graph/tokenizer/generate on a few molecules (CPU).
 Also triggers the one-time pyximport build of dataloaders.algos (cached in ~/.pyxbld, shared home)."""
 import os, sys, json, csv, re, types
-GIMLET_DIR = '/work/hdd/bhrm/jchan5/baselines/GIMLET'
+GIMLET_DIR = '/workspace/baselines/GIMLET'
 sys.path.insert(0, GIMLET_DIR); os.chdir(GIMLET_DIR)
 os.environ['HF_HUB_OFFLINE'] = '1'; os.environ['TRANSFORMERS_OFFLINE'] = '1'
 os.environ['TOKENIZERS_PARALLELISM'] = 'false'
 # Hard-pin HF caches to the writable bhrm path (a stray TRANSFORMERS_CACHE in the
 # shell profile points at an unwritable /work/hdd/bdgw/... and must be overridden).
-os.environ['HF_HOME'] = '/work/hdd/bhrm/jchan5/models'
-os.environ['HF_HUB_CACHE'] = '/work/hdd/bhrm/jchan5/models/hub'
-os.environ['TRANSFORMERS_CACHE'] = '/work/hdd/bhrm/jchan5/models/hub'
-os.environ['HUGGINGFACE_HUB_CACHE'] = '/work/hdd/bhrm/jchan5/models/hub'
+os.environ['HF_HOME'] = '/workspace/models'
+os.environ['HF_HUB_CACHE'] = '/workspace/models/hub'
+os.environ['TRANSFORMERS_CACHE'] = '/workspace/models/hub'
+os.environ['HUGGINGFACE_HUB_CACHE'] = '/workspace/models/hub'
 # bypass heavy model/__init__ (KVPLM/MoMu baselines need boto3/fairseq/etc.)
 _m = types.ModuleType('model'); _m.__path__ = [os.path.join(GIMLET_DIR, 'model')]
 sys.modules['model'] = _m
@@ -23,8 +23,8 @@ from ogb.utils import smiles2graph
 from model.GIMLET.GIMLETTransformerForConditionalGeneration import GraphT5TransformerForConditionalGeneration
 from dataloaders.gimlet_collator import CollatorForGIMLETLanguageModeling
 
-PR = json.load(open('/work/hdd/bhrm/jchan5/mole-rag_naacl/gimlet_baseline/code/gimlet_prompts.json'))
-DATA = '/work/hdd/bhrm/jchan5/MolE-RAG/data/moleculenet_property_scaffold/seed_0'
+PR = json.load(open('/workspace/mole-rag_naacl/gimlet_baseline/code/gimlet_prompts.json'))
+DATA = '/workspace/MolE-RAG/data/moleculenet_property_scaffold/seed_0'
 NUM_RE = re.compile(r"-?\d+\.?\d*e??\d*?")
 
 def sample(task, k):

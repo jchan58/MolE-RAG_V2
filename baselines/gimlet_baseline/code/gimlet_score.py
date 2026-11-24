@@ -4,7 +4,7 @@ import os, sys, json, csv, math, argparse
 import numpy as np
 from sklearn.metrics import roc_auc_score
 
-DATA_ROOT = '/work/hdd/bhrm/jchan5/MolE-RAG/data/moleculenet_property_scaffold/seed_0'
+DATA_ROOT = '/workspace/MolE-RAG/data/moleculenet_property_scaffold/seed_0'
 REG_TASKS = {'esol', 'freesolv', 'lipo'}
 ALL_TASKS = ['bbbp', 'bace', 'hiv', 'clintox', 'sider', 'tox21', 'esol', 'freesolv', 'lipo']
 MULTITASK = {'tox21', 'sider', 'clintox'}
@@ -105,8 +105,8 @@ def score_task(task, out_dir):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--out_dir', default='/work/hdd/bhrm/jchan5/mole-rag_naacl/gimlet_baseline/outputs')
-    ap.add_argument('--analysis_dir', default='/work/hdd/bhrm/jchan5/mole-rag_naacl/gimlet_baseline/analysis')
+    ap.add_argument('--out_dir', default='/workspace/mole-rag_naacl/gimlet_baseline/outputs')
+    ap.add_argument('--analysis_dir', default='/workspace/mole-rag_naacl/gimlet_baseline/analysis')
     ap.add_argument('--tasks', nargs='+', default=ALL_TASKS)
     args = ap.parse_args()
     os.makedirs(args.analysis_dir, exist_ok=True)

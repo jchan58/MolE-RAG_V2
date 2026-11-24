@@ -4,8 +4,8 @@
 # continuously in the background. Sequential chunk/judge passes keep Lustre
 # contention down; 32 processes x ~160 threads use the 5x OpenAI headroom.
 set -u
-RUN_DIR="/scratch/bhrm/jchan5/exp70_bbbp_pmc_collection"
-PY="/u/jchan5/miniconda3/bin/python3"
+RUN_DIR="${EXP70_RUN_DIR:-$(cd "$(dirname "$0")/.." && pwd)/corpus_runs/bbbp}"
+PY="${PY:-python3}"
 export EXP70_RUN_DIR="$RUN_DIR"
 cd "$RUN_DIR/code"
 NSHARDS=32

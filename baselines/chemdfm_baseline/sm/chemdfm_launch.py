@@ -19,7 +19,7 @@ BUCKET = "molerag"
 HERE = os.path.dirname(os.path.abspath(__file__))
 sess = sagemaker.Session(boto3.Session(region_name="us-east-1"))
 
-DATA_SRC = "/work/hdd/bhrm/jchan5/mole-rag_naacl/dmpnn_baseline/data"
+DATA_SRC = "/workspace/mole-rag_naacl/dmpnn_baseline/data"
 data_s3 = sess.upload_data(path=DATA_SRC, bucket=BUCKET, key_prefix="chemdfm_baseline/data")
 print("data ->", data_s3, flush=True)
 

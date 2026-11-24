@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -u
 BASE="https://ftp.ncbi.nlm.nih.gov/pubchem/Compound/Extras"
-DST="/scratch/bhrm/jchan5/exp70_bbbp_pmc_collection/bulk_ftp"
+DST="${EXP70_RUN_DIR:-$(cd "$(dirname "$0")/.." && pwd)/corpus_runs/bbbp}/bulk_ftp"
 cd "$DST" || exit 1
 for f in CID-InChI-Key.gz CID-Title.gz CID-IUPAC.gz CID-Synonym-filtered.gz; do
   for attempt in 1 2 3 4 5; do

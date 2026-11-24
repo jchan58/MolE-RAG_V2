@@ -3,7 +3,7 @@ import sagemaker, boto3, json, os
 from sagemaker.pytorch import PyTorch
 ROLE = "arn:aws:iam::833984135295:role/service-role/AmazonSageMaker-ExecutionRole-20260922T220415"
 BUCKET = "molerag"
-REPO = "/work/hdd/bhrm/jchan5/mole-rag_naacl/graphormer_baseline/code/GIMLET"
+REPO = "/workspace/mole-rag_naacl/graphormer_baseline/code/GIMLET"
 HERE = os.path.dirname(os.path.abspath(__file__))
 sess = sagemaker.Session(boto3.Session(region_name="us-east-1"))
 est = PyTorch(entry_point="convert_entry.py", source_dir=REPO, role=ROLE,

@@ -16,7 +16,7 @@ from sagemaker.pytorch import PyTorch
 
 ROLE = "arn:aws:iam::833984135295:role/service-role/AmazonSageMaker-ExecutionRole-20260922T220415"
 BUCKET = "molerag"
-SRC = "/work/hdd/bhrm/jchan5/mole-rag_naacl/llasmol_baseline/code/LLM4Chem"
+SRC = "/workspace/mole-rag_naacl/llasmol_baseline/code/LLM4Chem"
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 tasks = sys.argv[1] if len(sys.argv) > 1 else "esol,lipo,bbbp,clintox,hiv,sider"
@@ -26,7 +26,7 @@ smoke = sys.argv[3] if len(sys.argv) > 3 else "0"
 sess = sagemaker.Session(boto3.Session(region_name="us-east-1"))
 
 # MolE-RAG per-molecule test splits live in the dmpnn baseline; copy into OUR prefix only.
-DATA_SRC = "/work/hdd/bhrm/jchan5/mole-rag_naacl/dmpnn_baseline/data"
+DATA_SRC = "/workspace/mole-rag_naacl/dmpnn_baseline/data"
 data_s3 = sess.upload_data(path=DATA_SRC, bucket=BUCKET, key_prefix="llasmol_baseline/data")
 print("data ->", data_s3, flush=True)
 

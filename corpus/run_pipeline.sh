@@ -5,7 +5,7 @@
 # State on /work survives node death; bulk on node-local /tmp; everything idempotent.
 set -u
 DS="${1:?usage: run_pipeline.sh <dataset>}"
-CODE="/work/hdd/bhrm/jchan5/exp70_multi/code"
+CODE="${CODE:-$(cd "$(dirname "$0")" && pwd)}"
 source "$CODE/env_common.sh" "$DS"
 
 # --- NCBI rate: each concurrent dataset job takes a FIXED slice of the account-wide

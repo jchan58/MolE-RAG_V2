@@ -7,9 +7,9 @@
 #   CPU_DOWNSTREAM_DONE  -> pull candidates from S3 -> Delta Bedrock-qwen3-32b judge -> JUDGE_DONE
 #   (structuring_watcher.sh then does Cohere rerank + extract + v2 cards on JUDGE_DONE)
 set -u
-CODE=/work/hdd/bhrm/jchan5/exp70_multi/code; PY=/u/jchan5/miniconda3/bin/python3
+CODE=${CODE:-$(cd "$(dirname "$0")" && pwd)}; PY=${PY:-python3}
 export AWS_DEFAULT_REGION=us-east-1
-DS=hiv; RUN=/work/hdd/bhrm/jchan5/exp70_multi/$DS
+DS=hiv; RUN=${EXP70_BASE:-$(cd "$(dirname "$0")/.." && pwd)/corpus_runs}/$DS
 mkdir -p "$RUN/logs" "$RUN/state"
 # singleton: only one orchestrator at a time (relaunch-safe)
 exec 9>"$RUN/state/.hiv_watcher.lock"
