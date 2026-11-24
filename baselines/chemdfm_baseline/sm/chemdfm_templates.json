@@ -1,0 +1,293 @@
+{
+  "bbbp": {
+    "provenance": "ChemDFM released ChemLLMBench prompt (verbatim), zero-shot",
+    "multitask": false,
+    "endpoints": {
+      "p_np": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically penetration/non-penetration to the brain-blood barrier, based on the SMILES string representation of each molecule. Please answer with only Yes (penetrative) or No (not penetrative).SMILES: ",
+        "suffix": "\nPenetration:",
+        "positive_token": "Yes"
+      }
+    }
+  },
+  "bace": {
+    "provenance": "ChemDFM released ChemLLMBench prompt (verbatim), zero-shot",
+    "multitask": false,
+    "endpoints": {
+      "Class": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, predict the molecular properties of a given chemical compound based on its structure, by analyzing whether it can inhibit(Yes) the Beta-site Amyloid Precursor Protein Cleaving Enzyme 1 (BACE1) or cannot inhibit(No) BACE1. Consider factors such as molecular weight, atom count, bond types, and functional groups in order to assess the compound's drug-likeness and its potential to serve as an effective therapeutic agent for Alzheimer's disease, please answer with only Yes or No.\nSMILES: ",
+        "suffix": "\nBACE-1 Inhibit:",
+        "positive_token": "Yes"
+      }
+    }
+  },
+  "hiv": {
+    "provenance": "ChemDFM released ChemLLMBench prompt (verbatim), zero-shot",
+    "multitask": false,
+    "endpoints": {
+      "HIV_active": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether it has the abilities to inhibit HIV replication, based on the SMILES string representation of each molecule. Please answer the question \"does the provided molecule have the abilities to inhibit HIV replication?\" with only Yes or No.SMILES: ",
+        "suffix": "\nHIV Inhibition:",
+        "positive_token": "Yes"
+      }
+    }
+  },
+  "clintox": {
+    "provenance": "ChemDFM released ChemLLMBench prompt (verbatim), zero-shot",
+    "multitask": true,
+    "endpoints": {
+      "FDA_APPROVED": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule has approved by the FDA or failed clinical trials for toxicity reasons, based on the SMILES string representation of each molecule. Please answer with only Yes (approved by FDA) or No (failed clinical trials for toxicity reasons).SMILES: ",
+        "suffix": "\nFDA Approval:",
+        "positive_token": "Yes",
+        "chemdfm_task_name": "clintox-FDA"
+      },
+      "CT_TOX": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule has clinical trial toxicity or not, based on the SMILES string representation of each molecule. Please answer with only Yes (having clinical trial toxicity) or No (not having clinical trial toxicity).SMILES: ",
+        "suffix": "\nHaving clinical trial toxicity:",
+        "positive_token": "Yes",
+        "chemdfm_task_name": "clintox-tox"
+      }
+    }
+  },
+  "tox21": {
+    "provenance": "ChemDFM released ChemLLMBench prompt (verbatim), zero-shot",
+    "multitask": true,
+    "endpoints": {
+      "NR-AR": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the molecule is an agonist or antagonist of the nuclear receptor androgen receptor (NR-AR), based on the SMILES string representation of each molecule. Please answer with only Yes (agonist) or No (antagonist).SMILES: ",
+        "suffix": "\nNR-AR:",
+        "positive_token": "Yes"
+      },
+      "NR-AR-LBD": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the molecule is an agonist or antagonist of the nuclear receptor androgen receptor LBD (NR-AR-LBD), based on the SMILES string representation of each molecule. Please answer with only Yes (agonist) or No (antagonist).SMILES: ",
+        "suffix": "\nNR-AR-LBD:",
+        "positive_token": "Yes"
+      },
+      "NR-AhR": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the molecule is an agonist or antagonist of the nuclear receptor aryl hydrocarbon receptor (NR-AhR), based on the SMILES string representation of each molecule. Please answer with only Yes (agonist) or No (antagonist).SMILES: ",
+        "suffix": "\nNR-AhR:",
+        "positive_token": "Yes"
+      },
+      "NR-Aromatase": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the molecule is an agonist or antagonist of the nuclear receptor aromatase (NR-Aromatase), based on the SMILES string representation of each molecule. Please answer with only Yes (agonist) or No (antagonist).SMILES: ",
+        "suffix": "\nNR-Aromatase:",
+        "positive_token": "Yes"
+      },
+      "NR-ER": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the molecule is an agonist or antagonist of the nuclear receptor estrogen receptor (NR-ER), based on the SMILES string representation of each molecule. Please answer with only Yes (agonist) or No (antagonist).SMILES: ",
+        "suffix": "\nNR-ER:",
+        "positive_token": "Yes"
+      },
+      "NR-ER-LBD": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the molecule is an agonist or antagonist of the nuclear receptor estrogen receptor LBD (NR-ER-LBD), based on the SMILES string representation of each molecule. Please answer with only Yes (agonist) or No (antagonist).SMILES: ",
+        "suffix": "\nNR-ER-LBD:",
+        "positive_token": "Yes"
+      },
+      "NR-PPAR-gamma": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the molecule is an agonist or antagonist of the nuclear receptor peroxisome proliferator-activated receptor gamma (NR-PPAR-gamma), based on the SMILES string representation of each molecule. Please answer with only Yes (agonist) or No (antagonist).SMILES: ",
+        "suffix": "\nNR-PPAR-gamma:",
+        "positive_token": "Yes"
+      },
+      "SR-ARE": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the molecule is an agonist or antagonist of the steroid receptor androgen response element (SR-ARE), based on the SMILES string representation of each molecule. Please answer with only Yes (agonist) or No (antagonist).SMILES: ",
+        "suffix": "\nSR-ARE:",
+        "positive_token": "Yes"
+      },
+      "SR-ATAD5": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the molecule is an agonist or antagonist of the steroid receptor ATAD5 (SR-ATAD5), based on the SMILES string representation of each molecule. Please answer with only Yes (agonist) or No (antagonist).SMILES: ",
+        "suffix": "\nSR-ATAD5:",
+        "positive_token": "Yes"
+      },
+      "SR-HSE": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the molecule is an agonist or antagonist of the steroid receptor heat shock response element (SR-HSE), based on the SMILES string representation of each molecule. Please answer with only Yes (agonist) or No (antagonist).SMILES: ",
+        "suffix": "\nSR-HSE:",
+        "positive_token": "Yes"
+      },
+      "SR-MMP": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the molecule is an agonist or antagonist of the steroid receptor mitochondrial membrane potential (SR-MMP), based on the SMILES string representation of each molecule. Please answer with only Yes (agonist) or No (antagonist).SMILES: ",
+        "suffix": "\nSR-MMP:",
+        "positive_token": "Yes"
+      },
+      "SR-p53": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the molecule is an agonist or antagonist of the steroid receptor p53 (SR-p53), based on the SMILES string representation of each molecule. Please answer with only Yes (agonist) or No (antagonist).SMILES: ",
+        "suffix": "\nSR-p53:",
+        "positive_token": "Yes"
+      }
+    }
+  },
+  "sider": {
+    "provenance": "ChemDFM-STYLE prompt, OUR wording (ChemDFM released no SIDER prompt); zero-shot, ChemDFM dialogue format",
+    "multitask": true,
+    "endpoints": {
+      "Hepatobiliary_disorders": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Hepatobiliary disorders\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Metabolism_and_nutrition_disorders": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Metabolism and nutrition disorders\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Product_issues": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Product issues\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Eye_disorders": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Eye disorders\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Investigations": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Investigations\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Musculoskeletal_and_connective_tissue_disorders": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Musculoskeletal and connective tissue disorders\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Gastrointestinal_disorders": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Gastrointestinal disorders\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Social_circumstances": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Social circumstances\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Immune_system_disorders": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Immune system disorders\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Reproductive_system_and_breast_disorders": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Reproductive system and breast disorders\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Neoplasms_benign,_malignant_and_unspecified_(incl_cysts_and_polyps)": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Neoplasms benign, malignant and unspecified (incl cysts and polyps)\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "General_disorders_and_administration_site_conditions": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"General disorders and administration site conditions\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Endocrine_disorders": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Endocrine disorders\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Surgical_and_medical_procedures": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Surgical and medical procedures\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Vascular_disorders": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Vascular disorders\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Blood_and_lymphatic_system_disorders": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Blood and lymphatic system disorders\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Skin_and_subcutaneous_tissue_disorders": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Skin and subcutaneous tissue disorders\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Congenital,_familial_and_genetic_disorders": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Congenital, familial and genetic disorders\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Infections_and_infestations": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Infections and infestations\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Respiratory,_thoracic_and_mediastinal_disorders": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Respiratory, thoracic and mediastinal disorders\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Psychiatric_disorders": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Psychiatric disorders\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Renal_and_urinary_disorders": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Renal and urinary disorders\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Pregnancy,_puerperium_and_perinatal_conditions": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Pregnancy, puerperium and perinatal conditions\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Ear_and_labyrinth_disorders": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Ear and labyrinth disorders\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Cardiac_disorders": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Cardiac disorders\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Nervous_system_disorders": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Nervous system disorders\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      },
+      "Injury,_poisoning_and_procedural_complications": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting molecular properties, specifically whether the drug molecule causes side effects of the category \"Injury, poisoning and procedural complications\", based on the SMILES string representation of each molecule. Please answer with only Yes (causes such side effects) or No (does not cause such side effects).SMILES: ",
+        "suffix": "\nSide Effect:",
+        "positive_token": "Yes"
+      }
+    }
+  },
+  "esol": {
+    "provenance": "ChemDFM-STYLE regression prompt, OUR wording (ChemDFM released no regression property-prediction prompt); zero-shot",
+    "multitask": false,
+    "task_type": "regression",
+    "endpoints": {
+      "logSolubility": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting the aqueous solubility of the molecule, reported as the base-10 logarithm of the solubility in mol/L (logS, the ESOL property), based on the SMILES string representation of each molecule. Please answer with only a single numerical value and no other text.SMILES: ",
+        "suffix": "\nLog Solubility (log mol/L):"
+      }
+    }
+  },
+  "freesolv": {
+    "provenance": "ChemDFM-STYLE regression prompt, OUR wording (ChemDFM released no regression property-prediction prompt); zero-shot",
+    "multitask": false,
+    "task_type": "regression",
+    "endpoints": {
+      "freesolv": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting the hydration free energy of the molecule in water, reported in kcal/mol (the FreeSolv property), based on the SMILES string representation of each molecule. Please answer with only a single numerical value and no other text.SMILES: ",
+        "suffix": "\nHydration Free Energy (kcal/mol):"
+      }
+    }
+  },
+  "lipo": {
+    "provenance": "ChemDFM-STYLE regression prompt, OUR wording (ChemDFM released no regression property-prediction prompt); zero-shot",
+    "multitask": false,
+    "task_type": "regression",
+    "endpoints": {
+      "lipo": {
+        "prefix": "You are an expert chemist, your task is to predict the property of molecules using your experienced chemical property prediction knowledge.\nPlease strictly follow the format, no other information can be provided. Given the SMILES string of a molecule, the task focus on predicting the lipophilicity of the molecule, reported as the octanol/water distribution coefficient logD at pH 7.4 (the Lipophilicity property), based on the SMILES string representation of each molecule. Please answer with only a single numerical value and no other text.SMILES: ",
+        "suffix": "\nLogD:"
+      }
+    }
+  }
+}

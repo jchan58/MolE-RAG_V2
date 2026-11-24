@@ -1,0 +1,23 @@
+[
+  {
+    "job": "chemdfm-tox21-2026-10-12-04-09-14-352",
+    "tag": "tox21",
+    "tasks": "tox21",
+    "instance": "ml.g6e.2xlarge",
+    "batch": "16"
+  },
+  {
+    "job": "chemdfm-mix-2026-10-12-04-09-15-137",
+    "tag": "mix",
+    "tasks": "hiv,sider,bbbp,bace,clintox,esol,freesolv,lipo",
+    "instance": "ml.g6e.8xlarge",
+    "batch": "16"
+  },
+  {
+    "job": "chemdfm-mix-2026-10-12-05-17-27-007",
+    "tag": "mix",
+    "tasks": "hiv,sider,bbbp,bace,clintox,esol,freesolv,lipo",
+    "instance": "ml.g6e.8xlarge",
+    "batch": "16"
+  }
+]

@@ -1,0 +1,157 @@
+{
+  "esol": {
+    "task_type": "regression",
+    "n_targets": 1,
+    "targets": [
+      "logSolubility"
+    ],
+    "rows": {
+      "train": 902,
+      "valid": 112,
+      "test": 114
+    },
+    "multitask": false
+  },
+  "freesolv": {
+    "task_type": "regression",
+    "n_targets": 1,
+    "targets": [
+      "freesolv"
+    ],
+    "rows": {
+      "train": 513,
+      "valid": 64,
+      "test": 65
+    },
+    "multitask": false
+  },
+  "lipo": {
+    "task_type": "regression",
+    "n_targets": 1,
+    "targets": [
+      "lipo"
+    ],
+    "rows": {
+      "train": 3360,
+      "valid": 420,
+      "test": 420
+    },
+    "multitask": false
+  },
+  "bbbp": {
+    "task_type": "classification",
+    "n_targets": 1,
+    "targets": [
+      "p_np"
+    ],
+    "rows": {
+      "train": 1631,
+      "valid": 203,
+      "test": 205
+    },
+    "multitask": false
+  },
+  "bace": {
+    "task_type": "classification",
+    "n_targets": 1,
+    "targets": [
+      "Class"
+    ],
+    "rows": {
+      "train": 1210,
+      "valid": 151,
+      "test": 152
+    },
+    "multitask": false
+  },
+  "hiv": {
+    "task_type": "classification",
+    "n_targets": 1,
+    "targets": [
+      "HIV_active"
+    ],
+    "rows": {
+      "train": 32896,
+      "valid": 4112,
+      "test": 4112
+    },
+    "multitask": false
+  },
+  "clintox": {
+    "task_type": "classification",
+    "n_targets": 2,
+    "targets": [
+      "FDA_APPROVED",
+      "CT_TOX"
+    ],
+    "rows": {
+      "train": 1182,
+      "valid": 147,
+      "test": 149
+    },
+    "multitask": true
+  },
+  "sider": {
+    "task_type": "classification",
+    "n_targets": 27,
+    "targets": [
+      "Hepatobiliary_disorders",
+      "Metabolism_and_nutrition_disorders",
+      "Product_issues",
+      "Eye_disorders",
+      "Investigations",
+      "Musculoskeletal_and_connective_tissue_disorders",
+      "Gastrointestinal_disorders",
+      "Social_circumstances",
+      "Immune_system_disorders",
+      "Reproductive_system_and_breast_disorders",
+      "Neoplasms_benign,_malignant_and_unspecified_(incl_cysts_and_polyps)",
+      "General_disorders_and_administration_site_conditions",
+      "Endocrine_disorders",
+      "Surgical_and_medical_procedures",
+      "Vascular_disorders",
+      "Blood_and_lymphatic_system_disorders",
+      "Skin_and_subcutaneous_tissue_disorders",
+      "Congenital,_familial_and_genetic_disorders",
+      "Infections_and_infestations",
+      "Respiratory,_thoracic_and_mediastinal_disorders",
+      "Psychiatric_disorders",
+      "Renal_and_urinary_disorders",
+      "Pregnancy,_puerperium_and_perinatal_conditions",
+      "Ear_and_labyrinth_disorders",
+      "Cardiac_disorders",
+      "Nervous_system_disorders",
+      "Injury,_poisoning_and_procedural_complications"
+    ],
+    "rows": {
+      "train": 1141,
+      "valid": 142,
+      "test": 144
+    },
+    "multitask": true
+  },
+  "tox21": {
+    "task_type": "classification",
+    "n_targets": 12,
+    "targets": [
+      "NR-AR",
+      "NR-AR-LBD",
+      "NR-AhR",
+      "NR-Aromatase",
+      "NR-ER",
+      "NR-ER-LBD",
+      "NR-PPAR-gamma",
+      "SR-ATAD5",
+      "SR-MMP",
+      "SR-p53",
+      "SR-ARE",
+      "SR-HSE"
+    ],
+    "rows": {
+      "train": 6258,
+      "valid": 782,
+      "test": 783
+    },
+    "multitask": true
+  }
+}

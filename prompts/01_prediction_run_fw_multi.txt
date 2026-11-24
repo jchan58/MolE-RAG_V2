@@ -1,0 +1,137 @@
+================================================================================
+MOLECULAR PROPERTY PREDICTION PROMPTS  (MAIN_EVALUATED)
+source_file : fw_multi/code/run_fw_multi.py
+models      : ministral_3_14b, qwen3_32b, opus_4_6, gpt5mini  (all 4; Bedrock temp=0;
+              gpt5mini = OpenAI gpt-5-mini; chemdfm_v2_14b backend present but NOT reported)
+datasets    : esol, freesolv, lipo (regression); bbbp, hiv (classification);
+              sider(27), clintox(2), tox21(12) (multilabel)  -- TEST split only
+arms        : A = initial assessment (1 call); B = self-review (<=3 calls, NO new evidence);
+              C = evidence loop (<=3 rounds, each round = 2 calls: ASK then ASSESS)
+================================================================================
+
+Everything here is copied verbatim from run_fw_multi.py. Placeholders in {CURLY} mark
+code-interpolated values; the code's own variable names are given in [brackets].
+
+--------------------------------------------------------------------------------
+SHARED BASE PROMPT   [base_prompt(target,refs)]
+--------------------------------------------------------------------------------
+Rendered string (f-string in base_prompt()):
+
+TASK: {CFG['taskdef']}
+DESCRIPTOR GLOSSARY: {GLOSS}
+
+{fact_block(target)}
+
+FIVE SIMILAR TRAINING REFERENCES (measured outcomes; these are labeled examples, NOT the target):
+{refs_block(refs)}
+
+EXPLICIT TARGET-REFERENCE DIFFERENCES (descriptor + functional-group; NOT verified-structural):
+{diff_block(target,refs)}
+
+  [for multilabel tasks only, appended:]
+ENDPOINTS (predict a probability for EACH): {', '.join(ENDPOINTS)}
+
+..............................................................................
+GLOSS  [constant string]:
+(BertzCT=complexity; Chi0/Chi1/Chi0n=connectivity indices; SlogP_VSA2/SMR_VSA1/LabuteASA=VSA surface-area descriptors; MaxEStateIndex/MaxAbsEStateIndex=electrotopological state; NumValenceElectrons; the rest are size/weight/heteroatom counts). Descriptor magnitude does NOT by itself establish the property value.
+
+DESC  [the FIXED GLOBAL 15 RDKit descriptors, in order]:
+NumHeteroatoms, BertzCT, HeavyAtomCount, Chi0, Chi1, SlogP_VSA2, MaxEStateIndex,
+MaxAbsEStateIndex, HeavyAtomMolWt, NumValenceElectrons, ExactMolWt, MolWt, LabuteASA,
+SMR_VSA1, Chi0n
+
+..............................................................................
+fact_block(target) renders as:
+TARGET standardized_SMILES={canonical}; formula={CalcMolFormula}; heavy_atoms={GetNumHeavyAtoms}; AccFG={accfg}; descriptors: {NumHeteroatoms=..; BertzCT=..; ... Chi0n=..}
+  -- AccFG string = ", ".join(f"{group} x{count}") or "none"/"unavailable"
+  -- descriptors joined as "name=value; name=value; ..." (values round(.,3))
+
+refs_block(refs) renders ONE line per reference (5 refs, Morgan r1 2048-bit Tanimoto top-5):
+[ref Tanimoto={sim}; {ref_outcome}] SMILES={ref_smiles}; AccFG={accfg}; descriptors: {15 name=value pairs}
+  -- ref_outcome, regression:     measured {property} = {value} ({unit})
+  -- ref_outcome, classification: outcome = {pos_name | neg_name}
+  -- ref_outcome, multilabel:     positive endpoints ({k}/{N}): {comma-list or 'none'}
+
+diff_block(target,refs) renders ONE line per reference:
+  vs ref(Tani={sim}): FG only-in-target={[fg x n,...] or []}; FG only-in-ref={[...] or []}; top|Δdescriptor|(target-ref)={[(name, delta), ... top 6 by |Δ|]}
+
+--------------------------------------------------------------------------------
+ARM A -- INITIAL ASSESSMENT   (1 model call)   [run_mol: a_raw=bcall(...)]
+--------------------------------------------------------------------------------
+PROMPT = base_prompt(target,refs) + the following tail:
+
+Give a concise assessment and your prediction.
+{PRED_SCHEMA}
+
+  PRED_SCHEMA (regression):
+Output ONLY JSON: {"prediction_value": <number {unit}>, "justification":"...", "unresolved_questions":[]}
+  PRED_SCHEMA (classification):
+Output ONLY JSON: {"prediction":"positive|negative|uncertain","probability_positive":0.0,"justification":"...","unresolved_questions":[]}
+  PRED_SCHEMA (multilabel):
+Output ONLY JSON: {"endpoints": {"<endpoint_id>": <prob 0..1>, ... one entry per endpoint}, "justification":"...", "unresolved_questions":[]}
+
+--------------------------------------------------------------------------------
+ARM B -- SELF-REVIEW   (up to 3 calls, NO new evidence)   [run_mol B loop]
+--------------------------------------------------------------------------------
+PROMPT = base_prompt(...) + the following tail (cur = current prediction JSON, truncated 400 chars):
+
+YOUR CURRENT PREDICTION: {json of cur prediction fields}
+Critically REVIEW your reasoning and revise if warranted. You have NO new evidence beyond the above. If your prediction is already well-justified and stable, say so and STOP.
+Output ONLY JSON: {{REV_SCHEMA_TAIL},"changed":true,"stop":false,"justification":"..."}
+
+  REV_SCHEMA_TAIL (regression):     "prediction_value": <number>
+  REV_SCHEMA_TAIL (classification): "prediction":"positive|negative|uncertain","probability_positive":0.0
+  REV_SCHEMA_TAIL (multilabel):     "endpoints": {"<endpoint_id>": <prob>, ...changed endpoints...}
+
+  Loop stops when BJ.get("stop") is true OR BJ.get("changed") is False.
+
+--------------------------------------------------------------------------------
+ARM C -- EVIDENCE LOOP   (up to 3 rounds; each round = CALL 1 ASK then CALL 2 ASSESS)
+--------------------------------------------------------------------------------
+Between the two calls, CODE (do_retrieve) performs the retrieval; the model never
+retrieves. a_line = "\nYOUR INITIAL PREDICTION: {A prediction fields}\n".
+
+=== C CALL 1 -- ASK (question generation + entity/attribute SELECTION + route + stop) [qp] ===
+PROMPT = base_prompt(...) + a_line + ["\nEVIDENCE SO FAR:\n{carried}\n" if carried] + "\n"
+         + ent_menu + "\n" + TOOL_CATALOG + "\n"
+         + [sider line if multilabel] +
+Identify the MOST IMPORTANT unresolved, prediction-relevant question, then SELECT which entities and attributes to retrieve for it. CONTINUE ONLY IF a specific unresolved question exists AND literature retrieval over the selected entities/attributes could change the prediction. Otherwise STOP. Do not continue merely because you are uncertain.
+Output ONLY JSON: {"stop":false,"question":"...","entities":["<entity_id>",...],"attributes":["<attribute_id>",...],"route":"literature|structural|none","why_matters":"..."}
+  [multilabel appends inside the JSON:]  ,"endpoint":"<endpoint_id>"
+
+  sider/multilabel line (inserted before "Identify the MOST IMPORTANT..."):
+For SIDER, make the question ENDPOINT-SPECIFIC (name the organ-class endpoint) and select that endpoint's task entity.
+
+  ent_menu  [available_entities menu shown to the model]:
+AVAILABLE ENTITIES to query (select by entity_id):
+  TASK entities: {list of task entity_ids}
+  COMPOUND entity for THIS target: {'<id> (has indexed findings; attributes present: <up to 25 attr ids>)'  OR  'NONE (this molecule has no indexed literature findings)'}
+AVAILABLE TASK ATTRIBUTES: {task_attributes[:40]}
+AVAILABLE COMPOUND ATTRIBUTES: {compound_attributes[:40]}
+
+  TOOL_CATALOG  [constant string shown to the model]:
+STRUCTURAL TOOLS: none are implemented for this dataset. Any question requiring a structural/substructure computation on the target CANNOT be executed and must be treated as UNRESOLVED (do not infer the property from an unrun check).
+
+=== (code retrieval between calls) do_retrieve status strings carried in EVIDENCE ===
+ - "ok"                        : passages returned (top-3 by Cohere embed cosine)
+ - "no_findings_for_selection" : selected entities/attributes had no indexed findings
+ - "embed_failed"              : Cohere embedding call failed
+ - structural route requested  : ev note = "structural route requested but NO structural tool is implemented for this dataset; question UNRESOLVED"  (evstat="unresolved_no_tool")
+ - retrieval budget exhausted  : ev note = "retrieval budget exhausted"  (evstat="budget"; after 3 searches)
+
+=== C CALL 2 -- ASSESS + REVISE [ap] ===
+PROMPT = base_prompt(...) + a_line +
+QUESTION: {Q['question']}
+EVIDENCE RETURNED ({evstat}):
+{evtxt  = json.dumps(ev)[:3000]}
+Assess whether the retrieved passages SUPPORT a claim and APPLY to THIS target. An unanswered/irrelevant search is NOT evidence; a value for a different compound does not transfer. Update your prediction ONLY if warranted.
+Output ONLY JSON: {{REV_SCHEMA_TAIL},"question_answer_status":"answered|partially_answered|not_answered|unresolved","evidence_subject":"target|reference|related_compound|general_class|unresolved","new_information_added":true,"next_action":"continue|stop","justification":"..."}
+
+  Loop stops when AS.get("next_action")=="stop".
+  evtxt (ev dict) for a literature retrieval carries:
+    {"selected_entities":[...],"selected_attributes":[...],"passages":[{passage_id,pmcid,cos,text(<=600 chars)},...],"retrieval_status":"ok|no_findings_for_selection|embed_failed"}
+
+--------------------------------------------------------------------------------
+PER-DATASET CONFIG (taskdef / unit / pos_name / neg_name)  -- see task_definitions.csv
+and released file 09_endpoint_definitions.txt for the full multilabel endpoint maps.
+--------------------------------------------------------------------------------

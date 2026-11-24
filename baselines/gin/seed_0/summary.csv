@@ -1,0 +1,10 @@
+dataset,metric,test_mean,test_std,n_test
+bbbp,macro_roc_auc,0.9294,0.002,197
+bace,macro_roc_auc,0.7495,0.0228,152
+hiv,macro_roc_auc,0.7904,0.002,4111
+clintox,macro_roc_auc,0.7078,0.0315,148
+sider,macro_roc_auc,0.5902,0.0045,144
+tox21,macro_roc_auc,0.7862,0.0014,783
+esol,rmse,0.979,0.0644,111
+freesolv,rmse,3.3227,0.2966,65
+lipo,rmse,0.7594,0.0196,420

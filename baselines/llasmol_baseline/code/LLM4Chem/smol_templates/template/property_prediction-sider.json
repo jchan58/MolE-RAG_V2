@@ -1,0 +1,802 @@
+[
+    {
+        "Target": "Hepatobiliary disorders",
+        "input": "Can <INPUT> cause hepatobiliary disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Hepatobiliary disorders",
+        "input": "Are hepatobiliary disorders a side effect of <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Hepatobiliary disorders",
+        "input": "Is <INPUT> known to cause hepatobiliary disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Hepatobiliary disorders",
+        "input": "Can <INPUT> cause side effects that affect the hepatobiliary system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Hepatobiliary disorders",
+        "input": "Are there any known side effects of <INPUT> affecting the hepatobiliary system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Hepatobiliary disorders",
+        "input": "Does <INPUT> adversely affect the hepatobiliary system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Hepatobiliary disorders",
+        "input": "Do the side effects of <INPUT> impact the hepatobiliary system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Hepatobiliary disorders",
+        "input": "Are hepatobiliary system functions adversely affected by <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Metabolism and nutrition disorders",
+        "input": "Can <INPUT> cause metabolism and nutrition disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Metabolism and nutrition disorders",
+        "input": "Are metabolism and nutrition disorders a side effect of <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Metabolism and nutrition disorders",
+        "input": "Is <INPUT> known to cause metabolism and nutrition disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Metabolism and nutrition disorders",
+        "input": "Can <INPUT> cause side effects that affect metabolism and nutrition?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Metabolism and nutrition disorders",
+        "input": "Are there any known side effects of <INPUT> affecting metabolism and nutrition?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Metabolism and nutrition disorders",
+        "input": "Does <INPUT> adversely affect metabolism and nutrition?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Metabolism and nutrition disorders",
+        "input": "Do the side effects of <INPUT> impact metabolism and nutrition?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Metabolism and nutrition disorders",
+        "input": "Are metabolism and nutrition functions adversely affected by <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Eye disorders",
+        "input": "Can <INPUT> cause eye disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Eye disorders",
+        "input": "Are eye disorders a side effect of <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Eye disorders",
+        "input": "Is <INPUT> known to cause eye disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Eye disorders",
+        "input": "Can <INPUT> cause side effects that affect the eyes?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Eye disorders",
+        "input": "Are there any known side effects of <INPUT> affecting the eyes?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Eye disorders",
+        "input": "Does <INPUT> adversely affect the eyes?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Eye disorders",
+        "input": "Do the side effects of <INPUT> impact the eyes?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Eye disorders",
+        "input": "Are eye functions adversely affected by <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Musculoskeletal and connective tissue disorders",
+        "input": "Can <INPUT> cause musculoskeletal and connective tissue disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Musculoskeletal and connective tissue disorders",
+        "input": "Are musculoskeletal and connective tissue disorders a side effect of <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Musculoskeletal and connective tissue disorders",
+        "input": "Is <INPUT> known to cause musculoskeletal and connective tissue disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Musculoskeletal and connective tissue disorders",
+        "input": "Can <INPUT> cause side effects that affect the musculoskeletal system and the connective tissues?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Musculoskeletal and connective tissue disorders",
+        "input": "Are there any known side effects of <INPUT> affecting the musculoskeletal system and the connective tissues?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Musculoskeletal and connective tissue disorders",
+        "input": "Does <INPUT> adversely affect the musculoskeletal system and the connective tissues?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Musculoskeletal and connective tissue disorders",
+        "input": "Do the side effects of <INPUT> impact the musculoskeletal system and the connective tissues?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Musculoskeletal and connective tissue disorders",
+        "input": "Are musculoskeletal system and connective tissues functions adversely affected by <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Gastrointestinal disorders",
+        "input": "Can <INPUT> cause gastrointestinal disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Gastrointestinal disorders",
+        "input": "Are gastrointestinal disorders a side effect of <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Gastrointestinal disorders",
+        "input": "Is <INPUT> known to cause gastrointestinal disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Gastrointestinal disorders",
+        "input": "Can <INPUT> cause side effects that affect the gastrointestinal system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Gastrointestinal disorders",
+        "input": "Are there any known side effects of <INPUT> affecting the gastrointestinal system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Gastrointestinal disorders",
+        "input": "Does <INPUT> adversely affect the gastrointestinal system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Gastrointestinal disorders",
+        "input": "Do the side effects of <INPUT> impact the gastrointestinal system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Gastrointestinal disorders",
+        "input": "Are gastrointestinal system functions adversely affected by <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Immune system disorders",
+        "input": "Can <INPUT> cause immune system disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Immune system disorders",
+        "input": "Are immune system disorders a side effect of <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Immune system disorders",
+        "input": "Is <INPUT> known to cause immune system disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Immune system disorders",
+        "input": "Can <INPUT> cause side effects that affect the immune system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Immune system disorders",
+        "input": "Are there any known side effects of <INPUT> affecting the immune system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Immune system disorders",
+        "input": "Does <INPUT> adversely affect the immune system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Immune system disorders",
+        "input": "Do the side effects of <INPUT> impact the immune system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Immune system disorders",
+        "input": "Are immune system functions adversely affected by <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Reproductive system and breast disorders",
+        "input": "Can <INPUT> cause reproductive system and breast disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Reproductive system and breast disorders",
+        "input": "Are reproductive system and breast disorders a side effect of <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Reproductive system and breast disorders",
+        "input": "Is <INPUT> known to cause reproductive system and breast disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Reproductive system and breast disorders",
+        "input": "Can <INPUT> cause side effects that affect the reproductive system and the breasts?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Reproductive system and breast disorders",
+        "input": "Are there any known side effects of <INPUT> affecting the reproductive system and the breasts?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Reproductive system and breast disorders",
+        "input": "Does <INPUT> adversely affect the reproductive system and the breasts?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Reproductive system and breast disorders",
+        "input": "Do the side effects of <INPUT> impact the reproductive system and the breasts?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Reproductive system and breast disorders",
+        "input": "Are reproductive system and breast functions adversely affected by <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Neoplasms benign, malignant and unspecified (incl cysts and polyps)",
+        "input": "Can <INPUT> cause neoplasms?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Neoplasms benign, malignant and unspecified (incl cysts and polyps)",
+        "input": "Are neoplasms a side effect of <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Neoplasms benign, malignant and unspecified (incl cysts and polyps)",
+        "input": "Is <INPUT> known to cause neoplasms?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Neoplasms benign, malignant and unspecified (incl cysts and polyps)",
+        "input": "Is <INPUT> linked to the development of neoplasms?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Neoplasms benign, malignant and unspecified (incl cysts and polyps)",
+        "input": "Can neoplasms be induced by <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Neoplasms benign, malignant and unspecified (incl cysts and polyps)",
+        "input": "Does <INPUT> have the potential to trigger neoplasms?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Neoplasms benign, malignant and unspecified (incl cysts and polyps)",
+        "input": "Is there a correlation between <INPUT> and the occurrence of neoplasms?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Neoplasms benign, malignant and unspecified (incl cysts and polyps)",
+        "input": "Could <INPUT> lead to the formation of neoplasms?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Endocrine disorders",
+        "input": "Can <INPUT> cause endocrine disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Endocrine disorders",
+        "input": "Are endocrine disorders a side effect of <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Endocrine disorders",
+        "input": "Can <INPUT> cause side effects that affect the endocrine system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Endocrine disorders",
+        "input": "Does <INPUT> adversely affect the endocrine system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Endocrine disorders",
+        "input": "Does <INPUT> adversely affect hormones?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Endocrine disorders",
+        "input": "Do the side effects of <INPUT> impact the endocrine system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Endocrine disorders",
+        "input": "Do the side effects of <INPUT> impact hormones?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Endocrine disorders",
+        "input": "Are endocrine system functions adversely affected by <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Vascular disorders",
+        "input": "Can <INPUT> cause vascular disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Vascular disorders",
+        "input": "Are vascular disorders a side effect of <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Vascular disorders",
+        "input": "Is <INPUT> known to cause vascular disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Vascular disorders",
+        "input": "Can <INPUT> cause side effects that affect the blood vessels?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Vascular disorders",
+        "input": "Are there any known side effects of <INPUT> affecting the blood vessels?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Vascular disorders",
+        "input": "Does <INPUT> adversely affect the blood vessels?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Vascular disorders",
+        "input": "Do the side effects of <INPUT> impact the blood vessels?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Vascular disorders",
+        "input": "Are vascular functions adversely affected by <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Blood and lymphatic system disorders",
+        "input": "Can <INPUT> cause blood and lymphatic system disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Blood and lymphatic system disorders",
+        "input": "Are blood and lymphatic system disorders a side effect of <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Blood and lymphatic system disorders",
+        "input": "Is <INPUT> known to cause blood and lymphatic system disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Blood and lymphatic system disorders",
+        "input": "Can <INPUT> cause side effects that affect the blood and lymphatic system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Blood and lymphatic system disorders",
+        "input": "Are there any known side effects of <INPUT> affecting the blood and lymphatic system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Blood and lymphatic system disorders",
+        "input": "Does <INPUT> adversely affect the blood and lymphatic system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Blood and lymphatic system disorders",
+        "input": "Do the side effects of <INPUT> impact the blood and lymphatic system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Blood and lymphatic system disorders",
+        "input": "Are blood and lymphatic system functions adversely affected by <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Skin and subcutaneous tissue disorders",
+        "input": "Can <INPUT> cause skin and subcutaneous tissue disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Skin and subcutaneous tissue disorders",
+        "input": "Are skin and subcutaneous tissue disorders a side effect of <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Skin and subcutaneous tissue disorders",
+        "input": "Is <INPUT> known to cause skin and subcutaneous tissue disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Skin and subcutaneous tissue disorders",
+        "input": "Can <INPUT> cause side effects that affect the skin and subcutaneous tissues?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Skin and subcutaneous tissue disorders",
+        "input": "Are there any known side effects of <INPUT> affecting the skin and subcutaneous tissues?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Skin and subcutaneous tissue disorders",
+        "input": "Does <INPUT> adversely affect the skin and subcutaneous tissues?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Skin and subcutaneous tissue disorders",
+        "input": "Do the side effects of <INPUT> impact the skin and subcutaneous tissues?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Skin and subcutaneous tissue disorders",
+        "input": "Are skin and subcutaneous tissues functions adversely affected by <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Congenital, familial and genetic disorders",
+        "input": "Can <INPUT> increase risk of congenital, familial, and genetic disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Congenital, familial and genetic disorders",
+        "input": "Is increased risk of congenital, familial, and genetic disorders a side effect of <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Congenital, familial and genetic disorders",
+        "input": "Is <INPUT> known to increase risk of congenital, familial, and genetic disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Congenital, familial and genetic disorders",
+        "input": "Does <INPUT> increase risk of congenital, familial, and genetic disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Congenital, familial and genetic disorders",
+        "input": "Do the side effects of <INPUT> impact congenital, familial, and genetic disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Congenital, familial and genetic disorders",
+        "input": "Can <INPUT> result in an elevated chance of congenital, familial, and genetic disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Congenital, familial and genetic disorders",
+        "input": "Can the use of <INPUT> lead to a higher likelihood of congenital, familial, and genetic disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Congenital, familial and genetic disorders",
+        "input": "Does <INPUT> contribute to an amplified hazard of congenital, familial, and genetic disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Respiratory, thoracic and mediastinal disorders",
+        "input": "Can <INPUT> cause respiratory, thoracic, and mediastinal disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Respiratory, thoracic and mediastinal disorders",
+        "input": "Are respiratory, thoracic, and mediastinal disorders a side effect of <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Respiratory, thoracic and mediastinal disorders",
+        "input": "Is <INPUT> known to cause respiratory, thoracic, and mediastinal disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Respiratory, thoracic and mediastinal disorders",
+        "input": "Can <INPUT> cause side effects that affect the respiratory system, thorax, and mediastina?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Respiratory, thoracic and mediastinal disorders",
+        "input": "Are there any known side effects of <INPUT> affecting the respiratory system, thorax, and mediastina?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Respiratory, thoracic and mediastinal disorders",
+        "input": "Does <INPUT> adversely affect the respiratory system, thorax, and mediastina?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Respiratory, thoracic and mediastinal disorders",
+        "input": "Do the side effects of <INPUT> impact the respiratory system, thorax, and mediastina?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Respiratory, thoracic and mediastinal disorders",
+        "input": "Are respiratory system, thorax, and mediastina functions adversely affected by <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Psychiatric disorders",
+        "input": "Can <INPUT> cause psychiatric disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Psychiatric disorders",
+        "input": "Are psychiatric disorders a side effect of <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Psychiatric disorders",
+        "input": "Is <INPUT> known to cause psychiatric disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Psychiatric disorders",
+        "input": "Can <INPUT> cause side effects that affect mental health?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Psychiatric disorders",
+        "input": "Are there any known side effects of <INPUT> affecting mental health?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Psychiatric disorders",
+        "input": "Does <INPUT> adversely affect mental health?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Psychiatric disorders",
+        "input": "Do the side effects of <INPUT> impact mental health?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Psychiatric disorders",
+        "input": "Is mental health adversely affected by <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Renal and urinary disorders",
+        "input": "Can <INPUT> cause renal and urinary disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Renal and urinary disorders",
+        "input": "Are renal and urinary disorders a side effect of <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Renal and urinary disorders",
+        "input": "Is <INPUT> known to cause renal and urinary disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Renal and urinary disorders",
+        "input": "Can <INPUT> cause side effects that affect the kidneys, bladder, and urinary system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Renal and urinary disorders",
+        "input": "Are there any known side effects of <INPUT> affecting the kidneys, bladder, and urinary system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Renal and urinary disorders",
+        "input": "Does <INPUT> adversely affect the kidneys, bladder and urinary system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Renal and urinary disorders",
+        "input": "Do the side effects of <INPUT> impact the kidneys, bladder, and urinary system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Renal and urinary disorders",
+        "input": "Are kidneys, bladder, and urinary system functions adversely affected by <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Pregnancy, puerperium and perinatal conditions",
+        "input": "Can <INPUT> cause issues for pregnant or postpartum women?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Pregnancy, puerperium and perinatal conditions",
+        "input": "Is <INPUT> known to cause issues for pregnant or postpartum women?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Pregnancy, puerperium and perinatal conditions",
+        "input": "Can <INPUT> cause side effects that affect pregnant or postpartum women?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Pregnancy, puerperium and perinatal conditions",
+        "input": "Are there any known side effects of <INPUT> affecting pregnant or postpartum women?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Pregnancy, puerperium and perinatal conditions",
+        "input": "Does <INPUT> have side effects to women's pregnancy, puerperium, and perinatal conditions?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Pregnancy, puerperium and perinatal conditions",
+        "input": "Are there adverse effects of <INPUT> on women's pregnancy, postpartum period, and perinatal health?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Pregnancy, puerperium and perinatal conditions",
+        "input": "Does the use of <INPUT> have any negative impacts on pregnancy, postpartum recovery, or perinatal conditions in women?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Pregnancy, puerperium and perinatal conditions",
+        "input": "Can the consumption of <INPUT> lead to side effects for women in terms of pregnancy, puerperium, and perinatal conditions?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Ear and labyrinth disorders",
+        "input": "Can <INPUT> cause ear disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Ear and labyrinth disorders",
+        "input": "Are ear disorders a side effect of <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Ear and labyrinth disorders",
+        "input": "Is <INPUT> known to cause ear disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Ear and labyrinth disorders",
+        "input": "Can <INPUT> cause side effects that affect the ears and auditory system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Ear and labyrinth disorders",
+        "input": "Are there any known side effects of <INPUT> affecting the ears and auditory system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Ear and labyrinth disorders",
+        "input": "Does <INPUT> adversely affect the ears and auditory system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Ear and labyrinth disorders",
+        "input": "Do the side effects of <INPUT> impact the ears and auditory system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Ear and labyrinth disorders",
+        "input": "Are ears and auditory system functions adversely affected by <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Cardiac disorders",
+        "input": "Can <INPUT> cause cardiac disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Cardiac disorders",
+        "input": "Are cardiac disorders a side effect of <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Cardiac disorders",
+        "input": "Is <INPUT> known to cause cardiac disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Cardiac disorders",
+        "input": "Can <INPUT> cause side effects that affect the heart?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Cardiac disorders",
+        "input": "Are there any known side effects of <INPUT> affecting the heart?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Cardiac disorders",
+        "input": "Does <INPUT> adversely affect the heart?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Cardiac disorders",
+        "input": "Do the side effects of <INPUT> impact the heart?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Cardiac disorders",
+        "input": "Are heart functions adversely affected by <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Nervous system disorders",
+        "input": "Can <INPUT> cause nervous system disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Nervous system disorders",
+        "input": "Are nervous system disorders a side effect of <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Nervous system disorders",
+        "input": "Is <INPUT> known to cause nervous system disorders?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Nervous system disorders",
+        "input": "Can <INPUT> cause side effects that affect the nervous system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Nervous system disorders",
+        "input": "Are there any known side effects of <INPUT> affecting the nervous system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Nervous system disorders",
+        "input": "Does <INPUT> adversely affect the nervous system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Nervous system disorders",
+        "input": "Do the side effects of <INPUT> impact the nervous system?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "Target": "Nervous system disorders",
+        "input": "Are nervous system functions adversely affected by <INPUT> ?",
+        "output": "<OUTPUT>"
+    }
+]

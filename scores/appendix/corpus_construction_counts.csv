@@ -1,0 +1,10 @@
+dataset,discovered_articles,retained_candidate_articles,budgeted_candidates,download_targets,processed_articles,paragraph_passages,table_passages,other_passages,total_constructed_passages,para+table==total,method_provenance
+bbbp,9160943,384995,384995,,222222,9103317,168084,0,9271401,True,"RECOUNTED streamed S3 archive property+molecule parts, dedup by PMCID"
+bace,54677,54677,40488,,34641,1693504,22582,0,1716086,True,RECOUNTED line-by-line downstream/passages/passages.jsonl (34769 parse-attempted files)
+clintox,4679243,4679243,525946,129289,58990,2582600,53749,0,2636349,True,RECOUNTED downstream/passages/passages.jsonl; ledger 392500/17.22M REFUTED (never in S3)
+hiv,,561920,30002,,22572,1232767,22465,0,1255232,True,RECOUNTED streamed passages_hiv.tar.gz (scope-cut build)
+tox21,,1579735,34082,,17741,772607,13021,0,785628,True,RECOUNTED streamed passages_tox21.tar.gz (scope-cut build)
+sider,,482652,94771,,83754,3820772,95385,0,3916157,True,RECOUNTED streamed passages_sider.tar.gz (property-route)
+esol,2539842,2539842,560128,,444283,20597221,400449,0,20997670,True,MANIFEST state/CHUNK_COUNTS.json (ledger). NOT independently verifiable: bulk/passages export TRUNCATED to 4x20000 shards = only 80000 articles / 3802170 passages persisted on S3 (18%); recounted persisted store = 80000 art / 3802170 pass (3730461 para + 71709 table). evaluated index unaffected.
+freesolv,1234502,1234502,203151,,165474,7514610,172972,0,7687582,True,"RECOUNTED streamed bulk/passages/part-0000{0..8}.tgz (9 shards, global passage_id dedup): 165474 articles / 7687582 passages (7514610 para + 172972 table), 0 dup, 0 missing -> CONFIRMS ledger exactly; full source store recoverable from bulk."
+lipo,,260146,4465,,4088,213281,3385,0,216666,True,RECOUNTED streamed passages_lipo.tar.gz (property-route)

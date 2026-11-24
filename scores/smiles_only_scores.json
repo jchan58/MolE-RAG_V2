@@ -1,0 +1,248 @@
+{
+ "bace": {
+  "qwen3_32b": {
+   "metric": "AUC",
+   "value": 0.501,
+   "n": 152,
+   "miss": 0
+  },
+  "ministral_3_14b": {
+   "metric": "AUC",
+   "value": 0.493,
+   "n": 152,
+   "miss": 0
+  },
+  "gpt5mini": {
+   "metric": "AUC",
+   "value": 0.606,
+   "n": 152,
+   "miss": 0
+  },
+  "opus_4_6": {
+   "metric": "AUC",
+   "value": 0.729,
+   "n": 152,
+   "miss": 0
+  }
+ },
+ "bbbp": {
+  "qwen3_32b": {
+   "metric": "AUC",
+   "value": 0.55,
+   "n": 205,
+   "miss": 0
+  },
+  "ministral_3_14b": {
+   "metric": "AUC",
+   "value": 0.369,
+   "n": 205,
+   "miss": 0
+  },
+  "gpt5mini": {
+   "metric": "AUC",
+   "value": 0.819,
+   "n": 204,
+   "miss": 1
+  },
+  "opus_4_6": {
+   "metric": "AUC",
+   "value": 0.872,
+   "n": 205,
+   "miss": 0
+  }
+ },
+ "clintox": {
+  "qwen3_32b": {
+   "metric": "AUC(mean-endpoint)",
+   "value": 0.427,
+   "endpoints": 2,
+   "n": 298,
+   "miss": 0
+  },
+  "ministral_3_14b": {
+   "metric": "AUC(mean-endpoint)",
+   "value": 0.559,
+   "endpoints": 2,
+   "n": 298,
+   "miss": 0
+  },
+  "gpt5mini": {
+   "metric": "AUC(mean-endpoint)",
+   "value": 0.381,
+   "endpoints": 2,
+   "n": 295,
+   "miss": 3
+  },
+  "opus_4_6": {
+   "metric": "AUC(mean-endpoint)",
+   "value": 0.521,
+   "endpoints": 2,
+   "n": 297,
+   "miss": 1
+  }
+ },
+ "hiv": {
+  "qwen3_32b": {
+   "metric": "AUC",
+   "value": 0.474,
+   "n": 4112,
+   "miss": 0
+  },
+  "ministral_3_14b": {
+   "metric": "AUC",
+   "value": 0.585,
+   "n": 4112,
+   "miss": 0
+  },
+  "gpt5mini": {
+   "metric": "AUC",
+   "value": 0.565,
+   "n": 4110,
+   "miss": 1
+  },
+  "opus_4_6": {
+   "metric": "AUC",
+   "value": 0.73,
+   "n": 4102,
+   "miss": 10
+  }
+ },
+ "sider": {
+  "qwen3_32b": {
+   "metric": "AUC(mean-endpoint)",
+   "value": 0.511,
+   "endpoints": 27,
+   "n": 3888,
+   "miss": 0
+  },
+  "ministral_3_14b": {
+   "metric": "AUC(mean-endpoint)",
+   "value": 0.504,
+   "endpoints": 27,
+   "n": 3888,
+   "miss": 0
+  },
+  "gpt5mini": {
+   "metric": "AUC(mean-endpoint)",
+   "value": 0.575,
+   "endpoints": 27,
+   "n": 3888,
+   "miss": 0
+  },
+  "opus_4_6": {
+   "metric": "AUC(mean-endpoint)",
+   "value": 0.698,
+   "endpoints": 27,
+   "n": 3870,
+   "miss": 18
+  }
+ },
+ "tox21": {
+  "qwen3_32b": {
+   "metric": "AUC(mean-endpoint)",
+   "value": 0.528,
+   "endpoints": 12,
+   "n": 7394,
+   "miss": 0
+  },
+  "ministral_3_14b": {
+   "metric": "AUC(mean-endpoint)",
+   "value": 0.503,
+   "endpoints": 12,
+   "n": 7394,
+   "miss": 0
+  },
+  "gpt5mini": {
+   "metric": "AUC(mean-endpoint)",
+   "value": 0.704,
+   "endpoints": 12,
+   "n": 7393,
+   "miss": 1
+  },
+  "opus_4_6": {
+   "metric": "AUC(mean-endpoint)",
+   "value": 0.767,
+   "endpoints": 12,
+   "n": 7370,
+   "miss": 24
+  }
+ },
+ "esol": {
+  "qwen3_32b": {
+   "metric": "RMSE",
+   "value": 1.959,
+   "n": 114,
+   "miss": 0
+  },
+  "ministral_3_14b": {
+   "metric": "RMSE",
+   "value": 3.806,
+   "n": 114,
+   "miss": 0
+  },
+  "gpt5mini": {
+   "metric": "RMSE",
+   "value": 1.122,
+   "n": 89,
+   "miss": 25
+  },
+  "opus_4_6": {
+   "metric": "RMSE",
+   "value": 0.901,
+   "n": 114,
+   "miss": 0
+  }
+ },
+ "freesolv": {
+  "qwen3_32b": {
+   "metric": "RMSE",
+   "value": 4.68,
+   "n": 65,
+   "miss": 0
+  },
+  "ministral_3_14b": {
+   "metric": "RMSE",
+   "value": 4.449,
+   "n": 65,
+   "miss": 0
+  },
+  "gpt5mini": {
+   "metric": "RMSE",
+   "value": 7.245,
+   "n": 64,
+   "miss": 1
+  },
+  "opus_4_6": {
+   "metric": "RMSE",
+   "value": 1.299,
+   "n": 65,
+   "miss": 0
+  }
+ },
+ "lipo": {
+  "qwen3_32b": {
+   "metric": "RMSE",
+   "value": 1.286,
+   "n": 420,
+   "miss": 0
+  },
+  "ministral_3_14b": {
+   "metric": "RMSE",
+   "value": 1.127,
+   "n": 420,
+   "miss": 0
+  },
+  "gpt5mini": {
+   "metric": "RMSE",
+   "value": 1.432,
+   "n": 324,
+   "miss": 96
+  },
+  "opus_4_6": {
+   "metric": "RMSE",
+   "value": 0.956,
+   "n": 420,
+   "miss": 0
+  }
+ }
+}

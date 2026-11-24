@@ -1,0 +1,54 @@
+[
+    {
+        "input": "Is <INPUT> toxic?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Is the molecule <INPUT> known to exhibit toxic properties in biological systems?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Is <INPUT> classified as a hazardous substance with documented toxicity?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Does <INPUT> have documented toxicity in biological systems?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Is <INPUT> considered to be a toxic substance?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Does <INPUT> have toxicity?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Do you think that <INPUT> is toxic?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Can <INPUT> be considered toxic?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Is <INPUT> associated with harmful and toxic effects?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Is the substance <INPUT> toxic for human?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "<INPUT> Would you say that the molecule given above is toxic?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "<INPUT> Is it toxic?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Tell me if <INPUT> is toxic.",
+        "output": "<OUTPUT>"
+    }
+]

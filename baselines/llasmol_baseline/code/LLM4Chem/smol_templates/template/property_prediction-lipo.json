@@ -1,0 +1,54 @@
+[
+    {
+        "input": "What is the octanol/water distribution coefficient (logD at pH 7.4) of <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Please predict the octanol/water distribution coefficient (logD at pH 7.4) of <INPUT> .",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Tell me the octanol/water distribution coefficient (logD at pH 7.4) of <INPUT> .",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Predict the octanol/water distribution coefficient logD under the circumstance of pH 7.4 for <INPUT> .",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "<INPUT> What is the octanol/water distribution coefficient logD under the circumstance of pH 7.4 for the molecule given above?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "For this molecule <INPUT>, predict the octanol/water distribution coefficient (logD at pH 7.4).",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Could you provide information on the octanol/water distribution coefficient (logD) of <INPUT> under pH 7.4?",
+        "output": "Sure. The value is <OUTPUT> ."
+    },
+    {
+        "input": "At pH 7.4, what is the logD value (the octanol/water distribution coefficient) of <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "<INPUT> What is the logD (the octanol/water distribution coefficient) at pH 7.4 for the given molecule?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "What value does the octanol/water distribution coefficient (logD at pH 7.4) have for <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "What is the logD at pH 7.4 (the octanol/water distribution coefficient) associated with <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Provide the logD (the octanol/water distribution coefficient) at pH 7.4 of <INPUT> .",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "<INPUT> Please predict the octanol/water distribution coefficient (logD at pH 7.4) for the molecule given above.",
+        "output": "<OUTPUT>"
+    }
+]

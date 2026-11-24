@@ -1,0 +1,658 @@
+{
+  "label": "LlaSMol (Mistral-7B)",
+  "mode": "released-checkpoint inference (no fine-tuning, no seeds)",
+  "supported_tasks": [
+    "esol",
+    "lipo",
+    "bbbp",
+    "clintox",
+    "hiv",
+    "sider"
+  ],
+  "unsupported_tasks": {
+    "freesolv": "not in SMolInstruct (its PP regression subset = ESOL + Lipophilicity only)",
+    "bace": "not in SMolInstruct property-prediction subset",
+    "tox21": "not in SMolInstruct property-prediction subset"
+  },
+  "results": {
+    "esol": {
+      "task": "esol",
+      "task_type": "regression",
+      "status": "ok",
+      "n_test_molecules": 114,
+      "n_units": 114,
+      "n_unparseable_smiles": 0,
+      "generation": {
+        "num_beams": 4,
+        "num_return_sequences": 1,
+        "max_new_tokens": 20,
+        "max_input_tokens": 512,
+        "do_sample": false
+      },
+      "prompt_provenance": "SMolInstruct verbatim templates (bundled), template_id = unit_index mod n_templates",
+      "native_rmse": 1.1816580800645413,
+      "native_num_no_answer": 26,
+      "native_num_invalid": 0,
+      "metric": "RMSE",
+      "value": 1.2871685489568576,
+      "rmse_imputed_mean": 1.2871685489568576,
+      "imputed_train_mean": -2.951507760532151,
+      "n_imputed": 26
+    },
+    "lipo": {
+      "task": "lipo",
+      "task_type": "regression",
+      "status": "ok",
+      "n_test_molecules": 420,
+      "n_units": 420,
+      "n_unparseable_smiles": 0,
+      "generation": {
+        "num_beams": 4,
+        "num_return_sequences": 1,
+        "max_new_tokens": 20,
+        "max_input_tokens": 512,
+        "do_sample": false
+      },
+      "prompt_provenance": "SMolInstruct verbatim templates (bundled), template_id = unit_index mod n_templates",
+      "native_rmse": 1.0284563096954489,
+      "native_num_no_answer": 0,
+      "native_num_invalid": 0,
+      "metric": "RMSE",
+      "value": 1.0284563096954489,
+      "rmse_imputed_mean": 1.0284563096954489,
+      "imputed_train_mean": 2.1749136904761905,
+      "n_imputed": 0
+    },
+    "bbbp": {
+      "task": "bbbp",
+      "task_type": "classification",
+      "status": "ok",
+      "n_test_molecules": 205,
+      "n_units": 205,
+      "n_unparseable_smiles": 0,
+      "generation": {
+        "num_beams": 4,
+        "num_return_sequences": 1,
+        "max_new_tokens": 20,
+        "max_input_tokens": 512,
+        "do_sample": false
+      },
+      "prompt_provenance": "SMolInstruct verbatim templates (bundled), template_id = unit_index mod n_templates",
+      "metric": "ROC-AUC",
+      "value": 0.8630024610336342,
+      "prob_auc_mean": 0.8630024610336342,
+      "native_hardlabel_auc_mean": 0.656754170084769,
+      "n_endpoints_scored": 1,
+      "per_endpoint": [
+        {
+          "endpoint": "p_np",
+          "prob_auc": 0.8630024610336342,
+          "native": {
+            "num_all": 205,
+            "num_no_answer": 0,
+            "num_invalid": 0,
+            "num_correct": 172,
+            "num_scored": 205,
+            "roc_auc_score": 0.656754170084769,
+            "accuracy": 0.8390243902439024,
+            "f1_score": 0.9048991354466859,
+            "precision": 0.8351063829787234,
+            "recall": 0.9874213836477987
+          },
+          "n_pos": 159,
+          "n": 205
+        }
+      ],
+      "native_total_no_answer": 0,
+      "native_total_invalid": 0,
+      "native_total_correct": 172,
+      "native_total_scored": 205,
+      "native_accuracy": 0.8390243902439024
+    },
+    "clintox": {
+      "task": "clintox",
+      "task_type": "classification",
+      "status": "ok",
+      "n_test_molecules": 149,
+      "n_units": 149,
+      "n_unparseable_smiles": 0,
+      "generation": {
+        "num_beams": 4,
+        "num_return_sequences": 1,
+        "max_new_tokens": 20,
+        "max_input_tokens": 512,
+        "do_sample": false
+      },
+      "prompt_provenance": "SMolInstruct verbatim templates (bundled), template_id = unit_index mod n_templates",
+      "metric": "ROC-AUC",
+      "value": 0.7126984126984127,
+      "prob_auc_mean": 0.7126984126984127,
+      "native_hardlabel_auc_mean": 0.5,
+      "n_endpoints_scored": 1,
+      "per_endpoint": [
+        {
+          "endpoint": "CT_TOX",
+          "prob_auc": 0.7126984126984127,
+          "native": {
+            "num_all": 149,
+            "num_no_answer": 0,
+            "num_invalid": 0,
+            "num_correct": 140,
+            "num_scored": 149,
+            "roc_auc_score": 0.5,
+            "accuracy": 0.9395973154362416,
+            "f1_score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          "n_pos": 9,
+          "n": 149
+        }
+      ],
+      "native_total_no_answer": 0,
+      "native_total_invalid": 0,
+      "native_total_correct": 140,
+      "native_total_scored": 149,
+      "native_accuracy": 0.9395973154362416
+    },
+    "hiv": {
+      "task": "hiv",
+      "task_type": "classification",
+      "status": "ok",
+      "n_test_molecules": 4112,
+      "n_units": 4112,
+      "n_unparseable_smiles": 0,
+      "generation": {
+        "num_beams": 4,
+        "num_return_sequences": 1,
+        "max_new_tokens": 20,
+        "max_input_tokens": 512,
+        "do_sample": false
+      },
+      "prompt_provenance": "SMolInstruct verbatim templates (bundled), template_id = unit_index mod n_templates",
+      "metric": "ROC-AUC",
+      "value": 0.6685963644224078,
+      "prob_auc_mean": 0.6685963644224078,
+      "native_hardlabel_auc_mean": 0.5,
+      "n_endpoints_scored": 1,
+      "per_endpoint": [
+        {
+          "endpoint": "HIV_active",
+          "prob_auc": 0.6685963644224078,
+          "native": {
+            "num_all": 4112,
+            "num_no_answer": 0,
+            "num_invalid": 0,
+            "num_correct": 4001,
+            "num_scored": 4112,
+            "roc_auc_score": 0.5,
+            "accuracy": 0.9730058365758755,
+            "f1_score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          "n_pos": 111,
+          "n": 4112
+        }
+      ],
+      "native_total_no_answer": 0,
+      "native_total_invalid": 0,
+      "native_total_correct": 4001,
+      "native_total_scored": 4112,
+      "native_accuracy": 0.9730058365758755
+    },
+    "sider": {
+      "task": "sider",
+      "task_type": "classification",
+      "status": "ok",
+      "n_test_molecules": 144,
+      "n_units": 2880,
+      "n_unparseable_smiles": 0,
+      "generation": {
+        "num_beams": 4,
+        "num_return_sequences": 1,
+        "max_new_tokens": 20,
+        "max_input_tokens": 512,
+        "do_sample": false
+      },
+      "prompt_provenance": "SMolInstruct verbatim templates (bundled), template_id = unit_index mod n_templates",
+      "supported_endpoints": [
+        "Hepatobiliary_disorders",
+        "Metabolism_and_nutrition_disorders",
+        "Eye_disorders",
+        "Musculoskeletal_and_connective_tissue_disorders",
+        "Gastrointestinal_disorders",
+        "Immune_system_disorders",
+        "Reproductive_system_and_breast_disorders",
+        "Neoplasms_benign,_malignant_and_unspecified_(incl_cysts_and_polyps)",
+        "Endocrine_disorders",
+        "Vascular_disorders",
+        "Blood_and_lymphatic_system_disorders",
+        "Skin_and_subcutaneous_tissue_disorders",
+        "Congenital,_familial_and_genetic_disorders",
+        "Respiratory,_thoracic_and_mediastinal_disorders",
+        "Psychiatric_disorders",
+        "Renal_and_urinary_disorders",
+        "Pregnancy,_puerperium_and_perinatal_conditions",
+        "Ear_and_labyrinth_disorders",
+        "Cardiac_disorders",
+        "Nervous_system_disorders"
+      ],
+      "n_supported_endpoints": 20,
+      "n_total_endpoints": 27,
+      "unsupported_endpoints": [
+        "Product_issues",
+        "Investigations",
+        "Social_circumstances",
+        "General_disorders_and_administration_site_conditions",
+        "Surgical_and_medical_procedures",
+        "Infections_and_infestations",
+        "Injury,_poisoning_and_procedural_complications"
+      ],
+      "metric": "ROC-AUC",
+      "value": 0.556579688227212,
+      "prob_auc_mean": 0.556579688227212,
+      "native_hardlabel_auc_mean": 0.5095164117401904,
+      "n_endpoints_scored": 20,
+      "per_endpoint": [
+        {
+          "endpoint": "Hepatobiliary_disorders",
+          "prob_auc": 0.4360977564102564,
+          "native": {
+            "num_all": 144,
+            "num_no_answer": 2,
+            "num_invalid": 0,
+            "num_correct": 78,
+            "num_scored": 142,
+            "roc_auc_score": 0.5168269230769231,
+            "accuracy": 0.5492957746478874,
+            "f1_score": 0.673469387755102,
+            "precision": 0.559322033898305,
+            "recall": 0.8461538461538461
+          },
+          "n_pos": 78,
+          "n": 144
+        },
+        {
+          "endpoint": "Metabolism_and_nutrition_disorders",
+          "prob_auc": 0.5264604810996564,
+          "native": {
+            "num_all": 144,
+            "num_no_answer": 2,
+            "num_invalid": 0,
+            "num_correct": 98,
+            "num_scored": 142,
+            "roc_auc_score": 0.5170675830469644,
+            "accuracy": 0.6901408450704225,
+            "f1_score": 0.8135593220338984,
+            "precision": 0.6906474820143885,
+            "recall": 0.9896907216494846
+          },
+          "n_pos": 97,
+          "n": 144
+        },
+        {
+          "endpoint": "Eye_disorders",
+          "prob_auc": 0.6541274817136886,
+          "native": {
+            "num_all": 144,
+            "num_no_answer": 2,
+            "num_invalid": 0,
+            "num_correct": 90,
+            "num_scored": 142,
+            "roc_auc_score": 0.5339602925809823,
+            "accuracy": 0.6338028169014085,
+            "f1_score": 0.7657657657657657,
+            "precision": 0.6296296296296297,
+            "recall": 0.9770114942528736
+          },
+          "n_pos": 87,
+          "n": 144
+        },
+        {
+          "endpoint": "Musculoskeletal_and_connective_tissue_disorders",
+          "prob_auc": 0.5851449275362319,
+          "native": {
+            "num_all": 144,
+            "num_no_answer": 2,
+            "num_invalid": 0,
+            "num_correct": 96,
+            "num_scored": 142,
+            "roc_auc_score": 0.5,
+            "accuracy": 0.676056338028169,
+            "f1_score": 0.8067226890756303,
+            "precision": 0.676056338028169,
+            "recall": 1.0
+          },
+          "n_pos": 96,
+          "n": 144
+        },
+        {
+          "endpoint": "Gastrointestinal_disorders",
+          "prob_auc": 0.5843768634466309,
+          "native": {
+            "num_all": 144,
+            "num_no_answer": 2,
+            "num_invalid": 0,
+            "num_correct": 129,
+            "num_scored": 142,
+            "roc_auc_score": 0.5,
+            "accuracy": 0.9084507042253521,
+            "f1_score": 0.9520295202952029,
+            "precision": 0.9084507042253521,
+            "recall": 1.0
+          },
+          "n_pos": 129,
+          "n": 144
+        },
+        {
+          "endpoint": "Immune_system_disorders",
+          "prob_auc": 0.4922619047619048,
+          "native": {
+            "num_all": 144,
+            "num_no_answer": 2,
+            "num_invalid": 0,
+            "num_correct": 112,
+            "num_scored": 142,
+            "roc_auc_score": 0.5,
+            "accuracy": 0.7887323943661971,
+            "f1_score": 0.8818897637795275,
+            "precision": 0.7887323943661971,
+            "recall": 1.0
+          },
+          "n_pos": 112,
+          "n": 144
+        },
+        {
+          "endpoint": "Reproductive_system_and_breast_disorders",
+          "prob_auc": 0.5745800445253997,
+          "native": {
+            "num_all": 144,
+            "num_no_answer": 2,
+            "num_invalid": 0,
+            "num_correct": 76,
+            "num_scored": 142,
+            "roc_auc_score": 0.5278283748229102,
+            "accuracy": 0.5352112676056338,
+            "f1_score": 0.5875,
+            "precision": 0.5949367088607594,
+            "recall": 0.5802469135802469
+          },
+          "n_pos": 81,
+          "n": 144
+        },
+        {
+          "endpoint": "Neoplasms_benign,_malignant_and_unspecified_(incl_cysts_and_polyps)",
+          "prob_auc": 0.5622159090909091,
+          "native": {
+            "num_all": 144,
+            "num_no_answer": 2,
+            "num_invalid": 0,
+            "num_correct": 109,
+            "num_scored": 142,
+            "roc_auc_score": 0.4954545454545455,
+            "accuracy": 0.7676056338028169,
+            "f1_score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          "n_pos": 32,
+          "n": 144
+        },
+        {
+          "endpoint": "Endocrine_disorders",
+          "prob_auc": 0.5360795454545454,
+          "native": {
+            "num_all": 144,
+            "num_no_answer": 2,
+            "num_invalid": 0,
+            "num_correct": 109,
+            "num_scored": 142,
+            "roc_auc_score": 0.5065340909090909,
+            "accuracy": 0.7676056338028169,
+            "f1_score": 0.05714285714285714,
+            "precision": 0.3333333333333333,
+            "recall": 0.03125
+          },
+          "n_pos": 32,
+          "n": 144
+        },
+        {
+          "endpoint": "Vascular_disorders",
+          "prob_auc": 0.5413690476190476,
+          "native": {
+            "num_all": 144,
+            "num_no_answer": 2,
+            "num_invalid": 0,
+            "num_correct": 111,
+            "num_scored": 142,
+            "roc_auc_score": 0.4955357142857143,
+            "accuracy": 0.7816901408450704,
+            "f1_score": 0.8774703557312253,
+            "precision": 0.7872340425531915,
+            "recall": 0.9910714285714286
+          },
+          "n_pos": 112,
+          "n": 144
+        },
+        {
+          "endpoint": "Blood_and_lymphatic_system_disorders",
+          "prob_auc": 0.4570512820512821,
+          "native": {
+            "num_all": 144,
+            "num_no_answer": 2,
+            "num_invalid": 0,
+            "num_correct": 88,
+            "num_scored": 142,
+            "roc_auc_score": 0.4888888888888889,
+            "accuracy": 0.6197183098591549,
+            "f1_score": 0.7652173913043478,
+            "precision": 0.6285714285714286,
+            "recall": 0.9777777777777777
+          },
+          "n_pos": 90,
+          "n": 144
+        },
+        {
+          "endpoint": "Skin_and_subcutaneous_tissue_disorders",
+          "prob_auc": 0.5862433862433862,
+          "native": {
+            "num_all": 144,
+            "num_no_answer": 2,
+            "num_invalid": 0,
+            "num_correct": 135,
+            "num_scored": 142,
+            "roc_auc_score": 0.5,
+            "accuracy": 0.9507042253521126,
+            "f1_score": 0.9747292418772563,
+            "precision": 0.9507042253521126,
+            "recall": 1.0
+          },
+          "n_pos": 135,
+          "n": 144
+        },
+        {
+          "endpoint": "Congenital,_familial_and_genetic_disorders",
+          "prob_auc": 0.5965909090909091,
+          "native": {
+            "num_all": 144,
+            "num_no_answer": 2,
+            "num_invalid": 0,
+            "num_correct": 120,
+            "num_scored": 142,
+            "roc_auc_score": 0.5,
+            "accuracy": 0.8450704225352113,
+            "f1_score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          "n_pos": 22,
+          "n": 144
+        },
+        {
+          "endpoint": "Respiratory,_thoracic_and_mediastinal_disorders",
+          "prob_auc": 0.5727124183006537,
+          "native": {
+            "num_all": 144,
+            "num_no_answer": 2,
+            "num_invalid": 0,
+            "num_correct": 108,
+            "num_scored": 142,
+            "roc_auc_score": 0.5,
+            "accuracy": 0.7605633802816901,
+            "f1_score": 0.864,
+            "precision": 0.7605633802816901,
+            "recall": 1.0
+          },
+          "n_pos": 108,
+          "n": 144
+        },
+        {
+          "endpoint": "Psychiatric_disorders",
+          "prob_auc": 0.6062753036437246,
+          "native": {
+            "num_all": 144,
+            "num_no_answer": 2,
+            "num_invalid": 0,
+            "num_correct": 104,
+            "num_scored": 142,
+            "roc_auc_score": 0.5083502024291497,
+            "accuracy": 0.7323943661971831,
+            "f1_score": 0.8442622950819673,
+            "precision": 0.7357142857142858,
+            "recall": 0.9903846153846154
+          },
+          "n_pos": 104,
+          "n": 144
+        },
+        {
+          "endpoint": "Renal_and_urinary_disorders",
+          "prob_auc": 0.443161231884058,
+          "native": {
+            "num_all": 144,
+            "num_no_answer": 2,
+            "num_invalid": 0,
+            "num_correct": 96,
+            "num_scored": 142,
+            "roc_auc_score": 0.505661231884058,
+            "accuracy": 0.676056338028169,
+            "f1_score": 0.8050847457627118,
+            "precision": 0.6785714285714286,
+            "recall": 0.9895833333333334
+          },
+          "n_pos": 96,
+          "n": 144
+        },
+        {
+          "endpoint": "Pregnancy,_puerperium_and_perinatal_conditions",
+          "prob_auc": 0.4810267857142857,
+          "native": {
+            "num_all": 144,
+            "num_no_answer": 2,
+            "num_invalid": 0,
+            "num_correct": 128,
+            "num_scored": 142,
+            "roc_auc_score": 0.5,
+            "accuracy": 0.9014084507042254,
+            "f1_score": 0.0,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          "n_pos": 14,
+          "n": 144
+        },
+        {
+          "endpoint": "Ear_and_labyrinth_disorders",
+          "prob_auc": 0.592636815920398,
+          "native": {
+            "num_all": 144,
+            "num_no_answer": 2,
+            "num_invalid": 0,
+            "num_correct": 83,
+            "num_scored": 142,
+            "roc_auc_score": 0.5835820895522388,
+            "accuracy": 0.5845070422535211,
+            "f1_score": 0.562962962962963,
+            "precision": 0.5588235294117647,
+            "recall": 0.5671641791044776
+          },
+          "n_pos": 67,
+          "n": 144
+        },
+        {
+          "endpoint": "Cardiac_disorders",
+          "prob_auc": 0.6268756998880178,
+          "native": {
+            "num_all": 144,
+            "num_no_answer": 2,
+            "num_invalid": 0,
+            "num_correct": 96,
+            "num_scored": 142,
+            "roc_auc_score": 0.5106382978723405,
+            "accuracy": 0.676056338028169,
+            "f1_score": 0.8050847457627118,
+            "precision": 0.6737588652482269,
+            "recall": 1.0
+          },
+          "n_pos": 95,
+          "n": 144
+        },
+        {
+          "endpoint": "Nervous_system_disorders",
+          "prob_auc": 0.6763059701492538,
+          "native": {
+            "num_all": 144,
+            "num_no_answer": 2,
+            "num_invalid": 0,
+            "num_correct": 134,
+            "num_scored": 142,
+            "roc_auc_score": 0.5,
+            "accuracy": 0.9436619718309859,
+            "f1_score": 0.9710144927536232,
+            "precision": 0.9436619718309859,
+            "recall": 1.0
+          },
+          "n_pos": 134,
+          "n": 144
+        }
+      ],
+      "native_total_no_answer": 40,
+      "native_total_invalid": 0,
+      "native_total_correct": 2100,
+      "native_total_scored": 2840,
+      "native_accuracy": 0.7394366197183099
+    }
+  },
+  "billing": {
+    "llasmol-esol-2026-10-12-04-27-58-342": {
+      "instance": "ml.g6.4xlarge",
+      "tasks": "esol,lipo,bbbp,clintox,hiv,sider",
+      "smoke": "0",
+      "status": "Failed",
+      "billable_s": 2489
+    },
+    "llasmol-esol-2026-10-12-05-24-38-584": {
+      "instance": "ml.g6e.12xlarge",
+      "tasks": "esol,lipo,bbbp,clintox,hiv,sider",
+      "smoke": "0",
+      "status": "Completed",
+      "billable_s": 1962
+    },
+    "llasmol-smoke-esol-2026-10-12-06-29-14-936": {
+      "instance": "ml.g5.12xlarge",
+      "tasks": "esol,lipo,bbbp,clintox,hiv,sider",
+      "smoke": "1",
+      "status": "Completed",
+      "billable_s": 285
+    },
+    "llasmol-esol-2026-10-12-06-35-35-521": {
+      "instance": "ml.g5.12xlarge",
+      "tasks": "esol,lipo,bbbp,clintox,hiv,sider",
+      "smoke": "0",
+      "status": "Completed",
+      "billable_s": 2554
+    }
+  },
+  "total_billable_seconds": 7005,
+  "notes": "osunlp/LlaSMol-Mistral-7B = LoRA adapter (modules_to_save=[]) on openly-available mistralai/Mistral-7B-v0.1, instruction-tuned on SMolInstruct; merged and run with LlaSMol's own PP generation config (num_beams=4, 1 return seq, max_new_tokens=20, deterministic). Prompts are SMolInstruct's EXACT verbatim templates with <SMILES> core tags, SMILES canonicalized by LlaSMol's own canonicalize_molecule_smiles, chat wrapped as <s>[INST] .. [/INST], answers extracted with the repo's TASK_TAGS. Classification ROC-AUC headline = P(Yes) via sequence-LL of the two canonical <BOOLEAN> responses (suite-comparable); LlaSMol-native hard-label AUC/accuracy (calculate_boolean_metrics, verbatim) also reported. clintox evaluated against the CT_TOX endpoint ('Is X toxic?', verified 16/16). sider = mean AUC over the 20/27 endpoints SMolInstruct has templates for (7 masked). Regression RMSE headline imputes the train-target mean for unparseable outputs (over all test molecules); native RMSE (drops unparseable) + count also reported. WARNING: LlaSMol was instruction-tuned on these MoleculeNet PP datasets, and 74-92% of our scaffold-split TEST molecules appear in SMolInstruct's train/dev -- these numbers are NOT held-out generalization."
+}

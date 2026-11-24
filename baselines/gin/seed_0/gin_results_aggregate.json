@@ -1,0 +1,155 @@
+{
+  "bbbp": {
+    "metric": "macro_roc_auc",
+    "test_mean": 0.9294,
+    "test_std": 0.002,
+    "test_per_seed": [
+      0.9266,
+      0.9311,
+      0.9306
+    ],
+    "n_test": 197,
+    "selected_hp": {
+      "lr": 0.001,
+      "dropout": 0.5,
+      "epochs": 100,
+      "batch_size": 128
+    }
+  },
+  "bace": {
+    "metric": "macro_roc_auc",
+    "test_mean": 0.7495,
+    "test_std": 0.0228,
+    "test_per_seed": [
+      0.7672,
+      0.7173,
+      0.764
+    ],
+    "n_test": 152,
+    "selected_hp": {
+      "lr": 0.001,
+      "dropout": 0.5,
+      "epochs": 100,
+      "batch_size": 128
+    }
+  },
+  "hiv": {
+    "metric": "macro_roc_auc",
+    "test_mean": 0.7904,
+    "test_std": 0.002,
+    "test_per_seed": [
+      0.7932,
+      0.7889,
+      0.7889
+    ],
+    "n_test": 4111,
+    "selected_hp": {
+      "lr": 0.0001,
+      "dropout": 0.5,
+      "epochs": 60,
+      "batch_size": 256
+    }
+  },
+  "clintox": {
+    "metric": "macro_roc_auc",
+    "test_mean": 0.7078,
+    "test_std": 0.0315,
+    "test_per_seed": [
+      0.7066,
+      0.7469,
+      0.6699
+    ],
+    "n_test": 148,
+    "selected_hp": {
+      "lr": 0.0001,
+      "dropout": 0.5,
+      "epochs": 100,
+      "batch_size": 128
+    }
+  },
+  "sider": {
+    "metric": "macro_roc_auc",
+    "test_mean": 0.5902,
+    "test_std": 0.0045,
+    "test_per_seed": [
+      0.5848,
+      0.5898,
+      0.5959
+    ],
+    "n_test": 144,
+    "selected_hp": {
+      "lr": 0.0001,
+      "dropout": 0.5,
+      "epochs": 100,
+      "batch_size": 64
+    }
+  },
+  "tox21": {
+    "metric": "macro_roc_auc",
+    "test_mean": 0.7862,
+    "test_std": 0.0014,
+    "test_per_seed": [
+      0.7843,
+      0.787,
+      0.7874
+    ],
+    "n_test": 783,
+    "selected_hp": {
+      "lr": 0.0001,
+      "dropout": 0.5,
+      "epochs": 100,
+      "batch_size": 128
+    }
+  },
+  "esol": {
+    "metric": "rmse",
+    "test_mean": 0.979,
+    "test_std": 0.0644,
+    "test_per_seed": [
+      0.9404,
+      0.9268,
+      1.0697
+    ],
+    "n_test": 111,
+    "selected_hp": {
+      "lr": 0.001,
+      "dropout": 0.5,
+      "epochs": 100,
+      "batch_size": 128
+    }
+  },
+  "freesolv": {
+    "metric": "rmse",
+    "test_mean": 3.3227,
+    "test_std": 0.2966,
+    "test_per_seed": [
+      3.7155,
+      3.2541,
+      2.9987
+    ],
+    "n_test": 65,
+    "selected_hp": {
+      "lr": 0.001,
+      "dropout": 0.5,
+      "epochs": 100,
+      "batch_size": 128
+    }
+  },
+  "lipo": {
+    "metric": "rmse",
+    "test_mean": 0.7594,
+    "test_std": 0.0196,
+    "test_per_seed": [
+      0.7406,
+      0.7865,
+      0.7511
+    ],
+    "n_test": 420,
+    "selected_hp": {
+      "lr": 0.001,
+      "dropout": 0.5,
+      "epochs": 100,
+      "batch_size": 128
+    }
+  }
+}

@@ -1,0 +1,54 @@
+[
+    {
+        "input": "Can <INPUT> pass through the blood-brain barrier (BBB)?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Can <INPUT> permeate the blood-brain barrier?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Does <INPUT> have the blood-brain barrier permeability (BBBP)?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Does <INPUT> have the ability to penetrate the blood-brain barrier?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Is <INPUT> capable of crossing the blood-brain barrier (BBB)?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Can <INPUT> penetrate the blood-brain barrier?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Is <INPUT> capable of crossing the blood-brain barrier (BBB)?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Is it likely for <INPUT> to effectively traverse the blood-brain barrier?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Is blood-brain barrier permeability (BBBP) present in <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Does <INPUT> demonstrate the potential for blood-brain barrier permeation (BBBP)?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Does blood-brain barrier permeability (BBBP) apply to <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Is blood-brain barrier permeability (BBBP) a property of <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Would <INPUT> be able to successfully permeate the blood-brain barrier?",
+        "output": "<OUTPUT>"
+    }
+]

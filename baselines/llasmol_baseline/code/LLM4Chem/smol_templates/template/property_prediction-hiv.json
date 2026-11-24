@@ -1,0 +1,54 @@
+[
+    {
+        "input": "Is <INPUT> known to inhibit HIV replication?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Does <INPUT> inhibit viral replication for HIV?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Could <INPUT> be used to prevent HIV replication?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Can <INPUT> inhibit the replication of human immunodeficiency virus (HIV)?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Could HIV replication be slowed or stopped by <INPUT> ?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Does <INPUT> have an inhibitory impact on HIV?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Can <INPUT> effectively inhibit HIV replication?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Does <INPUT> exhibit inhibitory effects on HIV replication?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Is <INPUT> capable of suppressing HIV replication?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Would <INPUT> have the ability to hinder HIV replication?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Can <INPUT> serve as an inhibitor of HIV replication?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "Do you suggest that <INPUT> can impede the replication of HIV?",
+        "output": "<OUTPUT>"
+    },
+    {
+        "input": "<INPUT> Predict if the molecule given above have an inhibitory impact on HIV.",
+        "output": "<OUTPUT>"
+    }
+]

@@ -1,0 +1,52 @@
+================================================================================
+SECTION F -- CONTEXT ABLATION  (ABLATION_EVALUATED)
+source_files: context_ablation_appendix_v1/code/conditions.py (renderers),
+              run_ablation.py (runner), condition_definitions.json (field map)
+model       : Qwen3-32B ONLY (qwen.qwen3-32b-v1:0), Bedrock, temperature=0, maxTokens=1600
+design      : ONE initial-assessment template (identical to run_fw_multi ARM A:
+              "Give a concise assessment and your prediction." + PRED_SCHEMA), with the
+              molecular-context / reference / comparison BLOCKS toggled on or off per
+              condition. No literature (arm C) and no self-review (arm B). Each condition
+              is an independent fresh call. References (identity + order) are IDENTICAL
+              across all ref-containing conditions.
+              NOTE: condition MRD_no_id == the REPORTED fw_multi arm-A initial context
+              (fact_block + refs_block + diff_block, NO identifiers).
+              Condition S == the SMILES-only baseline (see 02_smiles_only_baseline.txt).
+================================================================================
+
+COMMON TEMPLATE (per condition, blocks included per the matrix below):
+TASK: {taskdef}
+[DESCRIPTOR GLOSSARY: {GLOSS}                         -- iff descriptors block on]
+[VERIFIED TARGET IDENTITY: name/IUPAC/aliases/InChIKey -- iff identifiers block on]
+TARGET standardized_SMILES={canonical}[; formula=..; heavy_atoms=..  -- iff descriptors on][; AccFG=..  -- iff FG on][; descriptors: ..  -- iff descriptors on]
+[FIVE SIMILAR TRAINING REFERENCES ...                 -- iff references block on; ref
+   annotations (identity/descriptors/FG) included only if the matching ref_* block on]
+[EXPLICIT TARGET-REFERENCE DIFFERENCES ...            -- iff explicit_comparisons on]
+[ENDPOINTS (predict a probability for EACH): ...      -- multilabel only]
+
+Give a concise assessment and your prediction.
+{PRED_SCHEMA}
+
+BLOCK-INCLUSION MATRIX (component present = 1). q_* = applied to target; r_* = per reference.
+Components: q_id=query identifiers; q_desc=query descriptors(+formula+heavy_atoms+GLOSS);
+q_fg=query AccFG; refs=bare references; r_id=ref identifiers; r_desc=ref descriptors;
+r_fg=ref functional groups; cmp=explicit comparisons. (literature & iterative_review = 0 for all.)
+
+  condition      q_id q_desc q_fg | refs r_id r_desc r_fg | cmp   primary
+  S                0    0     0   |  0    0    0     0   |  0    yes   (SMILES-only)
+  R                0    0     0   |  1    0    0     0   |  0    yes
+  M                1    1     1   |  0    0    0     0   |  0    yes
+  MR               1    1     1   |  1    1    1     1   |  0    yes
+  MRD              1    1     1   |  1    1    1     1   |  1    yes
+  MR_no_id         0    1     1   |  1    0    1     1   |  0    yes
+  MR_no_desc       1    0     1   |  1    1    0     1   |  0    yes
+  MR_no_fg         1    1     0   |  1    1    1     0   |  0    yes
+  MRD_no_id        0    1     1   |  1    0    1     1   |  1    no   (= reported fw_multi arm-A)
+  M_Rbare          1    1     1   |  1    0    0     0   |  0    no   (optional factorial point)
+
+CONTRASTS (from condition_definitions.json):
+  R-S  labeled refs help w/o annotations          MR-M   annotated refs beyond query context
+  M-S  query molecular context helps w/o refs      MRD-MR explicit comparisons beyond values
+  MR-R query+ref annotations beyond bare refs      MR-MR_no_id / _no_desc / _no_fg : each component
+improvement_convention: dAUC=AUC_aug-AUC_cmp (pp); dRMSE=RMSE_cmp-RMSE_aug; positive=improvement.
+The full machine-readable field map is condition_definitions.json (copied into this dir).

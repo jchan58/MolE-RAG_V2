@@ -1,0 +1,56 @@
+================================================================================
+MULTILABEL ENDPOINT -> DEFINITION MAP
+These are the entity ids used as {endpoint_id} in the multilabel PRED_SCHEMA
+{"endpoints":{"<endpoint_id>": <prob 0..1>, ...}} and shown to the predictor in the
+"ENDPOINTS (predict a probability for EACH): ..." line of base_prompt.
+Source: fw_multi/data/<ds>/entities.json task_entity_ids + run_fw_multi.py CONFIG taskdef.
+================================================================================
+
+TOX21 (12 assays; 1 = compound ACTIVE in that assay)
+nuclear-receptor signalling:
+  tox21:NR-AR            Androgen receptor (full)
+  tox21:NR-AR-LBD        Androgen receptor, ligand-binding domain
+  tox21:NR-AhR           Aryl hydrocarbon receptor
+  tox21:NR-Aromatase     Aromatase
+  tox21:NR-ER            Estrogen receptor alpha (full)
+  tox21:NR-ER-LBD        Estrogen receptor alpha, ligand-binding domain
+  tox21:NR-PPAR-gamma    Peroxisome proliferator-activated receptor gamma
+stress-response pathways:
+  tox21:SR-ARE           Antioxidant response element
+  tox21:SR-ATAD5         ATAD5 (genotoxicity / DNA damage)
+  tox21:SR-HSE           Heat-shock response element
+  tox21:SR-MMP           Mitochondrial membrane potential
+  tox21:SR-p53           p53 response
+
+CLINTOX (2 endpoints)
+  clintox_clinical_toxicity   CT_TOX: 1 = failed clinical trials for toxicity reasons (clinically toxic)
+  clintox_fda_approval        FDA_APPROVED: 1 = approved by the FDA
+
+SIDER (27 MedDRA system-organ-class endpoints; 1 = drug associated with adverse effects in that organ class)
+  sider:Blood_and_lymphatic_system_disorders
+  sider:Cardiac_disorders
+  sider:Congenital,_familial_and_genetic_disorders
+  sider:Ear_and_labyrinth_disorders
+  sider:Endocrine_disorders
+  sider:Eye_disorders
+  sider:Gastrointestinal_disorders
+  sider:General_disorders_and_administration_site_conditions
+  sider:Hepatobiliary_disorders
+  sider:Immune_system_disorders
+  sider:Infections_and_infestations
+  sider:Injury,_poisoning_and_procedural_complications
+  sider:Investigations
+  sider:Metabolism_and_nutrition_disorders
+  sider:Musculoskeletal_and_connective_tissue_disorders
+  sider:Neoplasms_benign,_malignant_and_unspecified_(incl_cysts_and_polyps)
+  sider:Nervous_system_disorders
+  sider:Pregnancy,_puerperium_and_perinatal_conditions
+  sider:Product_issues
+  sider:Psychiatric_disorders
+  sider:Renal_and_urinary_disorders
+  sider:Reproductive_system_and_breast_disorders
+  sider:Respiratory,_thoracic_and_mediastinal_disorders
+  sider:Skin_and_subcutaneous_tissue_disorders
+  sider:Social_circumstances
+  sider:Surgical_and_medical_procedures
+  sider:Vascular_disorders

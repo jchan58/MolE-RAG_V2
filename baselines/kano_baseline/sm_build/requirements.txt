@@ -1,0 +1,12 @@
+--find-links https://data.pyg.org/whl/torch-2.1.0+cu121.html
+torch-scatter==2.1.2
+rdkit==2023.9.6
+scikit-learn==1.7.2
+pandas==2.1.4
+scipy==1.11.4
+tensorboardX==2.6.5
+tqdm==4.70.1
+gensim==4.3.2
+nltk==3.10.3
+networkx==3.4.2
+Unidecode==1.4.0

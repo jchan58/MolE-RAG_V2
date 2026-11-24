@@ -1,0 +1,26 @@
+[
+  {
+    "job": "llasmol-esol-2026-10-12-04-27-58-342",
+    "tasks": "esol,lipo,bbbp,clintox,hiv,sider",
+    "instance": "ml.g6.4xlarge",
+    "smoke": "0"
+  },
+  {
+    "job": "llasmol-esol-2026-10-12-05-24-38-584",
+    "tasks": "esol,lipo,bbbp,clintox,hiv,sider",
+    "instance": "ml.g6e.12xlarge",
+    "smoke": "0"
+  },
+  {
+    "job": "llasmol-smoke-esol-2026-10-12-06-29-14-936",
+    "tasks": "esol,lipo,bbbp,clintox,hiv,sider",
+    "instance": "ml.g5.12xlarge",
+    "smoke": "1"
+  },
+  {
+    "job": "llasmol-esol-2026-10-12-06-35-35-521",
+    "tasks": "esol,lipo,bbbp,clintox,hiv,sider",
+    "instance": "ml.g5.12xlarge",
+    "smoke": "0"
+  }
+]

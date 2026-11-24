@@ -1,0 +1,10 @@
+dataset,split_seed,manuscript_fingerprint,validation_selected_fingerprint,validation_selected_k,deployed_k_in_pools,actual_run_fingerprint,supporting_config_or_log,match_status,notes
+bace,0,Topological Torsion,Topological Torsion,5,5,Topological Torsion,MolE-RAG/results/bace/fingerprint_sweep/bace_validation_structural_sweep_summary.csv,MATCH,
+bbbp,0,ECFP2,ECFP2,3,5,ECFP2,MolE-RAG/results/bbbp/fingerprint_sweep/bbbp_validation_structural_sweep_summary.csv,MATCH,"selected at k=3 but structural pools deployed with fixed k=5 (rebuild_fewshot_pools.TOP_K=5); FP identity preserved; at k=5 the top FP is fcfp2, not ecfp2 -> FP identity is k-dependent"
+clintox,0,FCFP2,FCFP2,5,5,FCFP2,MolE-RAG/results/clintox/fingerprint_sweep/CT_TOX/clintox_CT_TOX_validation_structural_sweep_summary.csv,MATCH,
+esol,0,Atom Pair,Atom Pair,5,5,Atom Pair,MolE-RAG/results/esol/fingerprint_sweep/esol_validation_structural_sweep_summary.csv,MATCH,
+freesolv,0,MACCS,MACCS,3,5,MACCS,MolE-RAG/results/freesolv/fingerprint_sweep/freesolv_validation_structural_sweep_summary.csv,MATCH,selected at k=3 but structural pools deployed with fixed k=5 (rebuild_fewshot_pools.TOP_K=5); FP identity preserved
+hiv,0,RDKit,RDKit,5,5,RDKit,MolE-RAG/results/hiv/fingerprint_sweep/hiv_validation_structural_sweep_summary.csv,MATCH,
+lipo,0,Atom Pair,Atom Pair,5,5,Atom Pair,MolE-RAG/results/lipo/fingerprint_sweep/lipo_validation_structural_sweep_summary.csv,MATCH,
+sider,0,FCFP2,FCFP2,5,5,FCFP2,MolE-RAG/results/sider/fingerprint_sweep/aggregated/sider_aggregate_by_method_k.csv,MATCH,
+tox21,0,Atom Pair,Atom Pair,5,5,Atom Pair,MolE-RAG/results/tox21/fingerprint_sweep/aggregated/tox21_aggregate_by_method_k.csv,MATCH,

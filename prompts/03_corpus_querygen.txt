@@ -1,0 +1,94 @@
+================================================================================
+LITERATURE-CORPUS QUERY GENERATION PROMPTS  (MAIN_EVALUATED)
+Three collection pipelines feed the exp70 corpus. All query-gen is "example-FREE":
+the model chooses all vocabulary; benchmark labels/splits are NEVER in the input.
+================================================================================
+
+################################################################################
+PIPELINE 1 -- BBBP  (exp70_bbbp_pmc_collection/code/querygen.py)
+  dataset : bbbp
+  model   : OpenAI, C.OPENAI_MODEL = "gpt-5.4-mini" (chat-completions); PROMPT_VERSION "exp70-v1"
+  note    : produces PMC Boolean search queries (property set once; molecule set per identity)
+################################################################################
+
+--- SYSTEM (format-only; shared by property + molecule) [SYSTEM_FORMAT] ---
+You produce PMC (PubMed Central) Boolean search queries by following the user's instruction exactly. Return ONLY a single JSON object, no prose outside it, with this schema: {"queries": [{"query": <string: an executable PMC Boolean query>, "purpose": <string>, "coverage": <string>, "identifiers_used": [<string>, ...]}], "notes": <string>}. For property queries identifiers_used may be an empty list. Emit as many query objects as the instruction warrants and ensure the JSON is complete and valid.
+
+--- USER, property-level [PROPERTY_INSTRUCTION] (used VERBATIM, once) ---
+Generate a broad set of Boolean queries for searching PMC literature about blood–brain barrier penetration (BBBP). The purpose is to collect a candidate literature corpus. Prioritize coverage. Determine the relevant terminology and search concepts independently. Generate as many distinct queries as necessary to express the coverage you intend. There is no predetermined query count. Do not require any particular molecule to appear. Do not impose publication-date, language, or article-type restrictions. Return executable PMC Boolean queries, a brief purpose for each query, and a concise description of its intended coverage. Do not assess article relevance or predict molecular properties.
+
+--- USER, molecule-level [MOLECULE_INSTRUCTION] (used VERBATIM, per resolved identity) ---
+Generate broad Boolean queries for searching PMC literature mentioning the molecule described by the supplied verified PubChem identity record. Use the supplied preferred name, IUPAC name, synonyms, development codes, and structural identifiers as appropriate. Do not invent additional molecular aliases. Search for the molecule independently of its BBBP property. Do not require property-related terms. Use alternative identifiers as alternatives rather than requiring an article to contain all identifiers. Generate as many distinct queries as necessary. Split long queries without losing intended identifier coverage. Account for all supplied aliases: record which are used and explain any exclusions. Return executable PMC Boolean queries, their purposes, and the supplied identifiers used in each query. Do not assess article relevance or predict molecular properties.
+
+  The verified PubChem identity record is appended to the molecule USER message as a
+  clearly-delimited DATA block (preferred_name, IUPAC, synonyms, development codes,
+  InChIKey), NOT as instructions. Unresolved molecules get a DETERMINISTIC (no-model)
+  InChIKey / structure-skeleton query instead.
+
+################################################################################
+PIPELINE 2 -- lipo / sider / hiv / tox21  (exp70_multi_code/querygen.py + dsconfig.py)
+  datasets: lipo, sider, hiv, tox21
+  model   : Claude Opus 4.6 on Bedrock (EXP70_QG_MODEL="us.anthropic.claude-opus-4-6-v1"),
+            fallback Haiku 4.5 then Qwen3-32B (bedrock_qg.py); PROMPT_VERSION "exp70multi-v1"
+  note    : SAME SYSTEM_FORMAT as Pipeline 1 (identical text). Instructions are the
+            Pipeline-1 instructions PARAMETERIZED to the dataset endpoint via
+            endpoint_desc()/endpoint_tag() (dsconfig.py). Rendered text is near-identical
+            except "blood–brain barrier penetration (BBBP)" is replaced by the endpoint.
+################################################################################
+
+--- USER, property-level [dsconfig.property_instruction()] ---
+Generate a broad set of Boolean queries for searching PMC literature about {endpoint_desc()}. The purpose is to collect a candidate literature corpus. Prioritize coverage. Determine the relevant terminology and search concepts independently. Generate as many distinct queries as necessary to express the coverage you intend. There is no predetermined query count. Do not require any particular molecule to appear. Do not impose publication-date, language, or article-type restrictions. Return executable PMC Boolean queries, a brief purpose for each query, and a concise description of its intended coverage. Do not assess article relevance or predict molecular properties.
+
+--- USER, molecule-level [dsconfig.molecule_instruction()] ---
+Generate broad Boolean queries for searching PMC literature mentioning the molecule described by the supplied verified PubChem identity record. Use the supplied preferred name, IUPAC name, synonyms, development codes, and structural identifiers as appropriate. Do not invent additional molecular aliases. Search for the molecule independently of its {endpoint_tag()} property. Do not require property-related terms. Use alternative identifiers as alternatives rather than requiring an article to contain all identifiers. Generate as many distinct queries as necessary. Split long queries without losing intended identifier coverage. Account for all supplied aliases: record which are used and explain any exclusions. Return executable PMC Boolean queries, their purposes, and the supplied identifiers used in each query. Do not assess article relevance or predict molecular properties.
+
+################################################################################
+PIPELINE 3 -- downstream: freesolv / esol / BACE / ClinTox
+  (exp70_multi/downstream/code/ds_querygen.py)
+  datasets: freesolv, esol, clintox  (+ bace, used in the BACE line)
+  model   : Claude Opus 4.6 (with fallback chain) [ds_querygen docstring: "Claude Opus 4.6"]
+  note    : DIFFERENT from pipelines 1-2. Produces BM25 + semantic (cross-encoder) query
+            pairs, NOT PMC Boolean queries, because this pipeline uses BM25 + rerank
+            (task route + reusable compound TEMPLATES with a {compound} placeholder).
+################################################################################
+
+--- TASK route SYSTEM [TASK_SYS] ---
+You are an expert cheminformatics literature-search query writer. You output ONLY valid JSON, no prose. You write search queries that help find passages in the scientific literature that provide EVIDENCE about a molecular property prediction task.
+
+--- TASK route USER [TASK_USER] ---
+Prediction task: {property}
+
+Dataset context: {name} ({modality}).
+Candidate topics to cover (expand/refine, keep only those appropriate to this task; do NOT add
+redundant paraphrases of the same topic):
+{seeds}
+
+Write {n} DIVERSE, non-redundant search queries about this prediction task. Each query targets a
+distinct kind of evidence (mechanism, measurement, assay, structure-property relationship, etc.).
+For each query provide:
+  - "topic_id": a short lowercase slug (e.g. "binding_mode")
+  - "semantic_query": a natural-language question for a cross-encoder reranker (one sentence)
+  - "bm25_query": 4-10 lexical keywords/phrases for sparse retrieval (space-separated, no boolean)
+
+Return ONLY a JSON array of objects with exactly those three keys.
+
+--- COMPOUND route SYSTEM [COMPOUND_SYS] ---
+You are an expert cheminformatics literature-search query writer. You output ONLY valid JSON, no prose. You write REUSABLE question templates about a specific compound's attributes relevant to a property-prediction task. Each template uses the literal placeholder {compound}.
+
+--- COMPOUND route USER [COMPOUND_USER] ---
+Prediction task context: {property}
+Dataset: {name} ({modality}).
+
+Candidate compound-attribute topics (expand/refine, keep only appropriate ones; avoid redundant
+paraphrases):
+{seeds}
+
+Write reusable compound question TEMPLATES. Each template asks what the literature reports about a
+specific compound regarding one attribute, using the literal token {compound} as a placeholder
+for the compound name. For each template provide:
+  - "topic_id": a short lowercase slug
+  - "semantic_query": a one-sentence question template containing {compound}
+  - "bm25_query": 3-8 lexical TOPIC keywords (do NOT include {compound}; the compound aliases are
+    added separately at retrieval time)
+
+Return ONLY a JSON array of objects with exactly those three keys.

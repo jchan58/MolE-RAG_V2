@@ -1,0 +1,54 @@
+================================================================================
+SECTION G -- CORPUS / RETRIEVAL ABLATION PROMPTS  (ABLATION_EVALUATED)
+source_files: section_g_v1/code/sg_lib.py (shared prompts) + sg_run.py (selection prompt)
+model       : qwen3_32b (Bedrock, temp=0)  [sg_run.py MODEL='qwen3_32b']
+design      : reuses run_fw_multi (R) for base_prompt/refs/do_retrieve/available_entities.
+              Arm-A initial assessment is REUSED FROZEN from runs/<ds>__qwen3_32b/test_XXXX.json.
+              The 4 conditions differ ONLY in the delivered passage CONTENT (which corpus /
+              retriever); the PROMPTS below are identical across all 4 conditions.
+              Difference vs run_fw_multi arm C: the question is asked CORPUS-INDEPENDENTLY
+              (one shared question, before any menu) and entity/attribute SELECTION is a
+              SEPARATE call; retrieval+revision is a single step (not a multi-round loop).
+================================================================================
+
+--- CORPUS-INDEPENDENT QUESTION  [sg_lib.question_prompt] ---
+(base = R.base_prompt; a_line = initial-prediction line; ep inserted only for multilabel)
+PROMPT = base + a_line + ep +
+You will be allowed ONE external literature search to improve this prediction. BEFORE seeing any search results, state the SINGLE most important unresolved, prediction-relevant question whose answer from the literature could change your prediction. Do NOT reference any corpus, database, entity list, or retrieval system. Base the question only on the task and the molecular context above. If no literature question could plausibly change your prediction, set no_question=true.
+Output ONLY JSON: {"no_question":false,"question":"...","why_matters":"..."}
+
+  ep (multilabel only):
+For a MULTILABEL task, you may name the single MOST decision-relevant endpoint in the question.
+
+--- ENTITY/ATTRIBUTE SELECTION  [sg_run.py sp] ---
+PROMPT = base + a_line +
+UNRESOLVED QUESTION YOU POSED: {question}
+{menu}Select which ENTITIES and ATTRIBUTES to retrieve literature passages that could answer this question.
+Output ONLY JSON: {"entities":["<entity_id>",...],"attributes":["<attribute_id>",...]}
+
+  menu:
+AVAILABLE ENTITIES (select entity_ids):
+  TASK entities: {task_ids}
+  COMPOUND entity for THIS target: {comp_id  OR  'NONE (no indexed findings for this molecule)'}
+AVAILABLE TASK ATTRIBUTES: {task_attributes[:40] with Tier-2 groups masked}
+AVAILABLE COMPOUND ATTRIBUTES: {compound_attributes[:40] with Tier-2 groups masked}
+
+--- ONE-STEP REVISION  [sg_lib.revision_prompt] ---
+PROMPT = base + a_line +
+UNRESOLVED QUESTION YOU POSED: {question}
+{packet_text}
+Assess whether the retrieved passages SUPPORT a claim and APPLY to THIS target. An unanswered/irrelevant search is NOT evidence; a value for a different compound does not transfer. Update your prediction ONLY if warranted by applicable evidence.
+Output ONLY JSON: {{rev_schema_tail},"question_answer_status":"answered|partially_answered|not_answered|unresolved","evidence_subject":"target|reference|related_compound|general_class|unresolved","new_information_added":true,"justification":"..."}
+
+--- EVIDENCE PACKET FORMAT  [sg_lib.build_packet] ---
+(non-empty)
+EVIDENCE: {N} retrieved passage(s). Each value for a DIFFERENT compound does not transfer to the target; assess support AND applicability.
+[P1] passage_id={id} | source={source_id} | title={title}
+{passage text, <=1200 chars}
+[P2] ...
+
+(empty)  [sg_lib.EMPTY_MSG]
+EVIDENCE: the literature search returned no eligible passages for your question. An empty search is NOT evidence for or against the property; do not treat the absence of passages as support for any answer.
+
+NOTE: the Section-G eligibility screen (sg_lib.screen_passage / leaks / TIER2_GROUPS) is
+CODE/regex (copied verbatim from run_fw_multi_v2.py), NOT an LLM prompt. See Section C.

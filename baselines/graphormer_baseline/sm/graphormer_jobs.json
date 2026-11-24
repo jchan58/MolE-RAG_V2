@@ -1,0 +1,58 @@
+[
+  {
+    "job": "graphormer-hiv-2026-10-12-01-24-06-478",
+    "tasks": "hiv",
+    "instance": "ml.g5.16xlarge",
+    "seeds": "0,1,2",
+    "smoke": "0",
+    "epochs": ""
+  },
+  {
+    "job": "graphormer-lipo-tox21-2026-10-12-01-47-34-321",
+    "tasks": "lipo,tox21",
+    "instance": "ml.g6e.4xlarge",
+    "seeds": "0,1,2",
+    "smoke": "0",
+    "epochs": ""
+  },
+  {
+    "job": "graphormer-clintox-sider-2026-10-12-01-24-43-511",
+    "tasks": "clintox,sider",
+    "instance": "ml.g6.12xlarge",
+    "seeds": "0,1,2",
+    "smoke": "0",
+    "epochs": ""
+  },
+  {
+    "job": "graphormer-bace-bbbp-2026-10-12-01-24-55-322",
+    "tasks": "bace,bbbp",
+    "instance": "ml.g6.16xlarge",
+    "seeds": "0,1,2",
+    "smoke": "0",
+    "epochs": ""
+  },
+  {
+    "job": "graphormer-esol-freesolv-2026-10-12-01-25-08-109",
+    "tasks": "esol,freesolv",
+    "instance": "ml.g6e.xlarge",
+    "seeds": "0,1,2",
+    "smoke": "0",
+    "epochs": ""
+  },
+  {
+    "job": "graphormer-clintox-sider-2026-10-12-02-18-28-605",
+    "tasks": "clintox,sider",
+    "instance": "ml.g6.12xlarge",
+    "seeds": "0,1,2",
+    "smoke": "0",
+    "epochs": ""
+  },
+  {
+    "job": "graphormer-sider-2026-10-12-02-58-19-588",
+    "tasks": "sider",
+    "instance": "ml.g6.12xlarge",
+    "seeds": "0,1,2",
+    "smoke": "0",
+    "epochs": ""
+  }
+]

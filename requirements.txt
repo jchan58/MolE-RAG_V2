@@ -1,0 +1,15 @@
+# MolE-RAG framework (Depth A: run the method + score on the pre-built cards).
+# The model client talks to any OpenAI-compatible endpoint using only the Python
+# standard library (urllib), so no provider SDK is required here.
+
+rdkit>=2023.9          # molecule parsing, fingerprints, descriptors
+accfg>=0.0.9           # functional-group annotations (AccFG)
+python-dotenv>=1.0     # load .env
+numpy                  # used by some scoring / retrieval helpers
+
+# The retrieval embedder and the four chat models are reached over HTTP via
+# models.json — no extra Python deps.
+#
+# Each Table-1 baseline under baselines/<name>/ has its own environment and
+# dependencies; see that baseline's README. Rebuilding the card corpus from PMC
+# (optional, "Depth B") has additional requirements documented in docs/.

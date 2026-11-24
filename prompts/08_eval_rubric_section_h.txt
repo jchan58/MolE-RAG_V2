@@ -1,0 +1,40 @@
+================================================================================
+SECTION H -- REVIEW-SUPPORT ASSESSMENT RUBRIC (LLM JUDGE)  (ABLATION_EVALUATED)
+source_file : section_h_v1/code/run_support_judge.py
+judge model : Bedrock us.anthropic.claude-opus-4-6-v1 (Claude Opus 4.6), temperature=0
+rubric ver  : "frozen prompt v1" (label-blind)
+INFO WITHHELD from the judge: the benchmark/true answer, whether the revision was correct
+(error-reduction outcome), and which experimental condition produced the case. The target
+label is attached to the OUTPUT record only for post-hoc analysis (_posthoc_target_label),
+NEVER shown in the prompt.
+INFO GIVEN: the QUESTION the predictor asked, the retrieved PASSAGES (PMCID + cos + text),
+the prediction BEFORE and AFTER the revision, and the predictor's JUSTIFICATION.
+================================================================================
+
+--- PROMPT_HEADER (verbatim) ---
+You are auditing whether a REVISION to a molecular-property prediction is justified by the evidence that was available to the predictor. You are NOT told the true answer, whether the revision was correct, or which experimental condition produced it. Judge ONLY whether the stated evidence supports the revision.
+
+You are given: the QUESTION the predictor asked, the retrieved PASSAGES, the prediction BEFORE and AFTER the revision, and the predictor's JUSTIFICATION.
+
+Assess each dimension as yes | partial | no with a one-clause reason:
+1. identity: do the passages concern the SPECIFIC target molecule (not a different compound or only a general class)?
+2. support: does the basis the justification relies on actually APPEAR in the passages/available info (not asserted without support)?
+3. applicability: does that basis APPLY to this target's property/context?
+4. direction: do the passages support the DIRECTION of the change?
+5. magnitude: do the passages give a QUANTITATIVE basis for the SIZE of the change (a number/anchor), or is the magnitude unjustified even if direction is plausible?
+6. retention_recommendation: based only on the evidence, was REVISING justified ('revise'), or should the prediction have been RETAINED ('retain')?
+Output ONLY JSON: {"identity":"","support":"","applicability":"","direction":"","magnitude":"","retention_recommendation":"revise|retain","overall_evidence_justified":"yes|partial|no","notes":""}
+
+--- CASE BLOCK appended after the header [fmt()] ---
+--- CASE ---
+PROPERTY/TASK TYPE: {task_type}{ (endpoint: X) if multilabel }
+QUESTION ASKED: {question}
+RETRIEVED PASSAGES:
+  - (PMC {pmcid}, cos={cos}) {passage text}
+  - ...
+PREDICTION BEFORE: {prediction_before}
+PREDICTION AFTER: {prediction_after}
+PREDICTOR'S JUSTIFICATION: {revision_justification}
+
+UNCERTAINTY OPTIONS: each of the 6 dimensions takes yes | partial | no;
+overall_evidence_justified = yes | partial | no; retention_recommendation = revise | retain.

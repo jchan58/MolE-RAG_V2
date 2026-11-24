@@ -1,0 +1,74 @@
+{
+  "label": "InstructMol-GS (Vicuna-7B + GIN)",
+  "status": "BLOCKED - no released checkpoint",
+  "blocker": "No trained InstructMol checkpoint (neither InstructMol-GS nor InstructMol-G, nor the stage-1 alignment projector) is publicly released. The upstream repo README (HEAD commit 5b2aa484, 2024-12-02, 'Update README.md') states under 'InstructMol Weights': 'TODO: coming soon'. Released-checkpoint INFERENCE is therefore impossible; no numbers are produced. Not fabricated.",
+  "mode_required_by_task": "released-checkpoint inference (single pass, no seeds) on SageMaker",
+  "sagemaker_jobs_launched": 0,
+  "billable_time_seconds": 0,
+  "coverage": {
+    "runnable_tasks": 0,
+    "total_tasks": 9,
+    "note": "0/9 runnable: no checkpoint exists for ANY task. Even if a checkpoint were released, InstructMol's own MoleculeNet eval protocol supports only 3 of our 9 tasks (bace, bbbp, hiv)."
+  },
+  "recon": {
+    "repo": "https://github.com/IDEA-XL/InstructMol (confirmed; git clone works)",
+    "upstream_head": "5b2aa484cd68e9e8832b9df54507d0ed0ac86613 (2024-12-02)",
+    "paper": "arXiv:2311.16208 (COLING 2025), 'InstructMol: Multi-Modal Integration ...'",
+    "architecture_confirmed": "5-layer GIN graph encoder initialized from MoleculeSTM (molecule_model.pth) + mm-projector + Vicuna-7B-v1.3 LLM; LLaVA-style. 'GS' = graph token + SELFIES string appended to the instruction ('--add-selfies'); 'G' = graph only.",
+    "released_component_weights": {
+      "vicuna_7b_v1.3": "https://huggingface.co/lmsys/vicuna-7b-v1.3 (open, not gated) - base LLM only, NOT instruction-tuned for molecules",
+      "moleculestm_gin_encoder": "https://huggingface.co/chao1224/MoleculeSTM/resolve/main/demo/demo_checkpoints_Graph/molecule_model.pth - GIN encoder INIT weights only",
+      "scibert": "https://huggingface.co/allenai/scibert_scivocab_uncased - used only for the molcap Text2Mol metric, not property prediction",
+      "graphmvp": "optional alternative graph encoder init (github.com/chao1224/GraphMVP)"
+    },
+    "NOT_released": [
+      "stage-1 alignment projector (checkpoints/Graph-LLaVA/llava-moleculestm-vicuna-v1-3-7b-pretrain)",
+      "stage-2 task LoRA adapters (checkpoints/Graph-LLaVA/MoleculeNet-llava-moleculestm-vicuna-v1-3-7b-finetune_lora) -- the actual InstructMol-G / InstructMol-GS models"
+    ],
+    "searches_performed": [
+      "GitHub README @ HEAD: 'InstructMol Weights: TODO: coming soon'",
+      "HF org IDEA-XL: only progen2-large, no InstructMol",
+      "HF model search 'instructmol': 0 models",
+      "HF author accounts hcaoaf / hcao: 0 models (only a dataset)",
+      "Project page idea-xl.github.io/InstructMol: links only code + a dataset (hcaoaf/PubChemSFT), no checkpoint",
+      "repo grep for huggingface.co / drive.google / *.pth download URLs: only component-weight URLs, no trained-model URL"
+    ]
+  },
+  "eval_protocol_if_checkpoint_existed": {
+    "classification_script": "llava.eval.molecule_metrics.MoleculeNet_classification (SUPPORT_DATASETS = ['bace','bbbp','hiv'] only)",
+    "supported_of_our_9": ["bbbp", "bace", "hiv"],
+    "unsupported_of_our_9": {
+      "clintox": "not in InstructMol MoleculeNet protocol",
+      "sider": "not in InstructMol MoleculeNet protocol",
+      "tox21": "not in InstructMol MoleculeNet protocol",
+      "esol": "InstructMol 'regression' eval = Mol-Instructions quantum props (HOMO/LUMO/HOMO-LUMO gap), NOT MoleculeNet solubility",
+      "freesolv": "same - not covered by InstructMol regression eval",
+      "lipo": "same - not covered by InstructMol regression eval"
+    },
+    "prompt_format": {
+      "wrapper": "LLaVA conv_template 'llava_v1'; graph image token prepended: '<image>\\n' + instruction (or DEFAULT_IM_START/END around image token if mm_use_im_start_end).",
+      "gs_variant_suffix": "InstructMol-GS appends: ' The compound SELFIES sequence is: {selfies_str}' (SELFIES encoded from SMILES via the `selfies` package).",
+      "per_molecule_instruction_text": "The task-specific instruction string (e.g. the BBBP/BACE/HIV question) lives in raw['instruction'] inside preprocessed .pkl files under a private path (/cto_labs/AIDD/DATA/MoleculeNet). These .pkl files and their preprocessing are NOT in the repo, so the exact instruction wording is itself not reproducible from released material."
+    },
+    "scoring": "Hard-label only. Model GENERATES free text; convert_label_to_int maps active/yes/true->1, inactive/no/false->0; roc_auc_score computed on 0/1 HARD labels (NOT positive-token probability). i.e. AUC over hard labels, no probability ranking. Generation is do_sample=True temperature=0.2 (stochastic)."
+  },
+  "results": {
+    "bbbp":    {"type": "classification", "metric": "ROC-AUC", "value": null, "status": "blocked_no_checkpoint"},
+    "bace":    {"type": "classification", "metric": "ROC-AUC", "value": null, "status": "blocked_no_checkpoint"},
+    "hiv":     {"type": "classification", "metric": "ROC-AUC", "value": null, "status": "blocked_no_checkpoint"},
+    "clintox": {"type": "classification", "metric": "ROC-AUC", "value": null, "status": "blocked_no_checkpoint_and_unsupported_protocol"},
+    "sider":   {"type": "classification", "metric": "ROC-AUC", "value": null, "status": "blocked_no_checkpoint_and_unsupported_protocol"},
+    "tox21":   {"type": "classification", "metric": "ROC-AUC", "value": null, "status": "blocked_no_checkpoint_and_unsupported_protocol"},
+    "esol":    {"type": "regression", "metric": "RMSE", "value": null, "status": "blocked_no_checkpoint_and_unsupported_protocol"},
+    "freesolv":{"type": "regression", "metric": "RMSE", "value": null, "status": "blocked_no_checkpoint_and_unsupported_protocol"},
+    "lipo":    {"type": "regression", "metric": "RMSE", "value": null, "status": "blocked_no_checkpoint_and_unsupported_protocol"}
+  },
+  "paper_reported_numbers_for_reference_only": {
+    "note": "From arXiv:2311.16208 (InstructMol-GS, scaffold/random split as in paper, NOT our splits; shown only to document what the method claims - NOT usable as our baseline).",
+    "bbbp_auc_approx": 70.0,
+    "bace_auc_approx": 82.3,
+    "hiv_auc_approx": 68.9,
+    "caveat": "Paper reports classification ROC-AUC for BBBP/BACE/HIV only. These are NOT computed on our test molecules and are NOT entered into the results table."
+  },
+  "decision": "STOP EARLY per task decision rule: GS checkpoint (and all trained weights) not released, only component weights + training code. Running base Vicuna + MoleculeSTM-init encoder with an untrained random projector and no LoRA would NOT be InstructMol and would yield meaningless output - that would be fabricating a baseline, so it was NOT done. To produce a real InstructMol-GS number one must reproduce the two-stage training (330K-pair alignment pretraining + MoleculeNet LoRA instruction tuning), which is out of scope for released-checkpoint inference."
+}

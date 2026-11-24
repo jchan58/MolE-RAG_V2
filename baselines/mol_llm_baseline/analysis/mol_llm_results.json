@@ -1,0 +1,127 @@
+{
+  "label": "MolLM (Gerstein Lab, 2D+3D)",
+  "seed": 0,
+  "results": {
+    "bbbp": {
+      "metric": "AUC",
+      "type": "classification",
+      "value": 0.9482,
+      "val_value": 0.9168,
+      "best_epoch": 0,
+      "epochs_done": 16,
+      "n_test": 205,
+      "n_targets_scored": 1,
+      "minutes": 1.6,
+      "use_3d": true
+    },
+    "bace": {
+      "metric": "AUC",
+      "type": "classification",
+      "value": 0.8346,
+      "val_value": 0.8614,
+      "best_epoch": 37,
+      "epochs_done": 50,
+      "n_test": 152,
+      "n_targets_scored": 1,
+      "minutes": 2.7,
+      "use_3d": true
+    },
+    "hiv": {
+      "metric": "AUC",
+      "type": "classification",
+      "value": 0.4781,
+      "val_value": 0.529,
+      "best_epoch": 7,
+      "epochs_done": 23,
+      "n_test": 4112,
+      "n_targets_scored": 1,
+      "minutes": 38.7,
+      "use_3d": true
+    },
+    "clintox": {
+      "metric": "AUC",
+      "type": "classification",
+      "value": 0.8401,
+      "val_value": 0.8124,
+      "best_epoch": 36,
+      "epochs_done": 50,
+      "n_test": 149,
+      "n_targets_scored": 2,
+      "minutes": 4.0,
+      "use_3d": true
+    },
+    "sider": {
+      "metric": "AUC",
+      "type": "classification",
+      "value": 0.6038,
+      "val_value": 0.6496,
+      "best_epoch": 19,
+      "epochs_done": 35,
+      "n_test": 144,
+      "n_targets_scored": 27,
+      "minutes": 25.9,
+      "use_3d": true
+    },
+    "tox21": {
+      "metric": "AUC",
+      "type": "classification",
+      "value": 0.7948,
+      "val_value": 0.8349,
+      "best_epoch": 2,
+      "epochs_done": 18,
+      "n_test": 783,
+      "n_targets_scored": 12,
+      "minutes": 5.9,
+      "use_3d": true
+    },
+    "esol": {
+      "metric": "RMSE",
+      "type": "regression",
+      "value": 0.8953,
+      "val_value": 0.9343,
+      "best_epoch": 16,
+      "epochs_done": 32,
+      "n_test": 114,
+      "n_targets_scored": 1,
+      "minutes": 20.1,
+      "use_3d": true
+    },
+    "freesolv": {
+      "metric": "RMSE",
+      "type": "regression",
+      "value": 2.0943,
+      "val_value": 2.6836,
+      "best_epoch": 45,
+      "epochs_done": 50,
+      "n_test": 65,
+      "n_targets_scored": 1,
+      "minutes": 1.0,
+      "use_3d": true
+    },
+    "lipo": {
+      "metric": "RMSE",
+      "type": "regression",
+      "value": 0.696,
+      "val_value": 0.655,
+      "best_epoch": 33,
+      "epochs_done": 49,
+      "n_test": 420,
+      "n_targets_scored": 1,
+      "minutes": 6.2,
+      "use_3d": true
+    }
+  },
+  "billing": {
+    "mollm-full-2026-10-12-11-17-30-235": {
+      "status": "Completed",
+      "billable_s": 2564
+    },
+    "mollm-stage-2026-10-12-04-15-09-358": {
+      "status": "Completed",
+      "billable_s": 159
+    }
+  },
+  "total_billable_seconds": 2723,
+  "missing": [],
+  "notes": "Released MolLM molecular graph encoder (Transformer-M over OGB 2D features + RDKit ETKDG 3D conformers), initialised from the released pretrained checkpoint (HF andrewt28/MolLM, all_checkpoints/model-epoch=394.ckpt), fine-tuned end-to-end on MolE-RAG seed-0 train, best checkpoint by validation, evaluated on MolE-RAG seed-0 test. One seed (0). Multitask (clintox/tox21/sider): one model, num_targets-wide head, masked BCE + mean ROC-AUC over endpoints. Regression: train-set target standardisation, RMSE."
+}

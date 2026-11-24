@@ -1,0 +1,65 @@
+{
+ "hiv": {
+  "rc": 0,
+  "feat_rc": 0,
+  "result_line": "overall_scaffold_balanced_test_auc=0.741369",
+  "sec": 5310,
+  "gpu": 0
+ },
+ "tox21": {
+  "rc": 0,
+  "feat_rc": 0,
+  "result_line": "overall_scaffold_balanced_test_auc=0.791847",
+  "sec": 1116,
+  "gpu": 1
+ },
+ "sider": {
+  "rc": 0,
+  "feat_rc": 0,
+  "result_line": "overall_scaffold_balanced_test_auc=0.556573",
+  "sec": 394,
+  "gpu": 2
+ },
+ "lipo": {
+  "rc": 0,
+  "feat_rc": 0,
+  "result_line": "overall_scaffold_balanced_test_rmse=0.935682",
+  "sec": 663,
+  "gpu": 3
+ },
+ "bbbp": {
+  "rc": 0,
+  "feat_rc": 0,
+  "result_line": "overall_scaffold_balanced_test_auc=0.888023",
+  "sec": 535,
+  "gpu": 0
+ },
+ "bace": {
+  "rc": 0,
+  "feat_rc": 0,
+  "result_line": "overall_scaffold_balanced_test_auc=0.716418",
+  "sec": 444,
+  "gpu": 1
+ },
+ "clintox": {
+  "rc": 0,
+  "feat_rc": 0,
+  "result_line": "overall_scaffold_balanced_test_auc=0.640834",
+  "sec": 235,
+  "gpu": 2
+ },
+ "esol": {
+  "rc": 0,
+  "feat_rc": 0,
+  "result_line": "overall_scaffold_balanced_test_rmse=1.175576",
+  "sec": 138,
+  "gpu": 3
+ },
+ "freesolv": {
+  "rc": 0,
+  "feat_rc": 0,
+  "result_line": "overall_scaffold_balanced_test_rmse=2.528787",
+  "sec": 145,
+  "gpu": 0
+ }
+}

@@ -1,0 +1,1187 @@
+{
+  "model": "BioT5 (biot5-base, fine-tuned)",
+  "seeds": [
+    0
+  ],
+  "billable_time_seconds_total": 67886,
+  "jobs": [
+    "probe-2026-10-12-03-24-31-380",
+    "probeg6-2026-10-12-03-28-50-274",
+    "biot5-tox21-2026-10-12-03-23-41-865",
+    "biot5-hiv-bace-bbbp-2026-10-12-03-23-47-766",
+    "biot5-clintox-esol-freesolv-lipo-2026-10-12-03-25-19-854"
+  ],
+  "tasks": {
+    "bbbp": {
+      "type": "classification",
+      "metric": "auroc",
+      "value": 0.9098988241728193,
+      "seed": 0,
+      "n_endpoints": 1,
+      "n_scored": 1,
+      "excluded_endpoints": [],
+      "per_endpoint_test": {
+        "p_np": 0.9098988241728193
+      },
+      "selfies_version": "2.1.0",
+      "base_model": "QizhiPei/biot5-base",
+      "budget": {
+        "steps": 800,
+        "eval_every": 40,
+        "warmup": 40,
+        "patience": 8
+      },
+      "base_lr": 0.001,
+      "eff_batch": 128,
+      "endpoint_counts": {
+        "p_np": {
+          "train": {
+            "n": 1631,
+            "skipped_selfies": 0,
+            "n_pos": 1244,
+            "n_neg": 387
+          },
+          "valid": {
+            "n": 203,
+            "skipped_selfies": 0,
+            "n_pos": 157,
+            "n_neg": 46
+          },
+          "test": {
+            "n": 205,
+            "skipped_selfies": 0,
+            "n_pos": 159,
+            "n_neg": 46
+          }
+        }
+      },
+      "endpoint_best_step": {
+        "p_np": 280
+      }
+    },
+    "bace": {
+      "type": "classification",
+      "metric": "auroc",
+      "value": 0.8194907813871818,
+      "seed": 0,
+      "n_endpoints": 1,
+      "n_scored": 1,
+      "excluded_endpoints": [],
+      "per_endpoint_test": {
+        "Class": 0.8194907813871818
+      },
+      "selfies_version": "2.1.0",
+      "base_model": "QizhiPei/biot5-base",
+      "budget": {
+        "steps": 800,
+        "eval_every": 40,
+        "warmup": 40,
+        "patience": 8
+      },
+      "base_lr": 0.001,
+      "eff_batch": 128,
+      "endpoint_counts": {
+        "Class": {
+          "train": {
+            "n": 1210,
+            "skipped_selfies": 0,
+            "n_pos": 533,
+            "n_neg": 677
+          },
+          "valid": {
+            "n": 151,
+            "skipped_selfies": 0,
+            "n_pos": 73,
+            "n_neg": 78
+          },
+          "test": {
+            "n": 152,
+            "skipped_selfies": 0,
+            "n_pos": 85,
+            "n_neg": 67
+          }
+        }
+      },
+      "endpoint_best_step": {
+        "Class": 160
+      }
+    },
+    "hiv": {
+      "type": "classification",
+      "metric": "auroc",
+      "value": 0.785291671456295,
+      "seed": 0,
+      "n_endpoints": 1,
+      "n_scored": 1,
+      "excluded_endpoints": [],
+      "per_endpoint_test": {
+        "HIV_active": 0.785291671456295
+      },
+      "selfies_version": "2.1.0",
+      "base_model": "QizhiPei/biot5-base",
+      "budget": {
+        "steps": 2000,
+        "eval_every": 100,
+        "warmup": 100,
+        "patience": 8
+      },
+      "base_lr": 0.001,
+      "eff_batch": 128,
+      "endpoint_counts": {
+        "HIV_active": {
+          "train": {
+            "n": 32853,
+            "skipped_selfies": 43,
+            "n_pos": 1144,
+            "n_neg": 31709
+          },
+          "valid": {
+            "n": 4108,
+            "skipped_selfies": 4,
+            "n_pos": 184,
+            "n_neg": 3924
+          },
+          "test": {
+            "n": 4108,
+            "skipped_selfies": 4,
+            "n_pos": 111,
+            "n_neg": 3997
+          }
+        }
+      },
+      "endpoint_best_step": {
+        "HIV_active": 1100
+      }
+    },
+    "clintox": {
+      "type": "classification",
+      "metric": "auroc",
+      "value": 0.7154063268499888,
+      "seed": 0,
+      "n_endpoints": 2,
+      "n_scored": 2,
+      "excluded_endpoints": [],
+      "per_endpoint_test": {
+        "FDA_APPROVED": 0.6685110663983904,
+        "CT_TOX": 0.7623015873015873
+      },
+      "selfies_version": "2.1.0",
+      "base_model": "QizhiPei/biot5-base",
+      "budget": {
+        "steps": 800,
+        "eval_every": 40,
+        "warmup": 40,
+        "patience": 8
+      },
+      "base_lr": 0.001,
+      "eff_batch": 128,
+      "endpoint_counts": {
+        "FDA_APPROVED": {
+          "train": {
+            "n": 1181,
+            "skipped_selfies": 1,
+            "n_pos": 1106,
+            "n_neg": 75
+          },
+          "valid": {
+            "n": 147,
+            "skipped_selfies": 0,
+            "n_pos": 135,
+            "n_neg": 12
+          },
+          "test": {
+            "n": 149,
+            "skipped_selfies": 0,
+            "n_pos": 142,
+            "n_neg": 7
+          }
+        },
+        "CT_TOX": {
+          "train": {
+            "n": 1181,
+            "skipped_selfies": 1,
+            "n_pos": 89,
+            "n_neg": 1092
+          },
+          "valid": {
+            "n": 147,
+            "skipped_selfies": 0,
+            "n_pos": 14,
+            "n_neg": 133
+          },
+          "test": {
+            "n": 149,
+            "skipped_selfies": 0,
+            "n_pos": 9,
+            "n_neg": 140
+          }
+        }
+      },
+      "endpoint_best_step": {
+        "FDA_APPROVED": 80,
+        "CT_TOX": 160
+      }
+    },
+    "sider": {
+      "type": "classification",
+      "metric": "auroc",
+      "value": 0.5982114243295189,
+      "seed": 0,
+      "n_endpoints": 23,
+      "n_scored": 23,
+      "excluded_endpoints": [],
+      "per_endpoint_test": {
+        "Hepatobiliary_disorders": 0.6769619269619269,
+        "Metabolism_and_nutrition_disorders": 0.6058361391694724,
+        "Investigations": 0.5616806722689076,
+        "Musculoskeletal_and_connective_tissue_disorders": 0.6216275499012942,
+        "Gastrointestinal_disorders": 0.6271285965942455,
+        "Immune_system_disorders": 0.647953216374269,
+        "Reproductive_system_and_breast_disorders": 0.6227709190672154,
+        "Neoplasms_benign,_malignant_and_unspecified_(incl_cysts_and_polyps)": 0.6363636363636365,
+        "General_disorders_and_administration_site_conditions": 0.6470149253731343,
+        "Endocrine_disorders": 0.6685267857142857,
+        "Surgical_and_medical_procedures": 0.49399922570654275,
+        "Vascular_disorders": 0.5757921781330289,
+        "Blood_and_lymphatic_system_disorders": 0.6864197530864198,
+        "Skin_and_subcutaneous_tissue_disorders": 0.4942648592283629,
+        "Congenital,_familial_and_genetic_disorders": 0.5987332339791356,
+        "Infections_and_infestations": 0.5865885416666666,
+        "Respiratory,_thoracic_and_mediastinal_disorders": 0.5300131061598952,
+        "Psychiatric_disorders": 0.6201923076923076,
+        "Renal_and_urinary_disorders": 0.6154858521605615,
+        "Pregnancy,_puerperium_and_perinatal_conditions": 0.582967032967033,
+        "Ear_and_labyrinth_disorders": 0.6119402985074628,
+        "Nervous_system_disorders": 0.5661764705882353,
+        "Injury,_poisoning_and_procedural_complications": 0.4804255319148936
+      },
+      "selfies_version": "2.1.0",
+      "base_model": "QizhiPei/biot5-base",
+      "budget": {
+        "steps": 600,
+        "eval_every": 40,
+        "warmup": 30,
+        "patience": 7
+      },
+      "base_lr": 0.001,
+      "eff_batch": 128,
+      "endpoint_counts": {
+        "Hepatobiliary_disorders": {
+          "train": {
+            "n": 1141,
+            "skipped_selfies": 0,
+            "n_pos": 593,
+            "n_neg": 548
+          },
+          "valid": {
+            "n": 142,
+            "skipped_selfies": 0,
+            "n_pos": 72,
+            "n_neg": 70
+          },
+          "test": {
+            "n": 144,
+            "skipped_selfies": 0,
+            "n_pos": 78,
+            "n_neg": 66
+          }
+        },
+        "Metabolism_and_nutrition_disorders": {
+          "train": {
+            "n": 1141,
+            "skipped_selfies": 0,
+            "n_pos": 804,
+            "n_neg": 337
+          },
+          "valid": {
+            "n": 142,
+            "skipped_selfies": 0,
+            "n_pos": 93,
+            "n_neg": 49
+          },
+          "test": {
+            "n": 144,
+            "skipped_selfies": 0,
+            "n_pos": 99,
+            "n_neg": 45
+          }
+        },
+        "Investigations": {
+          "train": {
+            "n": 1141,
+            "skipped_selfies": 0,
+            "n_pos": 912,
+            "n_neg": 229
+          },
+          "valid": {
+            "n": 142,
+            "skipped_selfies": 0,
+            "n_pos": 120,
+            "n_neg": 22
+          },
+          "test": {
+            "n": 144,
+            "skipped_selfies": 0,
+            "n_pos": 119,
+            "n_neg": 25
+          }
+        },
+        "Musculoskeletal_and_connective_tissue_disorders": {
+          "train": {
+            "n": 1141,
+            "skipped_selfies": 0,
+            "n_pos": 786,
+            "n_neg": 355
+          },
+          "valid": {
+            "n": 142,
+            "skipped_selfies": 0,
+            "n_pos": 114,
+            "n_neg": 28
+          },
+          "test": {
+            "n": 144,
+            "skipped_selfies": 0,
+            "n_pos": 97,
+            "n_neg": 47
+          }
+        },
+        "Gastrointestinal_disorders": {
+          "train": {
+            "n": 1141,
+            "skipped_selfies": 0,
+            "n_pos": 1034,
+            "n_neg": 107
+          },
+          "valid": {
+            "n": 142,
+            "skipped_selfies": 0,
+            "n_pos": 133,
+            "n_neg": 9
+          },
+          "test": {
+            "n": 144,
+            "skipped_selfies": 0,
+            "n_pos": 131,
+            "n_neg": 13
+          }
+        },
+        "Immune_system_disorders": {
+          "train": {
+            "n": 1141,
+            "skipped_selfies": 0,
+            "n_pos": 802,
+            "n_neg": 339
+          },
+          "valid": {
+            "n": 142,
+            "skipped_selfies": 0,
+            "n_pos": 108,
+            "n_neg": 34
+          },
+          "test": {
+            "n": 144,
+            "skipped_selfies": 0,
+            "n_pos": 114,
+            "n_neg": 30
+          }
+        },
+        "Reproductive_system_and_breast_disorders": {
+          "train": {
+            "n": 1141,
+            "skipped_selfies": 0,
+            "n_pos": 563,
+            "n_neg": 578
+          },
+          "valid": {
+            "n": 142,
+            "skipped_selfies": 0,
+            "n_pos": 83,
+            "n_neg": 59
+          },
+          "test": {
+            "n": 144,
+            "skipped_selfies": 0,
+            "n_pos": 81,
+            "n_neg": 63
+          }
+        },
+        "Neoplasms_benign,_malignant_and_unspecified_(incl_cysts_and_polyps)": {
+          "train": {
+            "n": 1141,
+            "skipped_selfies": 0,
+            "n_pos": 305,
+            "n_neg": 836
+          },
+          "valid": {
+            "n": 142,
+            "skipped_selfies": 0,
+            "n_pos": 38,
+            "n_neg": 104
+          },
+          "test": {
+            "n": 144,
+            "skipped_selfies": 0,
+            "n_pos": 33,
+            "n_neg": 111
+          }
+        },
+        "General_disorders_and_administration_site_conditions": {
+          "train": {
+            "n": 1141,
+            "skipped_selfies": 0,
+            "n_pos": 1030,
+            "n_neg": 111
+          },
+          "valid": {
+            "n": 142,
+            "skipped_selfies": 0,
+            "n_pos": 128,
+            "n_neg": 14
+          },
+          "test": {
+            "n": 144,
+            "skipped_selfies": 0,
+            "n_pos": 134,
+            "n_neg": 10
+          }
+        },
+        "Endocrine_disorders": {
+          "train": {
+            "n": 1141,
+            "skipped_selfies": 0,
+            "n_pos": 252,
+            "n_neg": 889
+          },
+          "valid": {
+            "n": 142,
+            "skipped_selfies": 0,
+            "n_pos": 39,
+            "n_neg": 103
+          },
+          "test": {
+            "n": 144,
+            "skipped_selfies": 0,
+            "n_pos": 32,
+            "n_neg": 112
+          }
+        },
+        "Surgical_and_medical_procedures": {
+          "train": {
+            "n": 1141,
+            "skipped_selfies": 0,
+            "n_pos": 170,
+            "n_neg": 971
+          },
+          "valid": {
+            "n": 142,
+            "skipped_selfies": 0,
+            "n_pos": 22,
+            "n_neg": 120
+          },
+          "test": {
+            "n": 144,
+            "skipped_selfies": 0,
+            "n_pos": 21,
+            "n_neg": 123
+          }
+        },
+        "Vascular_disorders": {
+          "train": {
+            "n": 1141,
+            "skipped_selfies": 0,
+            "n_pos": 880,
+            "n_neg": 261
+          },
+          "valid": {
+            "n": 142,
+            "skipped_selfies": 0,
+            "n_pos": 115,
+            "n_neg": 27
+          },
+          "test": {
+            "n": 144,
+            "skipped_selfies": 0,
+            "n_pos": 113,
+            "n_neg": 31
+          }
+        },
+        "Blood_and_lymphatic_system_disorders": {
+          "train": {
+            "n": 1141,
+            "skipped_selfies": 0,
+            "n_pos": 702,
+            "n_neg": 439
+          },
+          "valid": {
+            "n": 142,
+            "skipped_selfies": 0,
+            "n_pos": 93,
+            "n_neg": 49
+          },
+          "test": {
+            "n": 144,
+            "skipped_selfies": 0,
+            "n_pos": 90,
+            "n_neg": 54
+          }
+        },
+        "Skin_and_subcutaneous_tissue_disorders": {
+          "train": {
+            "n": 1141,
+            "skipped_selfies": 0,
+            "n_pos": 1044,
+            "n_neg": 97
+          },
+          "valid": {
+            "n": 142,
+            "skipped_selfies": 0,
+            "n_pos": 137,
+            "n_neg": 5
+          },
+          "test": {
+            "n": 144,
+            "skipped_selfies": 0,
+            "n_pos": 137,
+            "n_neg": 7
+          }
+        },
+        "Congenital,_familial_and_genetic_disorders": {
+          "train": {
+            "n": 1141,
+            "skipped_selfies": 0,
+            "n_pos": 213,
+            "n_neg": 928
+          },
+          "valid": {
+            "n": 142,
+            "skipped_selfies": 0,
+            "n_pos": 18,
+            "n_neg": 124
+          },
+          "test": {
+            "n": 144,
+            "skipped_selfies": 0,
+            "n_pos": 22,
+            "n_neg": 122
+          }
+        },
+        "Infections_and_infestations": {
+          "train": {
+            "n": 1141,
+            "skipped_selfies": 0,
+            "n_pos": 810,
+            "n_neg": 331
+          },
+          "valid": {
+            "n": 142,
+            "skipped_selfies": 0,
+            "n_pos": 100,
+            "n_neg": 42
+          },
+          "test": {
+            "n": 144,
+            "skipped_selfies": 0,
+            "n_pos": 96,
+            "n_neg": 48
+          }
+        },
+        "Respiratory,_thoracic_and_mediastinal_disorders": {
+          "train": {
+            "n": 1141,
+            "skipped_selfies": 0,
+            "n_pos": 840,
+            "n_neg": 301
+          },
+          "valid": {
+            "n": 142,
+            "skipped_selfies": 0,
+            "n_pos": 111,
+            "n_neg": 31
+          },
+          "test": {
+            "n": 144,
+            "skipped_selfies": 0,
+            "n_pos": 109,
+            "n_neg": 35
+          }
+        },
+        "Psychiatric_disorders": {
+          "train": {
+            "n": 1141,
+            "skipped_selfies": 0,
+            "n_pos": 817,
+            "n_neg": 324
+          },
+          "valid": {
+            "n": 142,
+            "skipped_selfies": 0,
+            "n_pos": 95,
+            "n_neg": 47
+          },
+          "test": {
+            "n": 144,
+            "skipped_selfies": 0,
+            "n_pos": 104,
+            "n_neg": 40
+          }
+        },
+        "Renal_and_urinary_disorders": {
+          "train": {
+            "n": 1141,
+            "skipped_selfies": 0,
+            "n_pos": 721,
+            "n_neg": 420
+          },
+          "valid": {
+            "n": 142,
+            "skipped_selfies": 0,
+            "n_pos": 93,
+            "n_neg": 49
+          },
+          "test": {
+            "n": 144,
+            "skipped_selfies": 0,
+            "n_pos": 97,
+            "n_neg": 47
+          }
+        },
+        "Pregnancy,_puerperium_and_perinatal_conditions": {
+          "train": {
+            "n": 1141,
+            "skipped_selfies": 0,
+            "n_pos": 93,
+            "n_neg": 1048
+          },
+          "valid": {
+            "n": 142,
+            "skipped_selfies": 0,
+            "n_pos": 18,
+            "n_neg": 124
+          },
+          "test": {
+            "n": 144,
+            "skipped_selfies": 0,
+            "n_pos": 14,
+            "n_neg": 130
+          }
+        },
+        "Ear_and_labyrinth_disorders": {
+          "train": {
+            "n": 1141,
+            "skipped_selfies": 0,
+            "n_pos": 526,
+            "n_neg": 615
+          },
+          "valid": {
+            "n": 142,
+            "skipped_selfies": 0,
+            "n_pos": 66,
+            "n_neg": 76
+          },
+          "test": {
+            "n": 144,
+            "skipped_selfies": 0,
+            "n_pos": 67,
+            "n_neg": 77
+          }
+        },
+        "Nervous_system_disorders": {
+          "train": {
+            "n": 1141,
+            "skipped_selfies": 0,
+            "n_pos": 1041,
+            "n_neg": 100
+          },
+          "valid": {
+            "n": 142,
+            "skipped_selfies": 0,
+            "n_pos": 127,
+            "n_neg": 15
+          },
+          "test": {
+            "n": 144,
+            "skipped_selfies": 0,
+            "n_pos": 136,
+            "n_neg": 8
+          }
+        },
+        "Injury,_poisoning_and_procedural_complications": {
+          "train": {
+            "n": 1141,
+            "skipped_selfies": 0,
+            "n_pos": 759,
+            "n_neg": 382
+          },
+          "valid": {
+            "n": 142,
+            "skipped_selfies": 0,
+            "n_pos": 93,
+            "n_neg": 49
+          },
+          "test": {
+            "n": 144,
+            "skipped_selfies": 0,
+            "n_pos": 94,
+            "n_neg": 50
+          }
+        }
+      },
+      "endpoint_best_step": {
+        "Hepatobiliary_disorders": 160,
+        "Metabolism_and_nutrition_disorders": 120,
+        "Investigations": 160,
+        "Musculoskeletal_and_connective_tissue_disorders": 160,
+        "Gastrointestinal_disorders": 120,
+        "Immune_system_disorders": 80,
+        "Reproductive_system_and_breast_disorders": 200,
+        "Neoplasms_benign,_malignant_and_unspecified_(incl_cysts_and_polyps)": 80,
+        "General_disorders_and_administration_site_conditions": 160,
+        "Endocrine_disorders": 120,
+        "Surgical_and_medical_procedures": 120,
+        "Vascular_disorders": 120,
+        "Blood_and_lymphatic_system_disorders": 80,
+        "Skin_and_subcutaneous_tissue_disorders": 80,
+        "Congenital,_familial_and_genetic_disorders": 40,
+        "Infections_and_infestations": 80,
+        "Respiratory,_thoracic_and_mediastinal_disorders": 200,
+        "Psychiatric_disorders": 200,
+        "Renal_and_urinary_disorders": 120,
+        "Pregnancy,_puerperium_and_perinatal_conditions": 40,
+        "Ear_and_labyrinth_disorders": 120,
+        "Nervous_system_disorders": 40,
+        "Injury,_poisoning_and_procedural_complications": 520
+      }
+    },
+    "tox21": {
+      "type": "classification",
+      "metric": "auroc",
+      "value": 0.7539284974322946,
+      "seed": 0,
+      "n_endpoints": 12,
+      "n_scored": 12,
+      "excluded_endpoints": [],
+      "per_endpoint_test": {
+        "NR-AR": 0.7582955217991715,
+        "NR-AR-LBD": 0.7599353796445881,
+        "NR-AhR": 0.7808114394542531,
+        "NR-Aromatase": 0.7531924562599409,
+        "NR-ER": 0.7734887412791912,
+        "NR-ER-LBD": 0.8423809523809522,
+        "NR-PPAR-gamma": 0.7005110274341044,
+        "SR-ATAD5": 0.6751189767995242,
+        "SR-MMP": 0.8477280462899932,
+        "SR-p53": 0.8014358108108108,
+        "SR-ARE": 0.6906374223447395,
+        "SR-HSE": 0.6636061946902655
+      },
+      "selfies_version": "2.1.0",
+      "base_model": "QizhiPei/biot5-base",
+      "budget": {
+        "steps": 1200,
+        "eval_every": 60,
+        "warmup": 60,
+        "patience": 8
+      },
+      "base_lr": 0.001,
+      "eff_batch": 128,
+      "endpoint_counts": {
+        "NR-AR": {
+          "train": {
+            "n": 5834,
+            "skipped_selfies": 0,
+            "n_pos": 206,
+            "n_neg": 5628
+          },
+          "valid": {
+            "n": 702,
+            "skipped_selfies": 0,
+            "n_pos": 65,
+            "n_neg": 637
+          },
+          "test": {
+            "n": 722,
+            "skipped_selfies": 0,
+            "n_pos": 37,
+            "n_neg": 685
+          }
+        },
+        "NR-AR-LBD": {
+          "train": {
+            "n": 5471,
+            "skipped_selfies": 0,
+            "n_pos": 156,
+            "n_neg": 5315
+          },
+          "valid": {
+            "n": 636,
+            "skipped_selfies": 0,
+            "n_pos": 56,
+            "n_neg": 580
+          },
+          "test": {
+            "n": 644,
+            "skipped_selfies": 0,
+            "n_pos": 25,
+            "n_neg": 619
+          }
+        },
+        "NR-AhR": {
+          "train": {
+            "n": 5298,
+            "skipped_selfies": 0,
+            "n_pos": 539,
+            "n_neg": 4759
+          },
+          "valid": {
+            "n": 624,
+            "skipped_selfies": 0,
+            "n_pos": 98,
+            "n_neg": 526
+          },
+          "test": {
+            "n": 620,
+            "skipped_selfies": 0,
+            "n_pos": 131,
+            "n_neg": 489
+          }
+        },
+        "NR-Aromatase": {
+          "train": {
+            "n": 4766,
+            "skipped_selfies": 0,
+            "n_pos": 213,
+            "n_neg": 4553
+          },
+          "valid": {
+            "n": 515,
+            "skipped_selfies": 0,
+            "n_pos": 42,
+            "n_neg": 473
+          },
+          "test": {
+            "n": 534,
+            "skipped_selfies": 0,
+            "n_pos": 45,
+            "n_neg": 489
+          }
+        },
+        "NR-ER": {
+          "train": {
+            "n": 5029,
+            "skipped_selfies": 0,
+            "n_pos": 571,
+            "n_neg": 4458
+          },
+          "valid": {
+            "n": 582,
+            "skipped_selfies": 0,
+            "n_pos": 119,
+            "n_neg": 463
+          },
+          "test": {
+            "n": 575,
+            "skipped_selfies": 0,
+            "n_pos": 101,
+            "n_neg": 474
+          }
+        },
+        "NR-ER-LBD": {
+          "train": {
+            "n": 5625,
+            "skipped_selfies": 0,
+            "n_pos": 239,
+            "n_neg": 5386
+          },
+          "valid": {
+            "n": 643,
+            "skipped_selfies": 0,
+            "n_pos": 60,
+            "n_neg": 583
+          },
+          "test": {
+            "n": 680,
+            "skipped_selfies": 0,
+            "n_pos": 50,
+            "n_neg": 630
+          }
+        },
+        "NR-PPAR-gamma": {
+          "train": {
+            "n": 5255,
+            "skipped_selfies": 0,
+            "n_pos": 141,
+            "n_neg": 5114
+          },
+          "valid": {
+            "n": 590,
+            "skipped_selfies": 0,
+            "n_pos": 19,
+            "n_neg": 571
+          },
+          "test": {
+            "n": 598,
+            "skipped_selfies": 0,
+            "n_pos": 26,
+            "n_neg": 572
+          }
+        },
+        "SR-ATAD5": {
+          "train": {
+            "n": 5696,
+            "skipped_selfies": 0,
+            "n_pos": 202,
+            "n_neg": 5494
+          },
+          "valid": {
+            "n": 672,
+            "skipped_selfies": 0,
+            "n_pos": 21,
+            "n_neg": 651
+          },
+          "test": {
+            "n": 697,
+            "skipped_selfies": 0,
+            "n_pos": 41,
+            "n_neg": 656
+          }
+        },
+        "SR-MMP": {
+          "train": {
+            "n": 4737,
+            "skipped_selfies": 0,
+            "n_pos": 693,
+            "n_neg": 4044
+          },
+          "valid": {
+            "n": 538,
+            "skipped_selfies": 0,
+            "n_pos": 112,
+            "n_neg": 426
+          },
+          "test": {
+            "n": 529,
+            "skipped_selfies": 0,
+            "n_pos": 113,
+            "n_neg": 416
+          }
+        },
+        "SR-p53": {
+          "train": {
+            "n": 5472,
+            "skipped_selfies": 0,
+            "n_pos": 294,
+            "n_neg": 5178
+          },
+          "valid": {
+            "n": 643,
+            "skipped_selfies": 0,
+            "n_pos": 69,
+            "n_neg": 574
+          },
+          "test": {
+            "n": 652,
+            "skipped_selfies": 0,
+            "n_pos": 60,
+            "n_neg": 592
+          }
+        },
+        "SR-ARE": {
+          "train": {
+            "n": 4777,
+            "skipped_selfies": 0,
+            "n_pos": 706,
+            "n_neg": 4071
+          },
+          "valid": {
+            "n": 518,
+            "skipped_selfies": 0,
+            "n_pos": 113,
+            "n_neg": 405
+          },
+          "test": {
+            "n": 530,
+            "skipped_selfies": 0,
+            "n_pos": 123,
+            "n_neg": 407
+          }
+        },
+        "SR-HSE": {
+          "train": {
+            "n": 5235,
+            "skipped_selfies": 0,
+            "n_pos": 280,
+            "n_neg": 4955
+          },
+          "valid": {
+            "n": 612,
+            "skipped_selfies": 0,
+            "n_pos": 44,
+            "n_neg": 568
+          },
+          "test": {
+            "n": 613,
+            "skipped_selfies": 0,
+            "n_pos": 48,
+            "n_neg": 565
+          }
+        }
+      },
+      "endpoint_best_step": {
+        "NR-AR": 120,
+        "NR-AR-LBD": 120,
+        "NR-AhR": 480,
+        "NR-Aromatase": 240,
+        "NR-ER": 120,
+        "NR-ER-LBD": 180,
+        "NR-PPAR-gamma": 300,
+        "SR-ATAD5": 300,
+        "SR-MMP": 300,
+        "SR-p53": 360,
+        "SR-ARE": 480,
+        "SR-HSE": 180
+      }
+    },
+    "esol": {
+      "type": "regression",
+      "metric": "rmse",
+      "value": 1.074272068674023,
+      "seed": 0,
+      "n_endpoints": 1,
+      "n_scored": 1,
+      "excluded_endpoints": [],
+      "per_endpoint_test": {
+        "logSolubility": 1.074272068674023
+      },
+      "selfies_version": "2.1.0",
+      "base_model": "QizhiPei/biot5-base",
+      "budget": {
+        "steps": 1200,
+        "eval_every": 60,
+        "warmup": 60,
+        "patience": 8
+      },
+      "base_lr": 0.001,
+      "eff_batch": 128,
+      "endpoint_counts": {
+        "logSolubility": {
+          "train": {
+            "n": 902,
+            "skipped_selfies": 0,
+            "n_pos": 0,
+            "n_neg": 0
+          },
+          "valid": {
+            "n": 112,
+            "skipped_selfies": 0,
+            "n_pos": 0,
+            "n_neg": 0
+          },
+          "test": {
+            "n": 114,
+            "skipped_selfies": 0,
+            "n_pos": 0,
+            "n_neg": 0
+          }
+        }
+      },
+      "endpoint_best_step": {
+        "logSolubility": 120
+      }
+    },
+    "freesolv": {
+      "type": "regression",
+      "metric": "rmse",
+      "value": 3.7627287472856072,
+      "seed": 0,
+      "n_endpoints": 1,
+      "n_scored": 1,
+      "excluded_endpoints": [],
+      "per_endpoint_test": {
+        "freesolv": 3.7627287472856072
+      },
+      "selfies_version": "2.1.0",
+      "base_model": "QizhiPei/biot5-base",
+      "budget": {
+        "steps": 1000,
+        "eval_every": 50,
+        "warmup": 50,
+        "patience": 8
+      },
+      "base_lr": 0.001,
+      "eff_batch": 128,
+      "endpoint_counts": {
+        "freesolv": {
+          "train": {
+            "n": 513,
+            "skipped_selfies": 0,
+            "n_pos": 0,
+            "n_neg": 0
+          },
+          "valid": {
+            "n": 64,
+            "skipped_selfies": 0,
+            "n_pos": 0,
+            "n_neg": 0
+          },
+          "test": {
+            "n": 65,
+            "skipped_selfies": 0,
+            "n_pos": 0,
+            "n_neg": 0
+          }
+        }
+      },
+      "endpoint_best_step": {
+        "freesolv": 200
+      }
+    },
+    "lipo": {
+      "type": "regression",
+      "metric": "rmse",
+      "value": 1.0558018036904178,
+      "seed": 0,
+      "n_endpoints": 1,
+      "n_scored": 1,
+      "excluded_endpoints": [],
+      "per_endpoint_test": {
+        "lipo": 1.0558018036904178
+      },
+      "selfies_version": "2.1.0",
+      "base_model": "QizhiPei/biot5-base",
+      "budget": {
+        "steps": 1500,
+        "eval_every": 75,
+        "warmup": 75,
+        "patience": 8
+      },
+      "base_lr": 0.001,
+      "eff_batch": 128,
+      "endpoint_counts": {
+        "lipo": {
+          "train": {
+            "n": 3360,
+            "skipped_selfies": 0,
+            "n_pos": 0,
+            "n_neg": 0
+          },
+          "valid": {
+            "n": 420,
+            "skipped_selfies": 0,
+            "n_pos": 0,
+            "n_neg": 0
+          },
+          "test": {
+            "n": 420,
+            "skipped_selfies": 0,
+            "n_pos": 0,
+            "n_neg": 0
+          }
+        }
+      },
+      "endpoint_best_step": {
+        "lipo": 375
+      }
+    }
+  }
+}

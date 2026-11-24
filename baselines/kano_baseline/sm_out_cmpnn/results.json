@@ -1,0 +1,47 @@
+{
+ "bbbp": {
+  "rc": 0,
+  "result_line": "Results: 0.96062 +/- 0.00000",
+  "sec": 643
+ },
+ "bace": {
+  "rc": 0,
+  "result_line": "Results: 0.83178 +/- 0.00000",
+  "sec": 563
+ },
+ "clintox": {
+  "rc": 0,
+  "result_line": "Results: 0.92562 +/- 0.00000",
+  "sec": 476
+ },
+ "esol": {
+  "rc": 0,
+  "result_line": "Results: 0.70798 +/- 0.00000",
+  "sec": 200
+ },
+ "freesolv": {
+  "rc": 0,
+  "result_line": "Results: 1.87825 +/- 0.00000",
+  "sec": 100
+ },
+ "lipo": {
+  "rc": 0,
+  "result_line": "Results: 0.60935 +/- 0.00000",
+  "sec": 1440
+ },
+ "sider": {
+  "rc": 0,
+  "result_line": "Results: 0.64081 +/- 0.00000",
+  "sec": 814
+ },
+ "tox21": {
+  "rc": 0,
+  "result_line": "Results: 0.80850 +/- 0.00000",
+  "sec": 2067
+ },
+ "hiv": {
+  "rc": 0,
+  "result_line": "Results: 0.80478 +/- 0.00000",
+  "sec": 14330
+ }
+}

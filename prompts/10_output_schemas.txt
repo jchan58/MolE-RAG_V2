@@ -1,0 +1,48 @@
+================================================================================
+OUTPUT SCHEMAS (verbatim JSON schema strings in prompts)
+================================================================================
+
+PREDICTION (run_fw_multi.py PRED_SCHEMA; also context-ablation F):
+  regression:
+Output ONLY JSON: {"prediction_value": <number {unit}>, "justification":"...", "unresolved_questions":[]}
+  classification:
+Output ONLY JSON: {"prediction":"positive|negative|uncertain","probability_positive":0.0,"justification":"...","unresolved_questions":[]}
+  multilabel:
+Output ONLY JSON: {"endpoints": {"<endpoint_id>": <prob 0..1>, ... one entry per endpoint}, "justification":"...", "unresolved_questions":[]}
+
+REVISION TAIL (run_fw_multi.py REV_SCHEMA_TAIL; reused in arm B, arm C assess, Section G revision):
+  regression:     "prediction_value": <number>
+  classification: "prediction":"positive|negative|uncertain","probability_positive":0.0
+  multilabel:     "endpoints": {"<endpoint_id>": <prob>, ...changed endpoints...}
+
+ARM B (self-review) full output:
+Output ONLY JSON: {{REV_SCHEMA_TAIL},"changed":true,"stop":false,"justification":"..."}
+
+ARM C CALL 1 (ask/select) full output:
+Output ONLY JSON: {"stop":false,"question":"...","entities":["<entity_id>",...],"attributes":["<attribute_id>",...],"route":"literature|structural|none","why_matters":"..."}
+  (multilabel appends:  ,"endpoint":"<endpoint_id>")
+
+ARM C CALL 2 (assess/revise) full output:
+Output ONLY JSON: {{REV_SCHEMA_TAIL},"question_answer_status":"answered|partially_answered|not_answered|unresolved","evidence_subject":"target|reference|related_compound|general_class|unresolved","new_information_added":true,"next_action":"continue|stop","justification":"..."}
+
+SECTION G revision full output:
+Output ONLY JSON: {{rev_schema_tail},"question_answer_status":"answered|partially_answered|not_answered|unresolved","evidence_subject":"target|reference|related_compound|general_class|unresolved","new_information_added":true,"justification":"..."}
+
+SECTION H judge output:
+Output ONLY JSON: {"identity":"","support":"","applicability":"","direction":"","magnitude":"","retention_recommendation":"revise|retain","overall_evidence_justified":"yes|partial|no","notes":""}
+
+----------------------------------------------------------------
+CORPUS QUERY-GEN output schemas
+  Boolean (pipelines 1 & 2, SYSTEM_FORMAT):
+{"queries": [{"query": <string: an executable PMC Boolean query>, "purpose": <string>, "coverage": <string>, "identifiers_used": [<string>, ...]}], "notes": <string>}
+  Semantic+BM25 (pipeline 3 downstream): JSON array of {"topic_id","semantic_query","bm25_query"}
+
+CORPUS EXTRACTION output schemas (one object per finding)
+  BBBP (exp70_extract.py): JSON ARRAY of:
+{"entity_type":"compound"|"task","entity_id","entity_mention","attribute_id","attribute_label_original","evidence_type":"experimental"|"computational"|"mechanism"|"general_relationship"|"method","finding","value","unit","conditions","qualifiers","supporting_quote"}
+  multi lipo/sider/hiv/tox21 (extract.py): JSON OBJECT {"records":[ ... ]}, each record adds
+    attribute_path (group.attribute) + identity_status ('resolved'|'article-local'|'unresolved');
+    evidence_type one of {experimental result, computational prediction, mechanism, general relationship, method}
+  downstream freesolv/esol/bace/clintox (ds_extract.py): JSON ARRAY of
+    {attribute_id, attribute_label_original, evidence_type, finding, value, unit, conditions, qualifiers, supporting_quote}
+    REQUIRED = attribute_id, evidence_type, finding, supporting_quote; supporting_quote verified verbatim.

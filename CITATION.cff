@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this code or the chemistry card corpus, please cite the paper."
+title: "MolE-RAG: Molecular Structure-Enhanced Retrieval-Augmented Generation for Chemistry"
+authors:
+  - family-names: Chan
+    given-names: Joey
+  - family-names: Kweon
+    given-names: Wonbin
+  - family-names: Shin
+    given-names: Ashley
+  - family-names: Bhattacharjee
+    given-names: Niharika
+  - family-names: Jiang
+    given-names: Pengcheng
+  - family-names: Guo
+    given-names: Yue
+  - family-names: Han
+    given-names: Jiawei
+preferred-citation:
+  type: article
+  title: "MolE-RAG: Molecular Structure-Enhanced Retrieval-Augmented Generation for Chemistry"
+  authors:
+    - family-names: Chan
+      given-names: Joey
+    - family-names: Kweon
+      given-names: Wonbin
+    - family-names: Shin
+      given-names: Ashley
+    - family-names: Bhattacharjee
+      given-names: Niharika
+    - family-names: Jiang
+      given-names: Pengcheng
+    - family-names: Guo
+      given-names: Yue
+    - family-names: Han
+      given-names: Jiawei
+  journal: "arXiv preprint arXiv:2606.05693"
+  year: 2026
+  identifiers:
+    - type: other
+      value: "arXiv:2606.05693"

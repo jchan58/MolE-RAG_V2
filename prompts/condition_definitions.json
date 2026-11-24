@@ -1,0 +1,312 @@
+{
+ "description": "Machine-readable field map for Appendix F context-ablation conditions.",
+ "components": {
+  "base": "task/endpoint definition + query standardized SMILES + output JSON schema + units (ALWAYS present)",
+  "identifiers": "resolved common name + IUPAC name + selected aliases (+InChIKey) from exp70 identity records",
+  "descriptors": "the FIXED GLOBAL 15 RDKit descriptor values + GLOSS glossary + formula(CalcMolFormula) + heavy_atoms(GetNumHeavyAtoms)",
+  "functional_groups": "AccFG functional-group names + counts (lite=True)",
+  "bare_references": "5 training refs: SMILES + observed outcome/label/positive-endpoints + Tanimoto similarity",
+  "reference_annotations": "identifiers + descriptors + functional_groups attached to each selected reference",
+  "explicit_comparisons": "per-reference query-minus-ref top-6 |\u0394descriptor| + shared/differing FG counts (direction=target-ref)",
+  "literature": "EXCLUDED in all conditions (arm C only; not used here)"
+ },
+ "conditions": {
+  "S": {
+   "fields": {
+    "query_identifiers": false,
+    "query_descriptors(+formula+heavy_atoms+GLOSS)": false,
+    "query_functional_groups(AccFG)": false,
+    "bare_references": false,
+    "reference_identifiers": false,
+    "reference_descriptors": false,
+    "reference_functional_groups": false,
+    "explicit_comparisons": false,
+    "literature": false,
+    "iterative_review": false
+   },
+   "required_markers": [],
+   "forbidden_markers": [
+    "comparisons",
+    "q_AccFG",
+    "q_descriptors",
+    "q_identity",
+    "r_AccFG",
+    "r_descriptors",
+    "r_identity",
+    "refs_present"
+   ],
+   "is_primary": true
+  },
+  "R": {
+   "fields": {
+    "query_identifiers": false,
+    "query_descriptors(+formula+heavy_atoms+GLOSS)": false,
+    "query_functional_groups(AccFG)": false,
+    "bare_references": true,
+    "reference_identifiers": false,
+    "reference_descriptors": false,
+    "reference_functional_groups": false,
+    "explicit_comparisons": false,
+    "literature": false,
+    "iterative_review": false
+   },
+   "required_markers": [
+    "refs_present"
+   ],
+   "forbidden_markers": [
+    "comparisons",
+    "q_AccFG",
+    "q_descriptors",
+    "q_identity",
+    "r_AccFG",
+    "r_descriptors",
+    "r_identity"
+   ],
+   "is_primary": true
+  },
+  "M": {
+   "fields": {
+    "query_identifiers": true,
+    "query_descriptors(+formula+heavy_atoms+GLOSS)": true,
+    "query_functional_groups(AccFG)": true,
+    "bare_references": false,
+    "reference_identifiers": false,
+    "reference_descriptors": false,
+    "reference_functional_groups": false,
+    "explicit_comparisons": false,
+    "literature": false,
+    "iterative_review": false
+   },
+   "required_markers": [
+    "q_AccFG",
+    "q_descriptors",
+    "q_identity"
+   ],
+   "forbidden_markers": [
+    "comparisons",
+    "r_AccFG",
+    "r_descriptors",
+    "r_identity",
+    "refs_present"
+   ],
+   "is_primary": true
+  },
+  "MR": {
+   "fields": {
+    "query_identifiers": true,
+    "query_descriptors(+formula+heavy_atoms+GLOSS)": true,
+    "query_functional_groups(AccFG)": true,
+    "bare_references": true,
+    "reference_identifiers": true,
+    "reference_descriptors": true,
+    "reference_functional_groups": true,
+    "explicit_comparisons": false,
+    "literature": false,
+    "iterative_review": false
+   },
+   "required_markers": [
+    "q_AccFG",
+    "q_descriptors",
+    "q_identity",
+    "r_AccFG",
+    "r_descriptors",
+    "r_identity",
+    "refs_present"
+   ],
+   "forbidden_markers": [
+    "comparisons"
+   ],
+   "is_primary": true
+  },
+  "MRD": {
+   "fields": {
+    "query_identifiers": true,
+    "query_descriptors(+formula+heavy_atoms+GLOSS)": true,
+    "query_functional_groups(AccFG)": true,
+    "bare_references": true,
+    "reference_identifiers": true,
+    "reference_descriptors": true,
+    "reference_functional_groups": true,
+    "explicit_comparisons": true,
+    "literature": false,
+    "iterative_review": false
+   },
+   "required_markers": [
+    "comparisons",
+    "q_AccFG",
+    "q_descriptors",
+    "q_identity",
+    "r_AccFG",
+    "r_descriptors",
+    "r_identity",
+    "refs_present"
+   ],
+   "forbidden_markers": [],
+   "is_primary": true
+  },
+  "MR_no_id": {
+   "fields": {
+    "query_identifiers": false,
+    "query_descriptors(+formula+heavy_atoms+GLOSS)": true,
+    "query_functional_groups(AccFG)": true,
+    "bare_references": true,
+    "reference_identifiers": false,
+    "reference_descriptors": true,
+    "reference_functional_groups": true,
+    "explicit_comparisons": false,
+    "literature": false,
+    "iterative_review": false
+   },
+   "required_markers": [
+    "q_AccFG",
+    "q_descriptors",
+    "r_AccFG",
+    "r_descriptors",
+    "refs_present"
+   ],
+   "forbidden_markers": [
+    "comparisons",
+    "q_identity",
+    "r_identity"
+   ],
+   "is_primary": true
+  },
+  "MR_no_desc": {
+   "fields": {
+    "query_identifiers": true,
+    "query_descriptors(+formula+heavy_atoms+GLOSS)": false,
+    "query_functional_groups(AccFG)": true,
+    "bare_references": true,
+    "reference_identifiers": true,
+    "reference_descriptors": false,
+    "reference_functional_groups": true,
+    "explicit_comparisons": false,
+    "literature": false,
+    "iterative_review": false
+   },
+   "required_markers": [
+    "q_AccFG",
+    "q_identity",
+    "r_AccFG",
+    "r_identity",
+    "refs_present"
+   ],
+   "forbidden_markers": [
+    "comparisons",
+    "q_descriptors",
+    "r_descriptors"
+   ],
+   "is_primary": true
+  },
+  "MR_no_fg": {
+   "fields": {
+    "query_identifiers": true,
+    "query_descriptors(+formula+heavy_atoms+GLOSS)": true,
+    "query_functional_groups(AccFG)": false,
+    "bare_references": true,
+    "reference_identifiers": true,
+    "reference_descriptors": true,
+    "reference_functional_groups": false,
+    "explicit_comparisons": false,
+    "literature": false,
+    "iterative_review": false
+   },
+   "required_markers": [
+    "q_descriptors",
+    "q_identity",
+    "r_descriptors",
+    "r_identity",
+    "refs_present"
+   ],
+   "forbidden_markers": [
+    "comparisons",
+    "q_AccFG",
+    "r_AccFG"
+   ],
+   "is_primary": true
+  },
+  "MRD_no_id": {
+   "fields": {
+    "query_identifiers": false,
+    "query_descriptors(+formula+heavy_atoms+GLOSS)": true,
+    "query_functional_groups(AccFG)": true,
+    "bare_references": true,
+    "reference_identifiers": false,
+    "reference_descriptors": true,
+    "reference_functional_groups": true,
+    "explicit_comparisons": true,
+    "literature": false,
+    "iterative_review": false
+   },
+   "required_markers": [
+    "comparisons",
+    "q_AccFG",
+    "q_descriptors",
+    "r_AccFG",
+    "r_descriptors",
+    "refs_present"
+   ],
+   "forbidden_markers": [
+    "q_identity",
+    "r_identity"
+   ],
+   "is_primary": false
+  },
+  "M_Rbare": {
+   "fields": {
+    "query_identifiers": true,
+    "query_descriptors(+formula+heavy_atoms+GLOSS)": true,
+    "query_functional_groups(AccFG)": true,
+    "bare_references": true,
+    "reference_identifiers": false,
+    "reference_descriptors": false,
+    "reference_functional_groups": false,
+    "explicit_comparisons": false,
+    "literature": false,
+    "iterative_review": false
+   },
+   "required_markers": [
+    "q_AccFG",
+    "q_descriptors",
+    "q_identity",
+    "refs_present"
+   ],
+   "forbidden_markers": [
+    "comparisons",
+    "r_AccFG",
+    "r_descriptors",
+    "r_identity"
+   ],
+   "is_primary": false
+  }
+ },
+ "primary_order": [
+  "S",
+  "R",
+  "M",
+  "MR",
+  "MRD",
+  "MR_no_id",
+  "MR_no_desc",
+  "MR_no_fg"
+ ],
+ "notes": {
+  "formula_heavy_atoms_assignment": "formula + heavy_atoms assigned to the DESCRIPTORS component (RDKit-computed size features of the same family; removed in MR_no_desc; absent in S/R). heavy_atoms duplicates HeavyAtomCount already in the 15-descriptor list.",
+  "MRD_no_id": "= the REPORTED fw_multi arm-A initial context (fact_block + refs_block + diff_block, NO identifiers). Reusable from existing runs. NOT one of the 8 primary conditions.",
+  "M_Rbare": "OPTIONAL factorial point: query molecular context + BARE refs (no ref annotations, no comparisons).",
+  "ablation_base": "MR_no_id / MR_no_desc / MR_no_fg are ablations of MR (NOT MRD): no comparison block, so a removed component cannot be silently reintroduced by a comparison. Removed from BOTH query and refs.",
+  "reference_invariance": "The 5 references (identity + order) are IDENTICAL across all ref-containing conditions; removing reference annotations does NOT change which refs were selected.",
+  "independence": "Each condition is an INDEPENDENT prediction call (fresh), never seeded with another condition's rationale; literature (arm C) and self-review (arm B) are disabled."
+ },
+ "improvement_convention": "dAUC=AUC_aug-AUC_cmp (pp); dRMSE=RMSE_cmp-RMSE_aug (orig units); positive=improvement",
+ "contrasts": {
+  "R-S": "labeled refs help w/o annotations",
+  "M-S": "query molecular context helps w/o refs",
+  "MR-R": "query+ref annotations beyond bare refs",
+  "MR-M": "annotated labeled-reference package beyond query context",
+  "MRD-MR": "explicit comparisons beyond supplying the values",
+  "MR-MR_no_id": "identifiers",
+  "MR-MR_no_desc": "descriptors",
+  "MR-MR_no_fg": "functional-group annotation"
+ }
+}

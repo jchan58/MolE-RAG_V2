@@ -1,0 +1,32 @@
+
+=== bbbp (classification) ===
+  ministral_3_14b  n= 205 | A auc=0.885 | B auc=0.844 | C auc=0.773 | C-A=-0.098 CI(-0.147, -0.054)
+  qwen3_32b        n= 205 | A auc=0.905 | B auc=0.897 | C auc=0.902 | C-A=-0.003 CI(-0.035, 0.026)
+  opus_4_6         n= 205 | A auc=0.922 | B auc=0.922 | C auc=0.912 | C-A=-0.009 CI(-0.033, 0.007)
+  gpt5mini         n= 205 | A auc=0.925 | B auc=0.901 | C auc=0.88 | C-A=-0.045 CI(-0.094, -0.009)
+
+=== esol (regression) ===
+  ministral_3_14b  n= 114 | A rmse=1.043 | B rmse=1.07 | C rmse=1.053 | C-A=0.01 CI(-0.002, 0.032)
+  qwen3_32b        n= 114 | A rmse=1.014 | B rmse=1.043 | C rmse=1.012 | C-A=-0.002 CI(-0.007, 0.0)
+  opus_4_6         n= 114 | A rmse=0.658 | B rmse=0.653 | C rmse=0.652 | C-A=-0.006 CI(-0.026, 0.01)
+  gpt5mini         n= 114 | A rmse=0.982 | B rmse=1.124 | C rmse=0.977 | C-A=-0.005 CI(-0.016, 0.0)
+
+=== freesolv (regression) ===
+  ministral_3_14b  n=  65 | A rmse=2.926 | B rmse=3.562 | C rmse=2.909 | C-A=-0.017 CI(-0.06, 0.0)
+  qwen3_32b        n=  65 | A rmse=3.481 | B rmse=3.537 | C rmse=3.426 | C-A=-0.055 CI(-0.189, 0.0)
+  opus_4_6         n=  65 | A rmse=1.593 | B rmse=1.589 | C rmse=1.585 | C-A=-0.008 CI(-0.048, 0.019)
+  gpt5mini         n=  65 | A rmse=2.815 | B rmse=3.222 | C rmse=2.802 | C-A=-0.013 CI(-0.063, 0.018)
+
+=== lipo (regression) ===
+  ministral_3_14b  n= 420 | A rmse=0.946 | B rmse=0.952 | C rmse=0.946 | C-A=-0.001 CI(-0.006, 0.003)
+  qwen3_32b        n= 420 | A rmse=0.962 | B rmse=0.95 | C rmse=0.963 | C-A=0.001 CI(-0.001, 0.002)
+  opus_4_6         n= 420 | A rmse=0.718 | B rmse=0.709 | C rmse=0.718 | C-A=0.0 CI(-0.02, 0.018)
+  gpt5mini         n= 420 | A rmse=0.868 | B rmse=0.878 | C rmse=0.869 | C-A=0.001 CI(-0.0, 0.004)
+
+=== sider (multilabel) ===
+  ministral_3_14b  n= 144 | A mean_auc=0.636 | B mean_auc=0.629 | C mean_auc=0.601 | C-A=-0.033 CI(-0.128, 0.089)
+  qwen3_32b        n= 144 | A mean_auc=0.628 | B mean_auc=0.63 | C mean_auc=0.704 | C-A=0.076 CI(-0.064, 0.184)
+  opus_4_6         n= 144 | A mean_auc=0.72 | B mean_auc=0.727 | C mean_auc=0.678 | C-A=-0.043 CI(-0.088, 0.005)
+  gpt5mini         n= 144 | A mean_auc=0.652 | B mean_auc=0.648 | C mean_auc=0.685 | C-A=0.033 CI(-0.073, 0.138)
+
+saved /work/hdd/bhrm/jchan5/molerag_reasoning/fw_multi/SCORES_fw_multi.json

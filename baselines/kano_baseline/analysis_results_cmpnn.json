@@ -1,0 +1,65 @@
+{
+ "bbbp": {
+  "type": "classification",
+  "metric": "auc",
+  "value": 0.9606,
+  "n_test": 205,
+  "train_sec": 643
+ },
+ "bace": {
+  "type": "classification",
+  "metric": "auc",
+  "value": 0.8318,
+  "n_test": 152,
+  "train_sec": 563
+ },
+ "clintox": {
+  "type": "classification",
+  "metric": "auc",
+  "value": 0.9256,
+  "n_test": 149,
+  "train_sec": 476
+ },
+ "esol": {
+  "type": "regression",
+  "metric": "rmse",
+  "value": 0.708,
+  "n_test": 114,
+  "train_sec": 200
+ },
+ "freesolv": {
+  "type": "regression",
+  "metric": "rmse",
+  "value": 1.8782,
+  "n_test": 65,
+  "train_sec": 100
+ },
+ "lipo": {
+  "type": "regression",
+  "metric": "rmse",
+  "value": 0.6093,
+  "n_test": 420,
+  "train_sec": 1440
+ },
+ "sider": {
+  "type": "classification",
+  "metric": "auc",
+  "value": 0.6408,
+  "n_test": 144,
+  "train_sec": 814
+ },
+ "tox21": {
+  "type": "classification",
+  "metric": "auc",
+  "value": 0.8085,
+  "n_test": 783,
+  "train_sec": 2067
+ },
+ "hiv": {
+  "type": "classification",
+  "metric": "auc",
+  "value": 0.8048,
+  "n_test": 4112,
+  "train_sec": 14330
+ }
+}

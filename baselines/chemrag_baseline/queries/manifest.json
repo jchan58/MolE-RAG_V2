@@ -1,0 +1,47 @@
+{
+  "esol": {
+    "n": 114,
+    "type": "regression",
+    "phrase": "aqueous solubility (log solubility, logS, in mol/L)"
+  },
+  "freesolv": {
+    "n": 65,
+    "type": "regression",
+    "phrase": "hydration free energy (kcal/mol)"
+  },
+  "lipo": {
+    "n": 420,
+    "type": "regression",
+    "phrase": "lipophilicity, the octanol-water distribution coefficient logD at pH 7.4"
+  },
+  "bbbp": {
+    "n": 205,
+    "type": "classification",
+    "phrase": "ability to penetrate the blood-brain barrier"
+  },
+  "bace": {
+    "n": 152,
+    "type": "classification",
+    "phrase": "inhibition of human beta-secretase 1 (BACE-1)"
+  },
+  "hiv": {
+    "n": 4112,
+    "type": "classification",
+    "phrase": "ability to inhibit HIV replication"
+  },
+  "clintox": {
+    "n": 298,
+    "type": "classification",
+    "phrase": "clinical trial toxicity"
+  },
+  "sider": {
+    "n": 3888,
+    "type": "classification",
+    "phrase": "association with adverse drug reactions / side effects"
+  },
+  "tox21": {
+    "n": 7394,
+    "type": "classification",
+    "phrase": "toxicity activity in the Tox21 assays"
+  }
+}

@@ -1,0 +1,73 @@
+ds,condition,metric,value,n_files,n_valid,status
+bbbp,S,ROC_AUC,0.5849056603773585,205,205,scored
+bbbp,R,ROC_AUC,0.8859037462400875,205,205,scored
+bbbp,M,ROC_AUC,0.7339349193327864,205,205,scored
+bbbp,MR,ROC_AUC,0.9257588187038556,205,205,scored
+bbbp,MRD,ROC_AUC,0.9220672682526662,205,205,scored
+bbbp,MR_no_id,ROC_AUC,0.9187763713080169,205,203,scored
+bbbp,MR_no_desc,ROC_AUC,0.9122914957615532,205,205,scored
+bbbp,MR_no_fg,ROC_AUC,0.9138638228055783,205,205,scored
+bace,S,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+bace,R,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+bace,M,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+bace,MR,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+bace,MRD,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+bace,MR_no_id,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+bace,MR_no_desc,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+bace,MR_no_fg,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+hiv,S,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+hiv,R,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+hiv,M,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+hiv,MR,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+hiv,MRD,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+hiv,MR_no_id,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+hiv,MR_no_desc,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+hiv,MR_no_fg,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+esol,S,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+esol,R,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+esol,M,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+esol,MR,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+esol,MRD,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+esol,MR_no_id,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+esol,MR_no_desc,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+esol,MR_no_fg,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+freesolv,S,RMSE,12.176754967496946,65,65,scored
+freesolv,R,RMSE,3.8703667089228717,65,65,scored
+freesolv,M,RMSE,11.405375588190523,65,65,scored
+freesolv,MR,RMSE,3.7256173468815357,65,65,scored
+freesolv,MRD,RMSE,3.016670094912346,65,65,scored
+freesolv,MR_no_id,RMSE,3.811419884827902,65,65,scored
+freesolv,MR_no_desc,RMSE,3.342922489264561,65,65,scored
+freesolv,MR_no_fg,RMSE,3.7625421030100217,65,65,scored
+lipo,S,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+lipo,R,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+lipo,M,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+lipo,MR,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+lipo,MRD,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+lipo,MR_no_id,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+lipo,MR_no_desc,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+lipo,MR_no_fg,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+tox21,S,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+tox21,R,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+tox21,M,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+tox21,MR,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+tox21,MRD,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+tox21,MR_no_id,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+tox21,MR_no_desc,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+tox21,MR_no_fg,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+sider,S,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+sider,R,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+sider,M,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+sider,MR,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+sider,MRD,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+sider,MR_no_id,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+sider,MR_no_desc,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+sider,MR_no_fg,NA,,0,0,no_run_dir (NOT YET EXECUTED)
+clintox,S,macro_ROC_AUC,0.5639531634249945,149,149,scored
+clintox,R,macro_ROC_AUC,0.5859602056785156,149,149,scored
+clintox,M,macro_ROC_AUC,0.2764615470601386,149,149,scored
+clintox,MR,macro_ROC_AUC,0.34480494075564494,149,149,scored
+clintox,MRD,macro_ROC_AUC,0.3548848647440197,149,149,scored
+clintox,MR_no_id,macro_ROC_AUC,0.5194891571652135,149,149,scored
+clintox,MR_no_desc,macro_ROC_AUC,0.3738737983456293,149,149,scored
+clintox,MR_no_fg,macro_ROC_AUC,0.29073608316566063,149,149,scored

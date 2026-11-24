@@ -1,0 +1,39 @@
+[
+  {
+    "job": "probe-2026-10-12-03-24-31-380",
+    "groups": "sider",
+    "instance": "ml.g5.8xlarge",
+    "seeds": "0",
+    "smoke": "0",
+    "slice": "0:14"
+  },
+  {
+    "job": "probeg6-2026-10-12-03-28-50-274",
+    "groups": "sider",
+    "instance": "ml.g6.16xlarge",
+    "seeds": "0",
+    "smoke": "0",
+    "slice": "14:27"
+  },
+  {
+    "job": "biot5-tox21-2026-10-12-03-23-41-865",
+    "groups": "tox21",
+    "instance": "ml.g5.4xlarge",
+    "seeds": "0",
+    "smoke": "0"
+  },
+  {
+    "job": "biot5-hiv-bace-bbbp-2026-10-12-03-23-47-766",
+    "groups": "hiv,bace,bbbp",
+    "instance": "ml.g5.2xlarge",
+    "seeds": "0",
+    "smoke": "0"
+  },
+  {
+    "job": "biot5-clintox-esol-freesolv-lipo-2026-10-12-03-25-19-854",
+    "groups": "clintox,esol,freesolv,lipo",
+    "instance": "ml.g5.xlarge",
+    "seeds": "0",
+    "smoke": "0"
+  }
+]

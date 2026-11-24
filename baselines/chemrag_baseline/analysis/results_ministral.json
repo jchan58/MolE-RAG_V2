@@ -1,0 +1,68 @@
+{
+  "bbbp": {
+    "type": "classification",
+    "n": 205,
+    "scored": 205,
+    "AUC": 0.536,
+    "pos_rate": 0.776
+  },
+  "bace": {
+    "type": "classification",
+    "n": 152,
+    "scored": 152,
+    "AUC": 0.4456,
+    "pos_rate": 0.559
+  },
+  "hiv": {
+    "type": "classification",
+    "n": 4112,
+    "scored": 4112,
+    "AUC": 0.5666,
+    "pos_rate": 0.027
+  },
+  "clintox": {
+    "type": "classification",
+    "n": 298,
+    "scored": 298,
+    "AUC": 0.4911,
+    "pos_rate": 0.507
+  },
+  "sider": {
+    "type": "classification",
+    "n": 3888,
+    "scored": 3888,
+    "AUC": 0.5136,
+    "pos_rate": 0.574
+  },
+  "tox21": {
+    "type": "classification",
+    "n": 7394,
+    "scored": 7394,
+    "AUC": 0.4957,
+    "pos_rate": 0.108
+  },
+  "esol": {
+    "type": "regression",
+    "n": 114,
+    "numeric": 114,
+    "abstain": 0,
+    "RMSE": 1.8533,
+    "MAE": 1.4016
+  },
+  "freesolv": {
+    "type": "regression",
+    "n": 65,
+    "numeric": 65,
+    "abstain": 0,
+    "RMSE": 13.8325,
+    "MAE": 6.9086
+  },
+  "lipo": {
+    "type": "regression",
+    "n": 420,
+    "numeric": 420,
+    "abstain": 0,
+    "RMSE": 1.9388,
+    "MAE": 1.4309
+  }
+}

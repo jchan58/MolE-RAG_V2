@@ -1,0 +1,13 @@
+dataset,model,completed_molecules,expected_molecules,status,total_endpoint_cells,A_null_cells,C_null_cells,C_final_equals_A_molecules,label_mismatch_vs_melted
+tox21,qwen3_32b,783,783,complete,7394,0,5473,131,0
+tox21,ministral_3_14b,783,783,complete,7394,35,3029,102,0
+tox21,opus_4_6,605,783,partial,5750,0,858,247,0
+tox21,gpt5mini,783,783,complete,7394,0,4520,283,0
+sider,qwen3_32b,144,144,complete,3888,0,3526,0,0
+sider,ministral_3_14b,144,144,complete,3888,54,3028,0,0
+sider,opus_4_6,144,144,complete,3888,0,2151,0,0
+sider,gpt5mini,144,144,complete,3888,0,3231,24,0
+clintox,qwen3_32b,149,149,complete,298,0,5,127,2
+clintox,ministral_3_14b,149,149,complete,298,46,0,16,2
+clintox,opus_4_6,149,149,complete,298,0,0,108,2
+clintox,gpt5mini,149,149,complete,298,0,97,89,2

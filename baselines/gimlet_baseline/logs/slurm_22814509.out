@@ -1,0 +1,28 @@
+=== node gpua014.delta.ncsa.illinois.edu Sun Oct 11 19:29:05 CDT 2026 ===
+GPU 0: NVIDIA A100-SXM4-40GB (UUID: GPU-6661bbf9-e9bc-7ed1-6dc3-9c393dde66ef)
+=== SMOKE TEST (env + frozen checkpoint + GPU generate) Sun Oct 11 19:29:05 CDT 2026 ===
+There was a problem when trying to write in your cache folder (/work/hdd/bdgw/jchan5/models). You should set the environment variable TRANSFORMERS_CACHE to a writable directory.
+WARNING:root:The OGB package is out of date. Your version is 1.3.3, while the latest version is 1.3.6.
+torch 1.9.0+cu111 cuda 11.1 device cuda
+Traceback (most recent call last):
+  File "/work/hdd/bhrm/jchan5/mole-rag_naacl/gimlet_baseline/code/smoke_test.py", line 35, in <module>
+    tok = AutoTokenizer.from_pretrained('t5-small', use_fast=True)
+  File "/work/hdd/bhrm/jchan5/envs/gimlet/lib/python3.7/site-packages/transformers/models/auto/tokenization_auto.py", line 642, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+  File "/work/hdd/bhrm/jchan5/envs/gimlet/lib/python3.7/site-packages/transformers/models/auto/tokenization_auto.py", line 499, in get_tokenizer_config
+    _commit_hash=commit_hash,
+  File "/work/hdd/bhrm/jchan5/envs/gimlet/lib/python3.7/site-packages/transformers/utils/hub.py", line 420, in cached_file
+    local_files_only=local_files_only,
+  File "/work/hdd/bhrm/jchan5/envs/gimlet/lib/python3.7/site-packages/huggingface_hub/utils/_validators.py", line 120, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/work/hdd/bhrm/jchan5/envs/gimlet/lib/python3.7/site-packages/huggingface_hub/file_download.py", line 1159, in hf_hub_download
+    os.makedirs(storage_folder, exist_ok=True)
+  File "/work/hdd/bhrm/jchan5/envs/gimlet/lib/python3.7/os.py", line 213, in makedirs
+    makedirs(head, exist_ok=exist_ok)
+  File "/work/hdd/bhrm/jchan5/envs/gimlet/lib/python3.7/os.py", line 213, in makedirs
+    makedirs(head, exist_ok=exist_ok)
+  File "/work/hdd/bhrm/jchan5/envs/gimlet/lib/python3.7/os.py", line 213, in makedirs
+    makedirs(head, exist_ok=exist_ok)
+  File "/work/hdd/bhrm/jchan5/envs/gimlet/lib/python3.7/os.py", line 223, in makedirs
+    mkdir(name, mode)
+PermissionError: [Errno 13] Permission denied: '/work/hdd/bdgw'

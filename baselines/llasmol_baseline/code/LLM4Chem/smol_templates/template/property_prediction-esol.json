@@ -1,0 +1,54 @@
+[
+    {
+        "input": "What is the log solubility of <INPUT> in water?",
+        "output": "<OUTPUT> mol/L."
+    },
+    {
+        "input": "Please predict the log solubility of <INPUT> in water.",
+        "output": "<OUTPUT> mol/L."
+    },
+    {
+        "input": "Tell me the solubility of <INPUT> in water.",
+        "output": "Its log solubility is <OUTPUT> mol/L."
+    },
+    {
+        "input": "How soluble is <INPUT> ?",
+        "output": "Its log solubility is <OUTPUT> mol/L."
+    },
+    {
+        "input": "What concentration of <INPUT> can be dissolved in water?",
+        "output": "The logarithmic solubility in mols per liter is <OUTPUT> ."
+    },
+    {
+        "input": "What is the solubility of <INPUT> ?",
+        "output": "Its log solubility in water is <OUTPUT> mol/L."
+    },
+    {
+        "input": "How many mols of <INPUT> can be dissolved in a liter of water?",
+        "output": "The logarithmic amount is <OUTPUT> ."
+    },
+    {
+        "input": "Could you provide the logarithmic solubility value of <INPUT> in aqueous solutions?",
+        "output": "Sure. The logarithmic solubility value is <OUTPUT> in mols per liter."
+    },
+    {
+        "input": "Give me the log water solubility for the following molecule: <INPUT> .",
+        "output": "Its log water solubility is <OUTPUT> mol/L."
+    },
+    {
+        "input": "<INPUT> What is the log solubility in water for the molecule given above?",
+        "output": "<OUTPUT> mol/L."
+    },
+    {
+        "input": "What is the logarithmic value of the solubility of <INPUT> in water??",
+        "output": "<OUTPUT> mol/L."
+    },
+    {
+        "input": "Can you predict the water solubility of <INPUT> ?",
+        "output": "Sure. The logarithmic solubility value of the provided molecule is <OUTPUT> in mols per liter."
+    },
+    {
+        "input": "<INPUT> Could you tell me the log solubility in water for the molecule given above?",
+        "output": "Of course. It's <OUTPUT> mol/L."
+    }
+]

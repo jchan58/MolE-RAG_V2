@@ -1,0 +1,10 @@
+transformers==4.44.2
+peft==0.12.0
+accelerate==0.34.2
+sentencepiece==0.2.0
+protobuf==4.25.3
+rdkit==2024.3.5
+rdchiral==1.1.0
+scikit-learn
+fire
+numpy<2

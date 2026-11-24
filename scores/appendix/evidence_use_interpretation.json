@@ -1,0 +1,51 @@
+{
+ "n_prevalence_assessed": 266,
+ "n_revisions": 154,
+ "n_retentions": 112,
+ "direction_supported": 103,
+ "direction_unsupported": 51,
+ "magnitude_quant_anchored": 23,
+ "magnitude_weakly_anchored": 99,
+ "magnitude_unsupported": 29,
+ "direction_supported_but_magnitude_NOT_quant_anchored": 80,
+ "supported_retention": 96,
+ "unsupported_retention": 16,
+ "missed_applicable_E5": 183,
+ "primary_category_dist": {
+  "D1": 93,
+  "E5": 62,
+  "E4": 12,
+  "E6": 53,
+  "SUPPORTED_REVISION": 28,
+  "E1": 3,
+  "SUPPORTED_RETENTION": 9,
+  "D2": 4,
+  "E5 missed-applicable-evidence": 1,
+  "E7": 1
+ },
+ "quantity_match_dist": {
+  "UNCERTAIN": 74,
+  "RELATED_WITHOUT_SUFFICIENT_MAPPING": 73,
+  "DIFFERENT": 34,
+  "SAME": 70,
+  "RELATED_WITH_EXPLICIT_RELATIONSHIP": 15
+ },
+ "applicability_dist": {
+  "PARTIAL": 155,
+  "UNCERTAIN": 5,
+  "NO": 79,
+  "YES": 27
+ },
+ "sufficiency_dist": {
+  "NO": 144,
+  "PARTIAL": 108,
+  "YES": 14
+ },
+ "identity_inferred_from_structure": 161,
+ "identity_drives_reasoning": 148,
+ "confidence_dist": {
+  "low": 123,
+  "medium": 127,
+  "high": 16
+ }
+}

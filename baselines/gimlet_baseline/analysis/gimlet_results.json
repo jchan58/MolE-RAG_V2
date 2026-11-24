@@ -1,0 +1,47 @@
+{
+  "bbbp": {
+    "metric": "AUC",
+    "value": 0.776,
+    "n_subtasks": 1
+  },
+  "bace": {
+    "metric": "AUC",
+    "value": 0.6007,
+    "n_subtasks": 1
+  },
+  "hiv": {
+    "metric": "AUC",
+    "value": 0.5273,
+    "n_subtasks": 1
+  },
+  "tox21": {
+    "metric": "AUC",
+    "value": 0.6314,
+    "n_subtasks": 12
+  },
+  "esol": {
+    "metric": "RMSE",
+    "value": 1.0567,
+    "n_subtasks": 1
+  },
+  "freesolv": {
+    "metric": "RMSE",
+    "value": 6.2212,
+    "n_subtasks": 1
+  },
+  "lipo": {
+    "metric": "RMSE",
+    "value": 1.3504,
+    "n_subtasks": 1
+  },
+  "clintox": {
+    "metric": "AUC",
+    "value": null,
+    "note": "unsupported by GIMLET's released zero-shot artifacts: absent from both prompt JSONs AND the haitengzhao/molecule_property_instruction dataset (verified splits: cyp450,lipo,bbbp,freesolv,bace,chembl_zero_shot,pcba,chembl_pretraining,tox21,esol,toxcast,hiv,muv). No authentic instruction template exists."
+  },
+  "sider": {
+    "metric": "AUC",
+    "value": null,
+    "note": "unsupported by GIMLET's released zero-shot artifacts: absent from both prompt JSONs AND the haitengzhao/molecule_property_instruction dataset (verified splits list has no sider). No authentic instruction template exists."
+  }
+}

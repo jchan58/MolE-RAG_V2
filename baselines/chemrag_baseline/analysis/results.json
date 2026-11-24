@@ -1,0 +1,59 @@
+{
+  "bbbp": {
+    "type": "classification",
+    "n": 205,
+    "AUC": 0.5575,
+    "pos_rate": 0.776
+  },
+  "bace": {
+    "type": "classification",
+    "n": 152,
+    "AUC": 0.394,
+    "pos_rate": 0.559
+  },
+  "hiv": {
+    "type": "classification",
+    "n": 4112,
+    "AUC": 0.5238,
+    "pos_rate": 0.027
+  },
+  "clintox": {
+    "type": "classification",
+    "n": 298,
+    "AUC": 0.4999,
+    "pos_rate": 0.507
+  },
+  "sider": {
+    "type": "classification",
+    "n": 3888,
+    "AUC": 0.5471,
+    "pos_rate": 0.574
+  },
+  "tox21": {
+    "type": "classification",
+    "n": 7394,
+    "AUC": 0.4877,
+    "pos_rate": 0.108
+  },
+  "esol": {
+    "type": "regression",
+    "n": 114,
+    "parsed": 5,
+    "RMSE": 1.6968,
+    "MAE": 1.0096
+  },
+  "freesolv": {
+    "type": "regression",
+    "n": 65,
+    "parsed": 5,
+    "RMSE": 53.5894,
+    "MAE": 36.86
+  },
+  "lipo": {
+    "type": "regression",
+    "n": 420,
+    "parsed": 104,
+    "RMSE": 6.3011,
+    "MAE": 4.6161
+  }
+}

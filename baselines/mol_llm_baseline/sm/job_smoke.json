@@ -1,0 +1,6 @@
+{
+  "job": "mollm-smoke-2026-10-12-05-29-18-515",
+  "instance": "ml.g6e.4xlarge",
+  "mode": "smoke",
+  "tasks": ""
+}

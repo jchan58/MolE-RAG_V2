@@ -1,0 +1,57 @@
+dataset,model,stage,n_calls,output_tokens_recounted,input_tokens_est,usd_estimated,measured_label,per_molecule_calls
+bbbp,qwen3_32b,INITIAL_ASSESSMENT,205,38413,524328.5000000016,0.1017,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,1.0
+bbbp,qwen3_32b,SELF_REVIEW,258,45014,673663.7999999968,0.1281,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,1.259
+bbbp,qwen3_32b,QUESTION_GENERATION,613,70311,2068016.800000023,0.3524,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,2.99
+bbbp,qwen3_32b,EVIDENCE_ASSESSMENT,612,75403,1863784.7999999807,0.3248,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,2.985
+bbbp,qwen3_32b,EMBEDDING,511,0,(1-41 passage texts; not recounted),(embed; ~0.0 NA per-text),calls=exact; embed-token=NA,2.493
+bbbp,qwen3_32b,TOTAL_online_generate,1688,229141,5129793.900000002,0.907,n_mol=205; +511 online embed calls (token NA),8.234
+bbbp,qwen3_32b,EVIDENCE_TOKENS_unique_vs_presented,,unique_evidence_tok=67831,presented_evidence_tok=153783,,recounted (cl100k) over delivered 600-char passage texts; unique dedup by passage_id,redundancy_ratio=2.267
+hiv,qwen3_32b,INITIAL_ASSESSMENT,4112,737324,8535689.59999952,1.7227,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,1.0
+hiv,qwen3_32b,SELF_REVIEW,4219,645075,8984782.399999293,1.7348,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,1.026
+hiv,qwen3_32b,QUESTION_GENERATION,9680,1261916,24486528.000002798,4.4301,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,2.354
+hiv,qwen3_32b,EVIDENCE_ASSESSMENT,8330,1214144,21523054.00000336,3.9569,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,2.026
+hiv,qwen3_32b,EMBEDDING,7993,0,(1-41 passage texts; not recounted),(embed; ~0.0 NA per-text),calls=exact; embed-token=NA,1.944
+hiv,qwen3_32b,TOTAL_online_generate,26341,3858459,63530054.00000497,11.8446,n_mol=4112; +7993 online embed calls (token NA),6.406
+hiv,qwen3_32b,EVIDENCE_TOKENS_unique_vs_presented,,unique_evidence_tok=1876978,presented_evidence_tok=3124995,,recounted (cl100k) over delivered 600-char passage texts; unique dedup by passage_id,redundancy_ratio=1.665
+esol,qwen3_32b,INITIAL_ASSESSMENT,114,23041,232195.19999999955,0.0487,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,1.0
+esol,qwen3_32b,SELF_REVIEW,225,43234,465254.99999999825,0.0957,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,1.974
+esol,qwen3_32b,QUESTION_GENERATION,214,21846,524257.19999999827,0.0917,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,1.877
+esol,qwen3_32b,EVIDENCE_ASSESSMENT,147,12873,367500,0.0628,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,1.289
+esol,qwen3_32b,EMBEDDING,16,0,(1-41 passage texts; not recounted),(embed; ~0.0 NA per-text),calls=exact; embed-token=NA,0.14
+esol,qwen3_32b,TOTAL_online_generate,700,100994,1589207.3999999962,0.299,n_mol=114; +16 online embed calls (token NA),6.14
+esol,qwen3_32b,EVIDENCE_TOKENS_unique_vs_presented,,unique_evidence_tok=3951,presented_evidence_tok=4391,,recounted (cl100k) over delivered 600-char passage texts; unique dedup by passage_id,redundancy_ratio=1.111
+freesolv,qwen3_32b,INITIAL_ASSESSMENT,65,13126,124702.5,0.0266,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,1.0
+freesolv,qwen3_32b,SELF_REVIEW,111,22226,217282.5,0.0459,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,1.708
+freesolv,qwen3_32b,QUESTION_GENERATION,125,12802,297562.5,0.0523,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,1.923
+freesolv,qwen3_32b,EVIDENCE_ASSESSMENT,89,7769,212710,0.0366,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,1.369
+freesolv,qwen3_32b,EMBEDDING,5,0,(1-41 passage texts; not recounted),(embed; ~0.0 NA per-text),calls=exact; embed-token=NA,0.077
+freesolv,qwen3_32b,TOTAL_online_generate,390,55923,852257.5,0.1614,n_mol=65; +5 online embed calls (token NA),6.0
+freesolv,qwen3_32b,EVIDENCE_TOKENS_unique_vs_presented,,unique_evidence_tok=908,presented_evidence_tok=1196,,recounted (cl100k) over delivered 600-char passage texts; unique dedup by passage_id,redundancy_ratio=1.317
+lipo,qwen3_32b,INITIAL_ASSESSMENT,420,83050,927318.0000000065,0.1889,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,1.0
+lipo,qwen3_32b,SELF_REVIEW,946,175163,2125567.399999963,0.4239,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,2.252
+lipo,qwen3_32b,QUESTION_GENERATION,1088,135418,2990803.1999999406,0.5299,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,2.59
+lipo,qwen3_32b,EVIDENCE_ASSESSMENT,992,108826,2679590.400000015,0.4672,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,2.362
+lipo,qwen3_32b,EMBEDDING,497,0,(1-41 passage texts; not recounted),(embed; ~0.0 NA per-text),calls=exact; embed-token=NA,1.183
+lipo,qwen3_32b,TOTAL_online_generate,3446,502457,8723278.999999925,1.61,n_mol=420; +497 online embed calls (token NA),8.205
+lipo,qwen3_32b,EVIDENCE_TOKENS_unique_vs_presented,,unique_evidence_tok=76052,presented_evidence_tok=178779,,recounted (cl100k) over delivered 600-char passage texts; unique dedup by passage_id,redundancy_ratio=2.351
+tox21,qwen3_32b,INITIAL_ASSESSMENT,783,245556,1871291.699999975,0.428,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,1.0
+tox21,qwen3_32b,SELF_REVIEW,1197,296027,3061806.2999999337,0.6369,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,1.529
+tox21,qwen3_32b,QUESTION_GENERATION,2343,434831,7480964.700000297,1.383,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,2.992
+tox21,qwen3_32b,EVIDENCE_ASSESSMENT,2339,471685,7045535.800000283,1.3398,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,2.987
+tox21,qwen3_32b,EMBEDDING,2042,0,(1-41 passage texts; not recounted),(embed; ~0.0 NA per-text),calls=exact; embed-token=NA,2.608
+tox21,qwen3_32b,TOTAL_online_generate,6662,1448099,19459598.500000488,3.7878,n_mol=783; +2042 online embed calls (token NA),8.508
+tox21,qwen3_32b,EVIDENCE_TOKENS_unique_vs_presented,,unique_evidence_tok=463953,presented_evidence_tok=751838,,recounted (cl100k) over delivered 600-char passage texts; unique dedup by passage_id,redundancy_ratio=1.621
+sider,qwen3_32b,INITIAL_ASSESSMENT,144,86780,462585.60000000114,0.1215,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,1.0
+sider,qwen3_32b,SELF_REVIEW,247,127187,836070.3000000037,0.2017,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,1.715
+sider,qwen3_32b,QUESTION_GENERATION,431,61761,1869634.8999999864,0.3175,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,2.993
+sider,qwen3_32b,EVIDENCE_ASSESSMENT,430,62277,1645825.0,0.2842,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,2.986
+sider,qwen3_32b,EMBEDDING,66,0,(1-41 passage texts; not recounted),(embed; ~0.0 NA per-text),calls=exact; embed-token=NA,0.458
+sider,qwen3_32b,TOTAL_online_generate,1252,338005,4814115.799999991,0.9249,n_mol=144; +66 online embed calls (token NA),8.694
+sider,qwen3_32b,EVIDENCE_TOKENS_unique_vs_presented,,unique_evidence_tok=6690,presented_evidence_tok=12171,,recounted (cl100k) over delivered 600-char passage texts; unique dedup by passage_id,redundancy_ratio=1.819
+clintox,qwen3_32b,INITIAL_ASSESSMENT,149,28709,306493,0.0632,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,1.0
+clintox,qwen3_32b,SELF_REVIEW,170,28195,359210,0.0708,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,1.141
+clintox,qwen3_32b,QUESTION_GENERATION,447,59170,1168770.8999999901,0.2108,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,3.0
+clintox,qwen3_32b,EVIDENCE_ASSESSMENT,447,66425,1142979,0.2113,calls=exact; out_tok=recounted; in_tok=estimated; usd=estimated,3.0
+clintox,qwen3_32b,EMBEDDING,279,0,(1-41 passage texts; not recounted),(embed; ~0.0 NA per-text),calls=exact; embed-token=NA,1.872
+clintox,qwen3_32b,TOTAL_online_generate,1213,182499,2977452.89999999,0.5561,n_mol=149; +279 online embed calls (token NA),8.141
+clintox,qwen3_32b,EVIDENCE_TOKENS_unique_vs_presented,,unique_evidence_tok=66235,presented_evidence_tok=108054,,recounted (cl100k) over delivered 600-char passage texts; unique dedup by passage_id,redundancy_ratio=1.631

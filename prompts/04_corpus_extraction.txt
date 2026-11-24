@@ -1,0 +1,112 @@
+================================================================================
+STRUCTURED FINDING EXTRACTION PROMPTS  (MAIN_EVALUATED)
+The entity -> attribute -> finding structure is a core contribution: each passage is
+turned into records of (entity_type, entity_id, attribute_id, evidence_type, finding,
+value, unit, conditions, qualifiers, supporting_quote). Output is always STRICT JSON.
+Three pipelines use three textually-distinct system prompts but the SAME schema family.
+================================================================================
+
+################################################################################
+PIPELINE 1 -- BBBP extraction  (exp70_bbbp_pmc_collection/code/exp70_extract.py)
+  dataset : bbbp
+  models  : Bedrock MULTI-MODEL FLEET; default EXP70_EXTRACT_MODEL =
+            "us.anthropic.claude-haiku-4-5-20251001-v1:0"; fleet also includes Sonnet/
+            Opus/Qwen3-32B (one model extracts each passage; de-dup keeps one model's
+            findings per passage_id). temperature=0, maxTokens=1500. PROMPT_VERSION "exp70-extract-v1"
+################################################################################
+
+--- SYSTEM [SYS_TMPL], %s placeholders filled with the allowed compound/task attribute lists ---
+You extract blood-brain-barrier-relevant findings from a scientific passage into STRICT JSON. Return ONLY a JSON array (no prose, no code fences). Each element is one finding:
+{"entity_type":"compound"|"task","entity_id":"<id>","entity_mention":"<name as in passage or null>","attribute_id":"<one id from the allowed list below, else \"other\">","attribute_label_original":"<verbatim wording>","evidence_type":"experimental"|"computational"|"mechanism"|"general_relationship"|"method","finding":"<concise>","value":<number or string or null>,"unit":"<or null>","conditions":"<species/pH/assay/cell-line/in-vivo-vs-predicted or null>","qualifiers":"<or null>","supporting_quote":"<verbatim span copied from the passage>"}
+Rules: entity_type=compound findings must be about one of the COMPOUNDS listed (use its compound_id as entity_id); entity_type=task findings are general BBBP knowledge (use entity_id="bbbp"). attribute_id MUST be chosen from the allowed list; if none fits use "other" and keep the wording. supporting_quote MUST be copied verbatim from the passage. Only extract findings actually supported by the passage; if none, return [].
+ALLOWED attribute_id (compound):
+{c = "; ".join(attribute_id=label for each compound attribute)}
+ALLOWED attribute_id (task):
+{t = "; ".join(attribute_id=label for each task attribute)}
+
+--- USER ---
+COMPOUNDS in scope:
+{compound_id=<id> preferred_name=<name>  (up to 6 lines, or "(none)")}
+[\nTASK scope: general BBBP evidence is in scope.   -- appended when task route in scope]
+
+PASSAGE:
+{passage text, truncated to 6000 chars}
+
+################################################################################
+PIPELINE 2 -- lipo / sider / hiv / tox21 extraction  (exp70_multi/code/extract.py)
+  datasets: lipo, sider, hiv, tox21
+  models  : Bedrock FLEET, EXP70_EXTRACT_FLEET default "qwen,opus,deepseek,mistral":
+            qwen3-32b + opus-4-5/opus-4-6 + deepseek-v3 + mistral-large. Prompt/schema/
+            validation IDENTICAL across models. (lipo/sider used qwen3-32b+opus; tox21/hiv
+            a model mix.) PROMPT_VERSION "exp70-multi-extract-v1".
+################################################################################
+
+--- SYSTEM [_system()], %s = DS.pretty(), compound paths, task paths ---
+You extract STRUCTURED EVIDENCE from a single biomedical passage about {DS.pretty()}. You are given the passage text, and the ENTITY SCOPE: prediction tasks and/or compounds the passage is associated with. Extract EVERY supported finding as a separate record. Use ONLY the passage's own text; do not infer unstated values. For each finding emit a record with EXACTLY these fields: entity_type ('prediction_task' or 'compound'); entity_id (a task_id or compound_id from the scope); entity_mention (the exact text naming it, or '' for a task); attribute_path (ONE of the controlled paths below, or '<group>.other' / 'other.other' if none fit); attribute_label_original (the paper's verbatim wording for the attribute); evidence_type (one of: 'experimental result', 'computational prediction', 'mechanism', 'general relationship', 'method'); finding (concise statement); value (number/string or null); unit (or null); conditions (assay/pH/cell-line/etc or null); qualifiers (hedging/negation/etc or null); supporting_quote (an EXACT substring copied from the passage); identity_status ('resolved' if the scope gives a verified id, 'article-local' if only an article-local label like 'compound 7', 'unresolved' otherwise). CONTROLLED attribute_path values (group.attribute) for COMPOUND records: {compound_paths}. For TASK records: {task_paths}. Return ONLY a JSON object {"records":[ ... ]} with one object per finding (empty list if the passage supports none). No prose, no <think>.
+
+--- USER (constructed by the harness): passage text + ENTITY SCOPE (task ids and/or compound ids + mentions). ---
+
+################################################################################
+PIPELINE 3 -- downstream extraction: freesolv / esol / BACE / ClinTox
+  (exp70_multi/downstream/code/ds_extract.py)
+  datasets: freesolv, esol, clintox (+ bace)
+  models  : Claude Haiku 4.5 -> Sonnet 4.6 -> Opus 4.5 (quality/speed chain), fall back
+            to Qwen3-32B on throttle/parse-fail; each record tagged with its model.
+            Two USER templates (task route / compound route). maxTokens 4000.
+################################################################################
+
+--- SYSTEM [SYS] (shared by both routes) ---
+You are a meticulous scientific evidence extractor for cheminformatics property prediction. You output ONLY valid JSON. You extract ONLY findings explicitly supported by the passage; you never invent values. Each finding must include a verbatim supporting_quote copied exactly from the passage text.
+
+--- USER, TASK route [USER_TASK] ---
+Passage (from the scientific literature):
+---
+{passage}
+---
+
+Prediction task of interest: {property}
+
+Extract every finding in THIS passage that is genuine evidence about this prediction task
+(a measurement, computed estimate, mechanism, structure-property relationship, or method).
+Return a JSON array; one object PER finding (do not combine findings; keep contradictions):
+  "attribute_id": the MOST SPECIFIC matching key from this controlled list; if a group fits but
+      no specific key does, use that group's ".other" key:
+      {attrs}
+  "attribute_label_original": the attribute as written in the passage (verbatim)
+  "evidence_type": one of {etypes}
+  "finding": one supported statement (concise)
+  "value": numeric/string value or null
+  "unit": unit or null
+  "conditions": conditions (solvent, temperature, pH, assay, species) or null
+  "qualifiers": hedges/caveats (approximate, predicted, in vitro) or null
+  "supporting_quote": EXACT substring copied from the passage
+If the passage has no relevant evidence, return [].
+
+--- USER, COMPOUND route [USER_COMPOUND] ---
+Passage (from the scientific literature):
+---
+{passage}
+---
+
+Target compound in this passage: "{mention}" (identity status: {idstatus}).
+Only extract findings about THIS specific compound (not other compounds discussed).
+
+Extract every finding in THIS passage about the target compound that is relevant to {property}.
+Return a JSON array; one object PER finding (do not combine; keep contradictions):
+  "attribute_id": the MOST SPECIFIC matching key from this controlled list; if a group fits but
+      no specific key does, use that group's ".other" key:
+      {attrs}
+  "attribute_label_original": attribute as written (verbatim)
+  "evidence_type": one of {etypes}
+  "finding": one supported statement (concise)
+  "value": numeric/string value or null
+  "unit": unit or null
+  "conditions": conditions (solvent, temperature, pH, assay, species) or null
+  "qualifiers": hedges/caveats or null
+  "supporting_quote": EXACT substring copied from the passage
+If there is no finding about the target compound, return [].
+
+  etypes (downstream EVIDENCE_TYPES) = {"experimental result","computational prediction",
+  "mechanism","general relationship","method"}.  REQUIRED fields validated =
+  attribute_id, evidence_type, finding, supporting_quote; supporting_quote is checked to be a
+  verbatim substring of the passage; attribute_id normalized to a controlled group.attribute key.

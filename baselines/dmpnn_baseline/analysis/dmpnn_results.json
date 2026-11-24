@@ -1,0 +1,101 @@
+{
+  "bbbp": {
+    "metric": "AUC",
+    "mean": 0.9306,
+    "std": 0.004,
+    "n_seeds": 3,
+    "per_seed": [
+      0.9258,
+      0.9305,
+      0.9356
+    ]
+  },
+  "bace": {
+    "metric": "AUC",
+    "mean": 0.7812,
+    "std": 0.0102,
+    "n_seeds": 3,
+    "per_seed": [
+      0.7956,
+      0.774,
+      0.7738
+    ]
+  },
+  "hiv": {
+    "metric": "AUC",
+    "mean": 0.7927,
+    "std": 0.0089,
+    "n_seeds": 3,
+    "per_seed": [
+      0.7897,
+      0.7837,
+      0.8048
+    ]
+  },
+  "clintox": {
+    "metric": "AUC",
+    "mean": 0.8325,
+    "std": 0.0033,
+    "n_seeds": 3,
+    "per_seed": [
+      0.8333,
+      0.8361,
+      0.828
+    ]
+  },
+  "sider": {
+    "metric": "AUC",
+    "mean": 0.5795,
+    "std": 0.0095,
+    "n_seeds": 3,
+    "per_seed": [
+      0.585,
+      0.5661,
+      0.5872
+    ]
+  },
+  "tox21": {
+    "metric": "AUC",
+    "mean": 0.7949,
+    "std": 0.003,
+    "n_seeds": 3,
+    "per_seed": [
+      0.7909,
+      0.798,
+      0.7957
+    ]
+  },
+  "esol": {
+    "metric": "RMSE",
+    "mean": 0.8127,
+    "std": 0.0124,
+    "n_seeds": 3,
+    "per_seed": [
+      0.8288,
+      0.7988,
+      0.8106
+    ]
+  },
+  "freesolv": {
+    "metric": "RMSE",
+    "mean": 2.2281,
+    "std": 0.2514,
+    "n_seeds": 3,
+    "per_seed": [
+      1.8835,
+      2.3248,
+      2.4761
+    ]
+  },
+  "lipo": {
+    "metric": "RMSE",
+    "mean": 0.6302,
+    "std": 0.0132,
+    "n_seeds": 3,
+    "per_seed": [
+      0.6407,
+      0.6383,
+      0.6116
+    ]
+  }
+}

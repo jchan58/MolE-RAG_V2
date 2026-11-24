@@ -1,0 +1,27 @@
+================================================================================
+SMILES-ONLY BASELINE  (ABLATION_EVALUATED, context-ablation condition "S")
+source_file : context_ablation_appendix_v1/code/conditions.py  (renderer)
+              + run_ablation.py (runner)
+rendered example: context_ablation_appendix_v1/rendered_prompts/bace_idx0000_S.txt
+model       : Qwen3-32B ONLY (qwen.qwen3-32b-v1:0), Bedrock, temperature=0, maxTokens=1600
+status      : the SMILES-only prompt is NOT a standalone template in run_fw_multi.py;
+              it is the context-ablation base with ALL optional blocks removed
+              (no identifiers, no descriptors/GLOSS/formula/heavy_atoms, no AccFG,
+               no references, no comparisons, no literature, no self-review).
+              i.e. it is reconstructed from the harness with blocks removed.
+================================================================================
+
+VERBATIM rendered condition-S prompt (BACE example, idx 0000):
+
+TASK: Predict whether the compound is an ACTIVE inhibitor of human beta-secretase 1 (BACE-1). Dataset convention (MoleculeNet BACE): 1 = active (binder/inhibitor), 0 = inactive. Output probability_positive = probability the molecule is ACTIVE.
+
+TARGET standardized_SMILES=C[C@@]1(c2cc(NC(=O)c3ccc(C#N)cn3)ccc2F)C[C@@H](C(F)(F)F)OC(N)=N1
+
+Give a concise assessment and your prediction.
+Output ONLY JSON: {"prediction":"positive|negative|uncertain","probability_positive":0.0,"justification":"...","unresolved_questions":[]}
+
+--------------------------------------------------------------------------------
+GENERAL FORM (any dataset): condition S = TASK line + "TARGET standardized_SMILES={canonical}"
++ "Give a concise assessment and your prediction." + PRED_SCHEMA for that task_type.
+The PRED_SCHEMA strings are identical to run_fw_multi.py (see 01_prediction_run_fw_multi.txt).
+--------------------------------------------------------------------------------

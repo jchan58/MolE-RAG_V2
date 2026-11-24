@@ -1,0 +1,8 @@
+{
+  "_README": "Point each base_url at any OpenAI-compatible endpoint that serves the given model. Put API keys in .env under the api_key_env names. To REPRODUCE THE PAPER, keep the `model` ids below (these are the models we evaluated); only the base_url/key change for your provider. You may also add your own entries and run the framework against any model you like.",
+  "qwen3_32b":       {"base_url": "", "model": "qwen.qwen3-32b-v1:0",              "api_key_env": "MOLERAG_API_KEY", "token_param": "max_tokens",             "temperature": 0},
+  "ministral_3_14b": {"base_url": "", "model": "mistral.ministral-3-14b-instruct", "api_key_env": "MOLERAG_API_KEY", "token_param": "max_tokens",             "temperature": 0},
+  "gpt5mini":        {"base_url": "https://api.openai.com/v1", "model": "gpt-5-mini", "api_key_env": "OPENAI_API_KEY", "token_param": "max_completion_tokens", "temperature": null},
+  "opus_4_6":        {"base_url": "", "model": "claude-opus-4-6",                  "api_key_env": "MOLERAG_API_KEY", "token_param": "max_tokens",             "temperature": 0},
+  "embedder":        {"base_url": "", "model": "cohere.embed-multilingual-v3",     "api_key_env": "MOLERAG_API_KEY", "extra": {"input_type": "search_query", "truncate": "END"}}
+}

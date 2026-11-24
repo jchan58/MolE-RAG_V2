@@ -1,0 +1,19 @@
+{
+ "endpoint": "chemdfm-v2-14b",
+ "status": "capacity_blocked",
+ "tried": [
+  "ml.g6e.2xlarge",
+  "ml.g6e.8xlarge",
+  "ml.g6e.12xlarge",
+  "ml.g5.12xlarge"
+ ],
+ "t_start": 1791816375.6838,
+ "elapsed_s": 7528.9,
+ "model_name": "pytorch-inference-2026-10-12-14-46-17-553",
+ "instance": "ml.g5.12xlarge",
+ "cfg": "chemdfm-v2-14b-ml-g5-12xlarge-1791822042",
+ "cur_endpoint_status": "Failed",
+ "last_result": "Failed",
+ "last_failure": "Unable to provision requested ML compute capacity due to InsufficientInstanceCapacity error. Please retry using a different ML instance type or after some time. Consider configuring InstancePools in your EndpointConfig with multiple instance types for priority",
+ "note": "No fallback instance reached InService within budget. g6e quota 1/type is capacity-contended."
+}

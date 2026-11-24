@@ -1,0 +1,126 @@
+{
+ "tox21": {
+  "qwen3_32b": {
+   "n_files": 783,
+   "unparsed": 0,
+   "A": {
+    "n": 783,
+    "miss": 0,
+    "mean_auc": 0.706,
+    "n_endpoints_scored": 12
+   },
+   "C": {
+    "n": 783,
+    "miss": 0,
+    "mean_auc": 0.757,
+    "n_endpoints_scored": 12
+   }
+  },
+  "ministral_3_14b": {
+   "n_files": 783,
+   "unparsed": 0,
+   "A": {
+    "n": 779,
+    "miss": 4,
+    "mean_auc": 0.706,
+    "n_endpoints_scored": 12
+   },
+   "C": {
+    "n": 781,
+    "miss": 2,
+    "mean_auc": 0.747,
+    "n_endpoints_scored": 12
+   }
+  },
+  "gpt5mini": {
+   "n_files": 783,
+   "unparsed": 0,
+   "A": {
+    "n": 783,
+    "miss": 0,
+    "mean_auc": 0.778,
+    "n_endpoints_scored": 12
+   },
+   "C": {
+    "n": 783,
+    "miss": 0,
+    "mean_auc": 0.802,
+    "n_endpoints_scored": 12
+   }
+  },
+  "opus_4_6": {
+   "n_files": 783,
+   "unparsed": 0,
+   "A": {
+    "n": 783,
+    "miss": 0,
+    "mean_auc": 0.8,
+    "n_endpoints_scored": 12
+   },
+   "C": {
+    "n": 783,
+    "miss": 0,
+    "mean_auc": 0.812,
+    "n_endpoints_scored": 12
+   }
+  }
+ },
+ "hiv": {
+  "qwen3_32b": {
+   "n_files": 4112,
+   "unparsed": 0,
+   "A": {
+    "n": 4112,
+    "miss": 0,
+    "auc": 0.771
+   },
+   "C": {
+    "n": 4112,
+    "miss": 0,
+    "auc": 0.769
+   }
+  },
+  "ministral_3_14b": {
+   "n_files": 4112,
+   "unparsed": 0,
+   "A": {
+    "n": 3949,
+    "miss": 163,
+    "auc": 0.743
+   },
+   "C": {
+    "n": 4111,
+    "miss": 1,
+    "auc": 0.758
+   }
+  },
+  "gpt5mini": {
+   "n_files": 4112,
+   "unparsed": 0,
+   "A": {
+    "n": 4112,
+    "miss": 0,
+    "auc": 0.802
+   },
+   "C": {
+    "n": 4112,
+    "miss": 0,
+    "auc": 0.796
+   }
+  },
+  "opus_4_6": {
+   "n_files": 4112,
+   "unparsed": 0,
+   "A": {
+    "n": 4112,
+    "miss": 0,
+    "auc": 0.806
+   },
+   "C": {
+    "n": 4112,
+    "miss": 0,
+    "auc": 0.826
+   }
+  }
+ }
+}

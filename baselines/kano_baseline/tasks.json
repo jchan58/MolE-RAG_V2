@@ -1,0 +1,157 @@
+{
+ "bbbp": {
+  "dataset_type": "classification",
+  "metric": "auc",
+  "n_endpoints": 1,
+  "endpoints": [
+   "p_np"
+  ],
+  "counts": {
+   "train": 1631,
+   "val": 203,
+   "test": 205
+  }
+ },
+ "bace": {
+  "dataset_type": "classification",
+  "metric": "auc",
+  "n_endpoints": 1,
+  "endpoints": [
+   "Class"
+  ],
+  "counts": {
+   "train": 1210,
+   "val": 151,
+   "test": 152
+  }
+ },
+ "hiv": {
+  "dataset_type": "classification",
+  "metric": "auc",
+  "n_endpoints": 1,
+  "endpoints": [
+   "HIV_active"
+  ],
+  "counts": {
+   "train": 32896,
+   "val": 4112,
+   "test": 4112
+  }
+ },
+ "clintox": {
+  "dataset_type": "classification",
+  "metric": "auc",
+  "n_endpoints": 2,
+  "endpoints": [
+   "FDA_APPROVED",
+   "CT_TOX"
+  ],
+  "counts": {
+   "train": 1182,
+   "val": 147,
+   "test": 149
+  }
+ },
+ "sider": {
+  "dataset_type": "classification",
+  "metric": "auc",
+  "n_endpoints": 27,
+  "endpoints": [
+   "Hepatobiliary_disorders",
+   "Metabolism_and_nutrition_disorders",
+   "Product_issues",
+   "Eye_disorders",
+   "Investigations",
+   "Musculoskeletal_and_connective_tissue_disorders",
+   "Gastrointestinal_disorders",
+   "Social_circumstances",
+   "Immune_system_disorders",
+   "Reproductive_system_and_breast_disorders",
+   "Neoplasms_benign,_malignant_and_unspecified_(incl_cysts_and_polyps)",
+   "General_disorders_and_administration_site_conditions",
+   "Endocrine_disorders",
+   "Surgical_and_medical_procedures",
+   "Vascular_disorders",
+   "Blood_and_lymphatic_system_disorders",
+   "Skin_and_subcutaneous_tissue_disorders",
+   "Congenital,_familial_and_genetic_disorders",
+   "Infections_and_infestations",
+   "Respiratory,_thoracic_and_mediastinal_disorders",
+   "Psychiatric_disorders",
+   "Renal_and_urinary_disorders",
+   "Pregnancy,_puerperium_and_perinatal_conditions",
+   "Ear_and_labyrinth_disorders",
+   "Cardiac_disorders",
+   "Nervous_system_disorders",
+   "Injury,_poisoning_and_procedural_complications"
+  ],
+  "counts": {
+   "train": 1141,
+   "val": 142,
+   "test": 144
+  }
+ },
+ "tox21": {
+  "dataset_type": "classification",
+  "metric": "auc",
+  "n_endpoints": 12,
+  "endpoints": [
+   "NR-AR",
+   "NR-AR-LBD",
+   "NR-AhR",
+   "NR-Aromatase",
+   "NR-ER",
+   "NR-ER-LBD",
+   "NR-PPAR-gamma",
+   "SR-ATAD5",
+   "SR-MMP",
+   "SR-p53",
+   "SR-ARE",
+   "SR-HSE"
+  ],
+  "counts": {
+   "train": 6258,
+   "val": 782,
+   "test": 783
+  }
+ },
+ "esol": {
+  "dataset_type": "regression",
+  "metric": "rmse",
+  "n_endpoints": 1,
+  "endpoints": [
+   "logSolubility"
+  ],
+  "counts": {
+   "train": 898,
+   "val": 111,
+   "test": 114
+  }
+ },
+ "freesolv": {
+  "dataset_type": "regression",
+  "metric": "rmse",
+  "n_endpoints": 1,
+  "endpoints": [
+   "freesolv"
+  ],
+  "counts": {
+   "train": 513,
+   "val": 64,
+   "test": 65
+  }
+ },
+ "lipo": {
+  "dataset_type": "regression",
+  "metric": "rmse",
+  "n_endpoints": 1,
+  "endpoints": [
+   "lipo"
+  ],
+  "counts": {
+   "train": 3360,
+   "val": 420,
+   "test": 420
+  }
+ }
+}

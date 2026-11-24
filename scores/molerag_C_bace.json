@@ -1,0 +1,254 @@
+{
+ "qwen3_32b": {
+  "n_files": 152,
+  "A": {
+   "n": 152,
+   "miss": 0,
+   "auc": 0.773,
+   "brier": 0.2,
+   "acc@0.5": 0.664,
+   "acc_committed": 0.762,
+   "abstain": 47,
+   "committed": 105
+  },
+  "C": {
+   "n": 152,
+   "miss": 0,
+   "auc": 0.778,
+   "brier": 0.2,
+   "acc@0.5": 0.664,
+   "acc_committed": 0.693,
+   "abstain": 12,
+   "committed": 140
+  },
+  "paired_C_minus_A": {
+   "n_paired": 152,
+   "dAUC_C_minus_A": 0.005,
+   "dAUC_CI": [
+    -0.009,
+    0.019
+   ],
+   "dBrier_C_minus_A": 0.001,
+   "dBrier_CI": [
+    -0.003,
+    0.004
+   ]
+  },
+  "evidence_use_C": {
+   "rounds_dist": {
+    "0": 0,
+    "1": 27,
+    "2": 1,
+    "3": 124
+   },
+   "C_moved_prob_vs_A": 51,
+   "stop_reasons": {
+    "no unresolved question with an available capable route": 28
+   },
+   "answer_status": {
+    "unresolved": 87,
+    "not_answered": 121,
+    "partially_answered": 158,
+    "answered": 7
+   },
+   "evidence_subject": {
+    "target": 79,
+    "general_class": 279,
+    "unresolved": 10,
+    "related_compound": 5
+   },
+   "tool_exec_status": {
+    "not_applicable": 149,
+    "executed": 224
+   },
+   "retrieval_ok": "284/284"
+  }
+ },
+ "ministral_3_14b": {
+  "n_files": 152,
+  "A": {
+   "n": 141,
+   "miss": 11,
+   "auc": 0.754,
+   "brier": 0.213,
+   "acc@0.5": 0.709,
+   "acc_committed": 0.721,
+   "abstain": 5,
+   "committed": 136
+  },
+  "C": {
+   "n": 152,
+   "miss": 0,
+   "auc": 0.718,
+   "brier": 0.233,
+   "acc@0.5": 0.697,
+   "acc_committed": 0.697,
+   "abstain": 0,
+   "committed": 152
+  },
+  "paired_C_minus_A": {
+   "n_paired": 141,
+   "dAUC_C_minus_A": -0.041,
+   "dAUC_CI": [
+    -0.081,
+    -0.002
+   ],
+   "dBrier_C_minus_A": 0.01,
+   "dBrier_CI": [
+    0.001,
+    0.02
+   ]
+  },
+  "evidence_use_C": {
+   "rounds_dist": {
+    "0": 0,
+    "1": 11,
+    "2": 9,
+    "3": 132
+   },
+   "C_moved_prob_vs_A": 66,
+   "stop_reasons": {
+    "no unresolved question with an available capable route": 10
+   },
+   "answer_status": {
+    "partially_answered": 297,
+    "not_answered": 56,
+    "answered": 47
+   },
+   "evidence_subject": {
+    "general_class": 331,
+    "target": 59,
+    "related_compound": 10
+   },
+   "tool_exec_status": {
+    "executed": 400
+   },
+   "retrieval_ok": "361/361"
+  }
+ },
+ "opus_4_6": {
+  "n_files": 152,
+  "A": {
+   "n": 152,
+   "miss": 0,
+   "auc": 0.819,
+   "brier": 0.17,
+   "acc@0.5": 0.77,
+   "acc_committed": 0.77,
+   "abstain": 0,
+   "committed": 152
+  },
+  "C": {
+   "n": 152,
+   "miss": 0,
+   "auc": 0.819,
+   "brier": 0.171,
+   "acc@0.5": 0.77,
+   "acc_committed": 0.77,
+   "abstain": 0,
+   "committed": 152
+  },
+  "paired_C_minus_A": {
+   "n_paired": 152,
+   "dAUC_C_minus_A": 0.0,
+   "dAUC_CI": [
+    -0.001,
+    0.001
+   ],
+   "dBrier_C_minus_A": 0.001,
+   "dBrier_CI": [
+    -0.0,
+    0.002
+   ]
+  },
+  "evidence_use_C": {
+   "rounds_dist": {
+    "0": 0,
+    "1": 134,
+    "2": 16,
+    "3": 2
+   },
+   "C_moved_prob_vs_A": 4,
+   "stop_reasons": {
+    "no unresolved question with an available capable route": 152
+   },
+   "answer_status": {
+    "not_answered": 12,
+    "answered": 1,
+    "partially_answered": 7
+   },
+   "evidence_subject": {
+    "general_class": 18,
+    "target": 1,
+    "related_compound": 1
+   },
+   "tool_exec_status": {
+    "executed": 20
+   },
+   "retrieval_ok": "19/19"
+  }
+ },
+ "gpt5mini": {
+  "n_files": 152,
+  "A": {
+   "n": 152,
+   "miss": 0,
+   "auc": 0.803,
+   "brier": 0.175,
+   "acc@0.5": 0.77,
+   "acc_committed": 0.776,
+   "abstain": 9,
+   "committed": 143
+  },
+  "C": {
+   "n": 152,
+   "miss": 0,
+   "auc": 0.806,
+   "brier": 0.174,
+   "acc@0.5": 0.77,
+   "acc_committed": 0.77,
+   "abstain": 0,
+   "committed": 152
+  },
+  "paired_C_minus_A": {
+   "n_paired": 152,
+   "dAUC_C_minus_A": 0.003,
+   "dAUC_CI": [
+    -0.013,
+    0.02
+   ],
+   "dBrier_C_minus_A": -0.001,
+   "dBrier_CI": [
+    -0.006,
+    0.005
+   ]
+  },
+  "evidence_use_C": {
+   "rounds_dist": {
+    "0": 0,
+    "1": 48,
+    "2": 29,
+    "3": 75
+   },
+   "C_moved_prob_vs_A": 54,
+   "stop_reasons": {},
+   "answer_status": {
+    "partially_answered": 148,
+    "not_answered": 165,
+    "answered": 14
+   },
+   "evidence_subject": {
+    "general_class": 295,
+    "related_compound": 16,
+    "target": 4,
+    "reference": 10,
+    "unresolved": 2
+   },
+   "tool_exec_status": {
+    "executed": 326,
+    "not_applicable": 1
+   },
+   "retrieval_ok": "329/329"
+  }
+ }
+}

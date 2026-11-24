@@ -1,0 +1,22 @@
+[
+  {
+    "job": "dmpnn-hiv-2026-10-11-22-17-09-701",
+    "tasks": "hiv",
+    "instance": "ml.g5.2xlarge"
+  },
+  {
+    "job": "dmpnn-tox21-2026-10-11-22-17-10-593",
+    "tasks": "tox21",
+    "instance": "ml.g4dn.2xlarge"
+  },
+  {
+    "job": "dmpnn-sider-2026-10-11-22-17-11-408",
+    "tasks": "sider,lipo",
+    "instance": "ml.g6.2xlarge"
+  },
+  {
+    "job": "dmpnn-esol-2026-10-11-22-17-12-043",
+    "tasks": "esol,freesolv,bbbp,bace,clintox",
+    "instance": "ml.g5.4xlarge"
+  }
+]

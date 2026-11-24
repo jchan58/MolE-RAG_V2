@@ -1,0 +1,9 @@
+torch
+transformers>=4.43.0
+accelerate>=0.30.0
+rdkit>=2023.9.1
+scikit-learn
+numpy
+sentencepiece
+tiktoken
+safetensors

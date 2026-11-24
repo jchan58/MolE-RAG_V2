@@ -1,0 +1,219 @@
+% ===== A. Corpus construction =====
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Dataset} & \textbf{Processed articles} & \textbf{Paragraph passages} & \textbf{Table passages} & \textbf{Total passages} \\
+\midrule
+BBBP          & 222,222 & 9,103,317 & 168,084 & 9,271,401 \\
+BACE          & 34,641 & 1,693,504 & 22,582 & 1,716,086 \\
+ClinTox       & 58,990 & 2,582,600 & 53,749 & 2,636,349 \\
+HIV           & 22,572 & 1,232,767 & 22,465 & 1,255,232 \\
+Tox21         & 17,741 & 772,607 & 13,021 & 785,628 \\
+SIDER         & 83,754 & 3,820,772 & 95,385 & 3,916,157 \\
+ESOL          & 444,283 & 20,597,221 & 400,449 & 20,997,670 \\
+FreeSolv      & 165,474 & 7,514,610 & 172,972 & 7,687,582 \\
+Lipophilicity & 4,088 & 213,281 & 3,385 & 216,666 \\
+\bottomrule
+\end{tabular}
+\caption{Article and passage counts for the nine collections. Articles and passages are counted once within each dataset.}
+\label{tab:corpus-construction}
+\end{table}
+
+% ===== A. Corpus index =====
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lrrrrr}
+\toprule
+\textbf{Dataset} & \textbf{Task entries} & \textbf{Finding records} & \textbf{Unique finding IDs} & \textbf{Supporting passages} & \textbf{Source articles} \\
+\midrule
+BBBP          & 1 & 55,851 & 55,851 & 28,165 & 16,017 \\
+BACE          & 1 & 19,741 & 19,741 & 5,871 & 2,200 \\
+ClinTox       & 2 & 265,026 & 265,026 & 44,087 & 15,489 \\
+HIV           & 1 & 1,215 & 1,168 & 299 & 77 \\
+Tox21         & 12 & 5,528 & 5,363 & 1,508 & 403 \\
+SIDER         & 27 & 23,925 & 22,458 & 5,610 & 1,927 \\
+ESOL          & 1 & 42,073 & 42,070 & 13,079 & 7,489 \\
+FreeSolv      & 1 & 38,298 & 38,298 & 9,379 & 5,505 \\
+Lipophilicity & 1 & 1,712 & 1,577 & 398 & 244 \\
+\bottomrule
+\end{tabular}
+\caption{Findings and supporting sources in the indexes used for prediction. Passages and articles shared by task- and compound-level findings are counted once.}
+\label{tab:corpus-index}
+\end{table}
+
+% ===== A. Compound-evidence coverage =====
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lrrrlr}
+\toprule
+\textbf{Dataset} & \textbf{Compound cards} & \textbf{With findings} & \textbf{Coverage} & \textbf{Covered test records / total} & \textbf{Test coverage} \\
+\midrule
+BBBP          & 1,975 & 1,394 & 70.6\% & 127 / 205 & 62.0\% \\
+BACE          & 1,513 & 55 & 3.6\% & 7 / 152 & 4.6\% \\
+ClinTox       & 1,459 & 659 & 45.2\% & 51 / 149 & 34.2\% \\
+HIV           & 41,120 & 23 & 0.06\% & 0 / 4,112 & 0.0\% \\
+Tox21         & 7,823 & 120 & 1.5\% & 15 / 783 & 1.9\% \\
+SIDER         & 1,427 & 469 & 32.9\% & 42 / 144 & 29.2\% \\
+ESOL          & 1,117 & 265 & 23.7\% & 29 / 114 & 25.4\% \\
+FreeSolv      & 642 & 262 & 40.8\% & 19 / 65 & 29.2\% \\
+Lipophilicity & 4,200 & 67 & 1.6\% & 6 / 420 & 1.4\% \\
+\bottomrule
+\end{tabular}
+\caption{Molecules with at least one indexed literature finding. Compound cards represent distinct standardized structures across all splits.}
+\label{tab:compound-evidence-coverage}
+\end{table}
+
+% ===== C. Selected fingerprints =====
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{llr}
+\toprule
+\textbf{Dataset} & \textbf{Selected fingerprint} & \textbf{Selection $k$} \\
+\midrule
+BACE          & Topological Torsion  & 5 \\
+BBBP          & ECFP2                & 3 \\
+ClinTox       & FCFP2                & 5 \\
+ESOL          & Atom Pair            & 5 \\
+FreeSolv      & MACCS                & 3 \\
+HIV           & RDKit                & 5 \\
+Lipophilicity & Atom Pair            & 5 \\
+SIDER         & FCFP2                & 5 \\
+Tox21         & Atom Pair            & 5 \\
+\bottomrule
+\end{tabular}
+\caption{Dataset-specific fingerprints selected using GPT-4o-mini validation performance. The task-specific reference pools used subsequently contain five references per query.}
+\label{tab:best_fingerprints}
+\end{table}
+
+% ===== E. Context ablation =====
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lrrr}
+\toprule
+Condition & BBBP $\uparrow$ & FreeSolv $\downarrow$ & ClinTox $\uparrow$ \\
+\midrule
+$S$ & 58.49 & 12.177 & 56.40 \\
+$R$ & 88.59 & 3.870 & \textbf{58.60} \\
+$M$ & 73.39 & 11.405 & 27.65 \\
+$MR$ & \textbf{92.58} & 3.726 & 34.48 \\
+$MRD$ & 92.21 & \textbf{3.017} & 35.49 \\
+\midrule
+$MR$ w/o identifiers & 91.88 & 3.811 & 51.95 \\
+$MR$ w/o descriptors & 91.23 & 3.343 & 37.39 \\
+$MR$ w/o groups & 91.39 & 3.763 & 29.07 \\
+\bottomrule
+\end{tabular}
+\caption{Initial-context ablations with Qwen3-32B, before literature retrieval. Classification scores are ROC-AUC percentages; FreeSolv reports RMSE. Bold marks the best point estimate.}
+\label{tab:context-ablation}
+\end{table}
+
+% ===== F. Retrieval vs. self-review =====
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{llrrl}
+\toprule
+\textbf{Dataset} & \textbf{Model} & \textbf{Paired molecules} & \textbf{Difference} & \textbf{95\% CI} \\
+\midrule
+\multicolumn{5}{l}{\textit{Classification: $\mathrm{AUC}_{C}-\mathrm{AUC}_{B}$}} \\
+\addlinespace
+BBBP  & Qwen3-32B                  & 205 & +0.005 & [-0.027, 0.040] \\
+      & Ministral-3-14B            & 203 & -0.069 & [-0.128, -0.017] \\
+      & Claude Opus 4.6            & 205 & -0.010 & [-0.029, 0.006] \\
+      & GPT-5-mini                 & 205 & -0.022 & [-0.066, 0.015] \\
+\addlinespace
+HIV   & Qwen3-32B                  & 4,112 & -0.003 & [-0.010, 0.004] \\
+      & Ministral-3-14B (partial)  & 3,392 & -0.025 & [-0.066, 0.017] \\
+      & Claude Opus 4.6 (partial)  & 3,519 & +0.021 & [0.005, 0.041] \\
+      & GPT-5-mini                 & 4,112 & -0.003 & [-0.013, 0.007] \\
+\addlinespace
+Tox21 & Qwen3-32B                  & 651 & -0.004 & [-0.019, 0.007] \\
+      & Ministral-3-14B            & 748 & -0.004 & [-0.018, 0.010] \\
+      & Claude Opus 4.6 (partial)  & 566 & -0.010 & [-0.020, -0.002] \\
+      & GPT-5-mini                 & 345 & +0.017 & [-0.007, 0.045] \\
+\addlinespace
+SIDER & Qwen3-32B                  & 143 & +0.012 & [-0.033, 0.057] \\
+      & Ministral-3-14B            & 144 & -0.082 & [-0.146, -0.011] \\
+      & Claude Opus 4.6            & 144 & -0.025 & [-0.039, -0.011] \\
+      & GPT-5-mini                 & 29 & +0.037 & [-0.035, 0.110] \\
+\addlinespace
+ClinTox & Qwen3-32B                  & 149 & -0.009 & [-0.027, 0.008] \\
+      & Ministral-3-14B            & 148 & -0.101 & [-0.209, 0.003] \\
+      & Claude Opus 4.6            & 149 & -0.135 & [-0.320, 0.041] \\
+      & GPT-5-mini                 & 101 & +0.136 & [-0.235, 0.480] \\
+\addlinespace
+\midrule
+\multicolumn{5}{l}{\textit{Regression: $\mathrm{RMSE}_{B}-\mathrm{RMSE}_{C}$}} \\
+\addlinespace
+ESOL  & Qwen3-32B                  & 114 & +0.031 & [-0.026, 0.086] \\
+      & Ministral-3-14B            & 114 & +0.017 & [-0.058, 0.092] \\
+      & Claude Opus 4.6            & 114 & +0.000 & [-0.021, 0.025] \\
+      & GPT-5-mini                 & 114 & +0.147 & [0.018, 0.261] \\
+\addlinespace
+FreeSolv & Qwen3-32B                  & 65 & +0.111 & [-0.119, 0.389] \\
+      & Ministral-3-14B            & 65 & +0.653 & [-0.396, 1.493] \\
+      & Claude Opus 4.6            & 65 & +0.004 & [-0.041, 0.044] \\
+      & GPT-5-mini                 & 65 & +0.420 & [0.095, 0.791] \\
+\addlinespace
+Lipophilicity & Qwen3-32B                  & 420 & -0.013 & [-0.031, 0.006] \\
+      & Ministral-3-14B            & 420 & +0.007 & [-0.022, 0.035] \\
+      & Claude Opus 4.6            & 420 & -0.009 & [-0.022, 0.005] \\
+      & GPT-5-mini                 & 420 & +0.008 & [-0.034, 0.049] \\
+\addlinespace
+\bottomrule
+\end{tabular}
+\caption{Evidence-assisted review ($C$) compared with self-review ($B$). Positive differences favor evidence-assisted review.}
+\label{tab:review-comparison}
+\end{table*}
+
+% ===== G. Retrieval budget and cost =====
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{lrrrrrr}
+\toprule
+\textbf{Dataset} & \textbf{Mean rounds} & \textbf{$B$ calls} & \textbf{$C$ calls} & \textbf{Embed calls} & \textbf{$C$ input tokens} & \textbf{$C$ output tokens} \\
+\midrule
+BBBP          & 2.985 & 2.26 & 6.98 & 2.49 & 21,737 & 898 \\
+HIV           & 2.026 & 2.03 & 5.38 & 1.94 & 13,265 & 781 \\
+Tox21         & 2.987 & 2.53 & 6.98 & 2.61 & 20,942 & 1,471 \\
+SIDER         & 2.986 & 2.72 & 6.98 & 0.46 & 27,625 & 1,464 \\
+ClinTox       & 3.000 & 2.14 & 7.00 & 1.87 & 17,572 & 1,036 \\
+ESOL          & 1.289 & 2.97 & 4.17 & 0.14 & 9,859 & 507 \\
+FreeSolv      & 1.369 & 2.71 & 4.29 & 0.08 & 9,769 & 518 \\
+Lipophilicity & 2.362 & 3.25 & 5.95 & 1.18 & 15,709 & 779 \\
+\bottomrule
+\end{tabular}
+\caption{Mean online resource use per molecule for Qwen3-32B. Generation-call counts for self-review ($B$) and evidence-assisted review ($C$) each include the initial assessment once.}
+\label{tab:inference-budget-cost}
+\end{table*}
+
+% ===== H. Evidence-use summary =====
+% Appendix H -- evidence use and errors (prose statistics).
+%   traces examined: 23796
+%   retrieval attempts: 43504
+%   empty retrievals: 6457
+%   delivered passage events: 108291
+%   repeated passages: 27174
+%   assessed cases: 266
+%   revisions: 154
+%   direction supported: 103
+%   magnitude quant-anchored: 23
+%   retentions: 112
+%   supported retentions: 96
+%   applicability_dist: {"PARTIAL": 155, "UNCERTAIN": 5, "NO": 79, "YES": 27}
+%   sufficiency_dist: {"NO": 144, "PARTIAL": 108, "YES": 14}
+
+% ----- handled separately -----
+% B (FreeSolv screening, tab:freesolv-screening-results): the 16 RMSE
+%   cells live only as prose in the screening notes; a dedicated scorer
+%   over runs_frozen/{c1,c2,c3} is needed before they can be emitted here.
+% D (RDKit descriptors, tab:rdkit_*): descriptor_rankings.csv holds the
+%   per-dataset |corr| ranking, but the correlation convention for the
+%   BACE rank-1 ordering must be pinned to match the manuscript.

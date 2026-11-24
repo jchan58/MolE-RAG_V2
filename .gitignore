@@ -1,0 +1,47 @@
+# ---- secrets: never commit ----
+.env
+*.env
+!.env.example
+*.key
+*secret*
+*token*
+~/.aws/
+bedrock.env
+azure.env
+hf.env
+
+# ---- credentials / core dumps ----
+core.*
+*.pem
+
+# ---- large data hosted on HuggingFace / fetched at runtime ----
+data/cards/*
+!data/cards/.gitkeep
+data/bace_pool/         # ~21MB retrieval pool -> host on HF
+data/caches/            # ~63MB PubChem synonym caches (corpus rebuild; regenerable)
+corpus_runs/            # corpus-build outputs
+runs/                   # per-molecule prediction outputs
+*.jsonl.gz
+*.parquet
+
+# ---- model artifacts ----
+*.pt
+*.ckpt
+*.bin
+*.safetensors
+checkpoints/
+*_checkpoints/
+
+# ---- caches / scratch ----
+__pycache__/
+*.pyc
+.pip-cache/
+.hf_cache/
+.cache/
+embed_cache/
+*.log
+
+# ---- OS / editor ----
+.DS_Store
+.vscode/
+.idea/

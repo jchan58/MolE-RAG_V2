@@ -1,0 +1,6 @@
+{
+  "job": "mollm-full-2026-10-12-11-17-30-235",
+  "instance": "ml.g6e.16xlarge",
+  "mode": "full",
+  "tasks": "hiv"
+}
