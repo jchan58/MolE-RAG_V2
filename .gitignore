@@ -14,10 +14,7 @@ hf.env
 core.*
 *.pem
 
-# ---- large data hosted on HuggingFace / fetched at runtime ----
-data/cards/*
-!data/cards/.gitkeep
-data/bace_pool/         # ~21MB retrieval pool -> host on HF
+# ---- card corpus + bace pool are tracked via git-LFS (see .gitattributes) ----
 data/caches/            # ~63MB PubChem synonym caches (corpus rebuild; regenerable)
 corpus_runs/            # corpus-build outputs
 runs/                   # per-molecule prediction outputs
